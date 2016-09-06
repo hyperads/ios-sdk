@@ -1,0 +1,10 @@
+framework module HADFramework {
+  umbrella header "HADFramework.h"
+
+  export *
+  module * { export * }
+}
+
+module HADFramework.Swift {
+    header "HADFramework-Swift.h"
+}
