@@ -16,7 +16,7 @@
 
 -(void)viewDidLoad {
     [super viewDidLoad];
-    [self.bannerView loadAd:@"5b3QbMRQ" bannerSize:HADBannerSizeBlock300x250 delegate:self];
+    [self.bannerView loadAdWithPlacementId:@"5b3QbMRQ" bannerSize:HADBannerSizeBlock300x250 delegate:self];
 }
 
 #pragma mark - HADBannerViewDelegate

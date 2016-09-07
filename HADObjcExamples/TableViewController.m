@@ -24,7 +24,7 @@
         static NSString *cellIdentifier = @"AD";
         ADCell *cell = (ADCell*) [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
         
-        [cell.bannerView loadAd:@"5b3QbMRQ" bannerSize:HADBannerSizeHeight50 delegate:self];
+        [cell.bannerView loadAdWithPlacementId:@"5b3QbMRQ" bannerSize:HADBannerSizeHeight50 delegate:self];
         
         return cell;
     } else {

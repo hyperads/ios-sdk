@@ -19,9 +19,9 @@ class ViewController: UIViewController, HADInterstitialDelegate {
     //MARK: HADInterstitial Delegate
     
     func HADInterstitialDidLoad(controller: HADInterstitial) {
-        controller.modalTransitionStyle = .CoverVertical
-        controller.modalPresentationStyle = .FullScreen
-        presentViewController(controller, animated: true, completion: nil)
+        controller.modalTransitionStyle = .coverVertical
+        controller.modalPresentationStyle = .fullScreen
+        present(controller, animated: true, completion: nil)
     }
     
     func HADInterstitialDidClick(controller: HADInterstitial) {

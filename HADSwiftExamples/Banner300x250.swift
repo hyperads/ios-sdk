@@ -14,7 +14,7 @@ class Banner300x250: UIViewController, HADBannerViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bannerView.loadAd("5b3QbMRQ", bannerSize: .Block300x250, delegate: self)
+        bannerView.loadAd(placementId: "5b3QbMRQ", bannerSize: .block300x250, delegate: self)
     }
     
     func HADViewDidLoad(view: HADBannerView) {

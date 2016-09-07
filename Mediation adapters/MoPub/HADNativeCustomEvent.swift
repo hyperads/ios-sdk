@@ -13,9 +13,9 @@ import HADFramework
 class HADNativeCustomEvent: MPNativeCustomEvent, HADNativeAdDelegate {
     var nativeAd: HADNativeAd!
     
-    override func requestAdWithCustomEventInfo(info: [NSObject : AnyObject]!) {
+    override func requestAd(withCustomEventInfo info: [AnyHashable : Any]!) {
         if let placementId = info["placementId"] as? String {
-            let nativeAd = HADNativeAd(placementId: placementId, bannerSize: .Block300x250, delegate: self)
+            let nativeAd = HADNativeAd(placementId: placementId, delegate: self)
             nativeAd.loadAd()
         } else {
             delegate.nativeCustomEvent(self, didFailToLoadAdWithError: MPNativeAdNSErrorForNoInventory())
@@ -27,7 +27,7 @@ class HADNativeCustomEvent: MPNativeCustomEvent, HADNativeAdDelegate {
     func HADNativeAdDidLoad(nativeAd: HADNativeAd) {
         let adAdapter = HADNativeAdAdapter(nativeAd: nativeAd)
         let interfaceAd = MPNativeAd(adAdapter: adAdapter)
-        delegate.nativeCustomEvent(self, didLoadAd: interfaceAd)
+        delegate.nativeCustomEvent(self, didLoad: interfaceAd)
     }
     
     func HADNativeAdDidFail(nativeAd: HADNativeAd, error: NSError) {

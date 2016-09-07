@@ -11,8 +11,8 @@ import HADFramework
 
 @objc(HADNativeAdAdapter)
 class HADNativeAdAdapter: NSObject, MPNativeAdAdapter {
-    var properties: [NSObject : AnyObject]!
-    var defaultActionURL: NSURL!
+    public var properties: [AnyHashable : Any]!
+    var defaultActionURL: URL!
     var delegate: MPNativeAdAdapterDelegate!
     
     var nativeAd: HADNativeAd!
@@ -25,13 +25,13 @@ class HADNativeAdAdapter: NSObject, MPNativeAdAdapter {
         return true
     }
     
-    func willAttachToView(view: UIView!) {
+    func willAttach(to view: UIView!) {
         if let nativeAdRendering = delegate.viewControllerForPresentingModalView() as? MPNativeAdRendering {
             nativeAdRendering.nativeTitleTextLabel?().text = nativeAd.title
             nativeAdRendering.nativeMainTextLabel?().text = nativeAd.desc
             nativeAdRendering.nativeCallToActionTextLabel?().text = nativeAd.cta
-            nativeAd.loadBannerIntoImageView(nativeAdRendering.nativeMainImageView!(), animated: true)
-            nativeAd.loadIconIntoImageView(nativeAdRendering.nativeIconImageView!(), animated: true)
+            nativeAd.loadBanner(into: nativeAdRendering.nativeMainImageView!(), animated: true)
+            nativeAd.loadIcon(into: nativeAdRendering.nativeIconImageView!(), animated: true)
             delegate.viewControllerForPresentingModalView().view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(trackClick)))
         }
     }

@@ -29,14 +29,14 @@
 #pragma mark - HADNativeAdDelegate
 
 -(void)HADNativeAdDidLoad:(HADNativeAd *)nativeAd {
-    [self.bannerMediaView loadHADBanner:nativeAd animated:NO completion:^(NSError * _Nullable error, UIImage * _Nullable image) {
+    [self.bannerMediaView loadHADBannerWithNativeAd:nativeAd animated:NO completion:^(NSError * _Nullable error, UIImage * _Nullable image) {
         if (!error) {
             NSLog(@"Banner downloaded");
         } else {
             NSLog(@"Banner download error: %@", error);
         }
     }];
-    [self.iconMediaView loadHADIcon:nativeAd animated:NO completion:^(NSError * _Nullable error, UIImage * _Nullable image) {
+    [self.iconMediaView loadHADIconWithNativeAd:nativeAd animated:NO completion:^(NSError * _Nullable error, UIImage * _Nullable image) {
         if (!error) {
             NSLog(@"Icon downloaded");
         } else {

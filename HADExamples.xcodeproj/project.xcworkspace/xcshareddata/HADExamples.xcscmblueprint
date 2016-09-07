@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "8C5BD002BD8F7446448E1CFC0BA1EF56F5FB48C9",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "8C5BD002BD8F7446448E1CFC0BA1EF56F5FB48C9" : 9223372036854775807,
+    "31714A783EDBC69BA33361D79D21B583E1C12005" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "365F6B22-37FB-4EFE-8981-5D8795307C09",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "8C5BD002BD8F7446448E1CFC0BA1EF56F5FB48C9" : "HADFrameworkExamples\/",
+    "31714A783EDBC69BA33361D79D21B583E1C12005" : "adpanel-sdk-ios\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "HADExamples",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "HADExamples.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "bitbucket.org:dispply\/adpanel-sdk-ios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "31714A783EDBC69BA33361D79D21B583E1C12005"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:hyperads\/ios-sdk.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8C5BD002BD8F7446448E1CFC0BA1EF56F5FB48C9"
+    }
+  ]
+}

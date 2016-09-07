@@ -11,10 +11,10 @@ import HADFramework
 
 @objc(HADBannerCustomEvent)
 class HADBannerCustomEvent: MPBannerCustomEvent, HADBannerViewDelegate {
-    override func requestAdWithSize(size: CGSize, customEventInfo info: [NSObject : AnyObject]!) {
+    override func requestAd(with size: CGSize, customEventInfo info: [AnyHashable : Any]!) {
         if let placementId = info["placementId"] as? String {
-            let m = HADBannerView(frame: CGRectMake(0, 0, size.width, size.height))
-            m.loadAd(placementId, bannerSize: HADBannerSize.Height50, delegate: self)
+            let m = HADBannerView(frame: CGRect(x: 0, y: 0, width: size.width, height: size.height))
+            m.loadAd(placementId: placementId, bannerSize: HADBannerSize.height50, delegate: self)
         } else {
             delegate.bannerCustomEvent(self, didFailToLoadAdWithError: MPNativeAdNSErrorForNoInventory())
         }

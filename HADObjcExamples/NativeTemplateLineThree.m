@@ -17,7 +17,7 @@
 -(void)viewDidLoad {
     [super viewDidLoad];
     //Just set HADBannerTemplateTypes param in loadAd method
-    [self.bannerTemplateView loadAd:@"5b3QbMRQ" bannerTemplate:HADBannerTemplateTypesLineThree delegate:self];
+    [self.bannerTemplateView loadAdWithPlacementId:@"5b3QbMRQ" bannerTemplate:HADBannerTemplateTypesLineThree delegate:self];
     //And customize everything
     [self.bannerTemplateView setCustomBackgroundColor:[UIColor lightGrayColor]];
     [self.bannerTemplateView setCustomTitleTextColor:[UIColor blackColor]];

@@ -12,8 +12,7 @@ import HADFramework
 @objc(HADInterstitialCustomEvent)
 class HADInterstitialCustomEvent: MPInterstitialCustomEvent, HADInterstitialDelegate {
     var interstitial: HADInterstitial!
-    
-    override func requestInterstitialWithCustomEventInfo(info: [NSObject : AnyObject]!) {
+    override func requestInterstitial(withCustomEventInfo info: [AnyHashable : Any]!) {
         if let placementId = info["placementId"] as? String {
             interstitial = HADInterstitial(placementId: placementId)
             interstitial.delegate = self
@@ -23,11 +22,11 @@ class HADInterstitialCustomEvent: MPInterstitialCustomEvent, HADInterstitialDele
         }
     }
     
-    override func showInterstitialFromRootViewController(rootViewController: UIViewController!) {
+    override func showInterstitial(fromRootViewController rootViewController: UIViewController!) {
         delegate.interstitialCustomEventWillAppear(self)
-        interstitial.modalTransitionStyle = .CoverVertical
-        interstitial.modalPresentationStyle = .FullScreen
-        rootViewController.presentViewController(interstitial, animated: true, completion: nil)
+        interstitial.modalTransitionStyle = .coverVertical
+        interstitial.modalPresentationStyle = .fullScreen
+        rootViewController.present(interstitial, animated: true, completion: nil)
     }
     
     //MARK: HADInterstitial Delegate
@@ -37,7 +36,7 @@ class HADInterstitialCustomEvent: MPInterstitialCustomEvent, HADInterstitialDele
     }
     
     func HADInterstitialDidClick(controller: HADInterstitial) {
-        delegate.interstitialCustomEventDidReceiveTapEvent(self)
+        delegate.interstitialCustomEventDidReceiveTap(self)
     }
     
     func HADInterstitialDidClose(controller: HADInterstitial) {

@@ -28,14 +28,14 @@ class NativeAd: UIViewController, HADNativeAdDelegate {
     //MARK: HADNativeAd Delegate
     
     func HADNativeAdDidLoad(nativeAd: HADNativeAd) {
-        imageView.loadHADBanner(nativeAd, animated: true) { (error, image) in
+        imageView.loadHADBanner(nativeAd: nativeAd, animated: true) { (error, image) in
             if error != nil {
                 print("ERROR: CAN'T DOWNLOAD BANNER \(error)")
                 return
             }
             print("BANNER DOWNLOADED")
         }
-        iconView.loadHADIcon(nativeAd, animated: true) { (error, image) in
+        iconView.loadHADIcon(nativeAd: nativeAd, animated: true) { (error, image) in
             if error != nil {
                 print("ERROR: CAN'T DOWNLOAD ICON \(error)")
                 return
@@ -44,7 +44,7 @@ class NativeAd: UIViewController, HADNativeAdDelegate {
         }
         titleLabel.text = nativeAd.title
         descLabel.text = nativeAd.desc
-        cta?.setTitle(nativeAd.cta, forState: .Normal)
+        cta?.setTitle(nativeAd.cta, for: .normal)
     }
     
     @IBAction func adClicked() {

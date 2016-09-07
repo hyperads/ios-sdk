@@ -14,7 +14,7 @@ class BannerHeight50: UIViewController, HADBannerViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bannerView.loadAd("5b3QbMRQ", bannerSize: .Height50, delegate: self)
+        bannerView.loadAd(placementId: "5b3QbMRQ", bannerSize: .height50, delegate: self)
     }
     
     func HADViewDidLoad(view: HADBannerView) {

@@ -27,21 +27,22 @@ class ADCell: UITableViewCell, HADBannerViewDelegate {
 
 class TableViewController: UITableViewController {
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 100
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row % 20 == 0 {
-            let cell = tableView.dequeueReusableCellWithIdentifier("AD", forIndexPath: indexPath) as! ADCell
-            cell.bannerView.loadAd("5b3QbMRQ", bannerSize: .Height50, delegate: cell)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "AD", for: indexPath) as! ADCell
+            cell.bannerView.loadAd(placementId: "5b3QbMRQ", bannerSize: .height50, delegate: cell)
             return cell
         } else {
-            return tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+            return tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         }
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return indexPath.row % 20 == 0 ? 50 : 44
     }
 }
