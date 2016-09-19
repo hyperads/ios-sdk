@@ -38,7 +38,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		69YWbaMtK6W/DPAfTzcdBL3zhJc=
+		DV9NCJ/a3g1aGQypMkATcrc+ApA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -48,104 +48,41 @@
 	<key>files2</key>
 	<dict>
 		<key>Headers/HAD.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			pDc5HrIxzWZCPzwf5TLGyWThQCE=
-			</data>
-			<key>hash2</key>
-			<data>
-			+3yYnDUOiY3qJozr22zj66M5+1cHsYzg03Wtedp85us=
-			</data>
-		</dict>
+		<data>
+		pDc5HrIxzWZCPzwf5TLGyWThQCE=
+		</data>
 		<key>Headers/HADAdObject.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			RQg8e4AE02h35Hjy3ZX3woc3P88=
-			</data>
-			<key>hash2</key>
-			<data>
-			VSFxmmAzAIA4zydfIuJNNBXh+Yg9jLzZNfabnHfj8A8=
-			</data>
-		</dict>
+		<data>
+		RQg8e4AE02h35Hjy3ZX3woc3P88=
+		</data>
 		<key>Headers/HADEventManager.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			53Twzc59B5cK2Vsf7aoqeX9zVcs=
-			</data>
-			<key>hash2</key>
-			<data>
-			sL7O/uDzBdhKGjaJJRdFuuOCkWmUDUbeI5ZB2Am0+Bk=
-			</data>
-		</dict>
+		<data>
+		53Twzc59B5cK2Vsf7aoqeX9zVcs=
+		</data>
 		<key>Headers/HADFrameworkObjC.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			o4jEtf8f/thtIM4xmpyp/TkGVeI=
-			</data>
-			<key>hash2</key>
-			<data>
-			N5tYrPZa3fPNB+Ef/LWmDy4oy0AKSGOMLykbp6GY63w=
-			</data>
-		</dict>
+		<data>
+		o4jEtf8f/thtIM4xmpyp/TkGVeI=
+		</data>
 		<key>Headers/HADMediaView.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			GwGzAqxyEiQEceNtnfFhh+mjObg=
-			</data>
-			<key>hash2</key>
-			<data>
-			UQZi7x0vbyQy2vqd4bUNHsCdQP70ewvnXXiFravTMfE=
-			</data>
-		</dict>
+		<data>
+		GwGzAqxyEiQEceNtnfFhh+mjObg=
+		</data>
 		<key>Headers/HADNativeAd.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			FtXLu4WwqcCrOOXfarFyhIJJTwY=
-			</data>
-			<key>hash2</key>
-			<data>
-			PdQl2z5by8y0GIn4/1ChBgnd2hSeht94OfQ4+aOL//E=
-			</data>
-		</dict>
+		<data>
+		FtXLu4WwqcCrOOXfarFyhIJJTwY=
+		</data>
 		<key>Headers/HADNativeAdDelegate.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			5tVXk3DE2eYvTdMaFPx7ookcHf8=
-			</data>
-			<key>hash2</key>
-			<data>
-			IbExtUeXbfjw4T10edvUOeuidIXNfJBImZ2v1191Nwg=
-			</data>
-		</dict>
+		<data>
+		5tVXk3DE2eYvTdMaFPx7ookcHf8=
+		</data>
 		<key>Headers/HADNetworkManager.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			6NOvGsCmh6D1rM7/fjAOkZRAwNE=
-			</data>
-			<key>hash2</key>
-			<data>
-			x4BCIFtKxwSOx5lxgTp/QiWmAxJhpKFhXjsuVdjZtf4=
-			</data>
-		</dict>
+		<data>
+		6NOvGsCmh6D1rM7/fjAOkZRAwNE=
+		</data>
 		<key>Modules/module.modulemap</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			9vXbgf9XU16Sv4MpnpqajYUQJZ0=
-			</data>
-			<key>hash2</key>
-			<data>
-			puNeh9LMGTSYK8JefrZGsEEO2/UZllcZoGMMn+sl/38=
-			</data>
-		</dict>
+		<data>
+		9vXbgf9XU16Sv4MpnpqajYUQJZ0=
+		</data>
 	</dict>
 	<key>rules</key>
 	<dict>
