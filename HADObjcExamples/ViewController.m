@@ -32,26 +32,26 @@
 
 #pragma mark - HADInterstitialDelegate
 
--(void)HADInterstitialDidLoad:(HADInterstitial *)controller {
+-(void)HADInterstitialDidLoadWithController:(HADInterstitial *)controller {
     NSLog(@"HADInterstitialDidLoad");
     self.interstitial.modalPresentationStyle = UIModalPresentationFullScreen;
     self.interstitial.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     [self presentViewController:self.interstitial animated:YES completion:nil];
 }
 
--(void)HADInterstitialDidFail:(HADInterstitial *)controller error:(NSError *)error {
+-(void)HADInterstitialDidFailWithController:(HADInterstitial *)controller error:(NSError *)error {
     NSLog(@"HADInterstitialDidFail: %@", error);
 }
 
--(void)HADInterstitialDidClick:(HADInterstitial *)controller {
+-(void)HADInterstitialDidClickWithController:(HADInterstitial *)controller {
     NSLog(@"HADInterstitialDidClick");
 }
 
--(void)HADInterstitialWillClose:(HADInterstitial *)controller {
+-(void)HADInterstitialWillCloseWithController:(HADInterstitial *)controller {
     NSLog(@"HADInterstitialWillClose");
 }
 
--(void)HADInterstitialDidClose:(HADInterstitial *)controller {
+-(void)HADInterstitialDidCloseWithController:(HADInterstitial *)controller {
     NSLog(@"HADInterstitialDidClose");
 }
 

@@ -38,15 +38,15 @@
 
 #pragma mark - HADBannerTemplateViewDelegate
 
--(void)HADTemplateViewDidLoad:(HADBannerView *)view {
+-(void)HADTemplateViewDidLoadWithView:(HADBannerTemplateView *)view {
     NSLog(@"HADTemplateViewDidLoad");
 }
 
--(void)HADTemplateView:(HADBannerView *)view didFailWithError:(NSError *)error {
+-(void)HADTemplateViewWithView:(HADBannerTemplateView *)view didFailWithError:(NSError *)error {
     NSLog(@"HADTemplateViewDidFai:l %@", error);
 }
 
--(void)HADTemplateViewDidClick:(HADBannerView *)view {
+-(void)HADTemplateViewDidClickWithView:(HADBannerTemplateView *)view {
     NSLog(@"HADTemplateViewDidClick");
 }
 

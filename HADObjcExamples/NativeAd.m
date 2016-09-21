@@ -28,7 +28,7 @@
 
 #pragma mark - HADNativeAdDelegate
 
--(void)HADNativeAdDidLoad:(HADNativeAd *)nativeAd {
+-(void)HADNativeAdDidLoadWithNativeAd:(HADNativeAd *)nativeAd {
     [self.bannerMediaView loadHADBannerWithNativeAd:nativeAd animated:NO completion:^(NSError * _Nullable error, UIImage * _Nullable image) {
         if (!error) {
             NSLog(@"Banner downloaded");
