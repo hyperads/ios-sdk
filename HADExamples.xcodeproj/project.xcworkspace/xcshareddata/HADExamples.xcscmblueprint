@@ -9,7 +9,7 @@
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "365F6B22-37FB-4EFE-8981-5D8795307C09",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "8C5BD002BD8F7446448E1CFC0BA1EF56F5FB48C9" : "HADFrameworkExamples\/",
+    "8C5BD002BD8F7446448E1CFC0BA1EF56F5FB48C9" : "HADExamples\/",
     "31714A783EDBC69BA33361D79D21B583E1C12005" : "adpanel-sdk-ios\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "HADExamples",

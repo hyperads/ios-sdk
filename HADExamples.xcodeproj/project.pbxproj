@@ -28,6 +28,9 @@
 		471C4E0A1D252F7500699B11 /* BannerHeight90.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471C4E091D252F7500699B11 /* BannerHeight90.swift */; };
 		471C4E0C1D252F8100699B11 /* Banner300x250.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471C4E0B1D252F8100699B11 /* Banner300x250.swift */; };
 		471C4E0E1D252F8A00699B11 /* NativeAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471C4E0D1D252F8A00699B11 /* NativeAd.swift */; };
+		474696EB1D9E8B6900C2C496 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474696EA1D9E8B6900C2C496 /* CollectionView.swift */; };
+		474696EE1D9E8EC000C2C496 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 474696ED1D9E8EC000C2C496 /* CollectionViewController.m */; };
+		474696F11D9E8EEE00C2C496 /* ADCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 474696F01D9E8EEE00C2C496 /* ADCollectionCell.m */; };
 		477F58061D387CC100D1AD6C /* NativeTemplateBlockOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477F58001D387CC100D1AD6C /* NativeTemplateBlockOne.swift */; };
 		477F58071D387CC100D1AD6C /* NativeTemplateBlockThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477F58011D387CC100D1AD6C /* NativeTemplateBlockThree.swift */; };
 		477F58081D387CC100D1AD6C /* NativeTemplateBlockTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477F58021D387CC100D1AD6C /* NativeTemplateBlockTwo.swift */; };
@@ -105,6 +108,11 @@
 		471C4E091D252F7500699B11 /* BannerHeight90.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerHeight90.swift; sourceTree = "<group>"; };
 		471C4E0B1D252F8100699B11 /* Banner300x250.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Banner300x250.swift; sourceTree = "<group>"; };
 		471C4E0D1D252F8A00699B11 /* NativeAd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeAd.swift; sourceTree = "<group>"; };
+		474696EA1D9E8B6900C2C496 /* CollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
+		474696EC1D9E8EC000C2C496 /* CollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
+		474696ED1D9E8EC000C2C496 /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
+		474696EF1D9E8EEE00C2C496 /* ADCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADCollectionCell.h; sourceTree = "<group>"; };
+		474696F01D9E8EEE00C2C496 /* ADCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADCollectionCell.m; sourceTree = "<group>"; };
 		477F58001D387CC100D1AD6C /* NativeTemplateBlockOne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeTemplateBlockOne.swift; sourceTree = "<group>"; };
 		477F58011D387CC100D1AD6C /* NativeTemplateBlockThree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeTemplateBlockThree.swift; sourceTree = "<group>"; };
 		477F58021D387CC100D1AD6C /* NativeTemplateBlockTwo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeTemplateBlockTwo.swift; sourceTree = "<group>"; };
@@ -171,6 +179,7 @@
 				471C4D861D251B5000699B11 /* AppDelegate.swift */,
 				471C4E031D252F4D00699B11 /* ViewController.swift */,
 				471C4E051D252F5D00699B11 /* TableViewController.swift */,
+				474696EA1D9E8B6900C2C496 /* CollectionView.swift */,
 				471C4E071D252F6B00699B11 /* BannerHeight50.swift */,
 				471C4E091D252F7500699B11 /* BannerHeight90.swift */,
 				471C4E0B1D252F8100699B11 /* Banner300x250.swift */,
@@ -205,8 +214,12 @@
 				471C4DEB1D252B9E00699B11 /* NativeAd.m */,
 				471C4DED1D252BB100699B11 /* TableViewController.h */,
 				471C4DEE1D252BB100699B11 /* TableViewController.m */,
+				474696EC1D9E8EC000C2C496 /* CollectionViewController.h */,
+				474696ED1D9E8EC000C2C496 /* CollectionViewController.m */,
 				471C4DF01D252BBB00699B11 /* ADCell.h */,
 				471C4DF11D252BBB00699B11 /* ADCell.m */,
+				474696EF1D9E8EEE00C2C496 /* ADCollectionCell.h */,
+				474696F01D9E8EEE00C2C496 /* ADCollectionCell.m */,
 				477F580C1D38833000D1AD6C /* NativeTemplateBlockOne.h */,
 				477F580D1D38833000D1AD6C /* NativeTemplateBlockOne.m */,
 				477F580F1D38833A00D1AD6C /* NativeTemplateBlockTwo.h */,
@@ -341,6 +354,7 @@
 			files = (
 				471C4E0A1D252F7500699B11 /* BannerHeight90.swift in Sources */,
 				471C4E0C1D252F8100699B11 /* Banner300x250.swift in Sources */,
+				474696EB1D9E8B6900C2C496 /* CollectionView.swift in Sources */,
 				471C4E061D252F5D00699B11 /* TableViewController.swift in Sources */,
 				477F58091D387CC100D1AD6C /* NativeTemplateLineOne.swift in Sources */,
 				471C4E0E1D252F8A00699B11 /* NativeAd.swift in Sources */,
@@ -359,6 +373,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				474696EE1D9E8EC000C2C496 /* CollectionViewController.m in Sources */,
 				471C4DE01D252B7300699B11 /* ViewController.m in Sources */,
 				471C4DE61D252B8A00699B11 /* BannerHeight90.m in Sources */,
 				471C4DB31D251D5B00699B11 /* AppDelegate.m in Sources */,
@@ -373,6 +388,7 @@
 				471C4DE31D252B8000699B11 /* BannerHeight50.m in Sources */,
 				477F581D1D38836300D1AD6C /* NativeTemplateLineThree.m in Sources */,
 				471C4DEC1D252B9E00699B11 /* NativeAd.m in Sources */,
+				474696F11D9E8EEE00C2C496 /* ADCollectionCell.m in Sources */,
 				471C4DE91D252B9600699B11 /* Banner300x250.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
