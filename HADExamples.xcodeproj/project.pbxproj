@@ -43,31 +43,31 @@
 		477F58171D38835100D1AD6C /* NativeTemplateLineOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 477F58161D38835100D1AD6C /* NativeTemplateLineOne.m */; };
 		477F581A1D38835A00D1AD6C /* NativeTemplateLineTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = 477F58191D38835A00D1AD6C /* NativeTemplateLineTwo.m */; };
 		477F581D1D38836300D1AD6C /* NativeTemplateLineThree.m in Sources */ = {isa = PBXBuildFile; fileRef = 477F581C1D38836300D1AD6C /* NativeTemplateLineThree.m */; };
-		47E7992B1D7F7ECF00E7AAC2 /* HADFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47E799281D7F7EC600E7AAC2 /* HADFramework.framework */; };
-		47E7992C1D7F7ECF00E7AAC2 /* HADFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 47E799281D7F7EC600E7AAC2 /* HADFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		47E7992D1D7F7ED300E7AAC2 /* HADFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47E799281D7F7EC600E7AAC2 /* HADFramework.framework */; };
-		47E7992E1D7F7ED300E7AAC2 /* HADFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 47E799281D7F7EC600E7AAC2 /* HADFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6CC06B941DB63F5700AA3140 /* HADFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CC06B931DB63F5700AA3140 /* HADFramework.framework */; };
+		6CC06B951DB63F5700AA3140 /* HADFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6CC06B931DB63F5700AA3140 /* HADFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6CC06B961DB63F5C00AA3140 /* HADFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CC06B931DB63F5700AA3140 /* HADFramework.framework */; };
+		6CC06B971DB63F5C00AA3140 /* HADFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6CC06B931DB63F5700AA3140 /* HADFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		471C4D981D251B6700699B11 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				47E7992C1D7F7ECF00E7AAC2 /* HADFramework.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		471C4DC51D251D9400699B11 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				47E7992E1D7F7ED300E7AAC2 /* HADFramework.framework in Embed Frameworks */,
+				6CC06B971DB63F5C00AA3140 /* HADFramework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6CC06B901DB6365000AA3140 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6CC06B951DB63F5700AA3140 /* HADFramework.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -131,7 +131,7 @@
 		477F58191D38835A00D1AD6C /* NativeTemplateLineTwo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeTemplateLineTwo.m; sourceTree = "<group>"; };
 		477F581B1D38836300D1AD6C /* NativeTemplateLineThree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeTemplateLineThree.h; sourceTree = "<group>"; };
 		477F581C1D38836300D1AD6C /* NativeTemplateLineThree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeTemplateLineThree.m; sourceTree = "<group>"; };
-		47E799281D7F7EC600E7AAC2 /* HADFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HADFramework.framework; sourceTree = "<group>"; };
+		6CC06B931DB63F5700AA3140 /* HADFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HADFramework.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,7 +139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47E7992B1D7F7ECF00E7AAC2 /* HADFramework.framework in Frameworks */,
+				6CC06B941DB63F5700AA3140 /* HADFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,7 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47E7992D1D7F7ED300E7AAC2 /* HADFramework.framework in Frameworks */,
+				6CC06B961DB63F5C00AA3140 /* HADFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,7 +157,7 @@
 		471C4D411D2519FA00699B11 = {
 			isa = PBXGroup;
 			children = (
-				47E799281D7F7EC600E7AAC2 /* HADFramework.framework */,
+				6CC06B931DB63F5700AA3140 /* HADFramework.framework */,
 				471C4D851D251B5000699B11 /* HADSwiftExamples */,
 				471C4DAD1D251D5B00699B11 /* HADObjcExamples */,
 				471C4D4B1D2519FA00699B11 /* Products */,
@@ -259,7 +259,7 @@
 				471C4D801D251B5000699B11 /* Sources */,
 				471C4D811D251B5000699B11 /* Frameworks */,
 				471C4D821D251B5000699B11 /* Resources */,
-				471C4D981D251B6700699B11 /* Embed Frameworks */,
+				6CC06B901DB6365000AA3140 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -508,6 +508,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -525,6 +526,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -542,6 +544,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -558,6 +561,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
