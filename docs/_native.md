@@ -1,16 +1,5 @@
 # Native ads
 
-HyperAdX uses Placement ID to allow access to the API. You can register a new App and create Placement at our [developer portal](http://hyperadx.com/publishers/sign_in).
-
-## Native Ads in Mobile Web
-
-* Go to the Publisher UI
-* Create new App
-* Create new Placement for it
-* On placements list click on Tag & SDK and select appropriate integration.
-
-## Native Ads in iOS
-
 The HyperAdX's Native Ads allows you to build a customized experience for the ads you show in your app. When using the Native Ad API, instead of receiving an ad ready to be displayed, you will receive a group of ad properties such as a title, an image, a call to action, and you will have to use them to construct a custom UIView where the ad is shown.
 
 **There are three actions you will need to take to implement this in your app:**
@@ -21,18 +10,7 @@ The HyperAdX's Native Ads allows you to build a customized experience for the ad
 
 ### Set up the SDK
 
-Follow these steps to download and include it in your project:
-
-* [Download](https://github.com/hyperads/ios-sdk/releases) latest release and extract the HADFramework for iOS.
-* Open your project target General tab.
-* Drag the HADFramework.framework file to Embedded Binaries.
-* Open your project target Build Settings tab. (Required only for Objective-C projects)
-* Set "Always Embed Swift Standard Libraries" (for Xcode 8) or "Embedded Content Contains Swift Code" (for Xcode < 8) to Yes. (Required only for Objective-C projects)
-* Add the AdSupport and CoreTelephony frameworks to your project.
-
-### iOS 7
-
-If you want to support iOS7 - [download](https://github.com/hyperads/ios-sdk/releases/tag/v2.0.3) our legacy SDK. It supports only NativeAds.
+[Please complete these steps](../README.md#set-up-the-sdk)
 
 ### Swift implementation
 

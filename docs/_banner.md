@@ -1,38 +1,10 @@
 # Banner
 
-HyperAdX uses Placement ID to allow access to the API. You can register a new App and create Placement at our [developer portal](http://hyperadx.com/publishers/sign_in).
-
-HyperAdX expects for Placement ID to be included in all API requests to the server in a get variable that looks like the following:
-
-<aside class="notice">
-You must replace <code>PLACEMENT_ID</code> with your placement's ID.
-</aside>
-
-## Mobile Web
-
-* Go to the Publisher UI
-* Create new App
-* Create new Placement for it
-* On placements list click on Tag & SDK and select appropriate integration.
-
-## iOS
-
 The HyperAdX Banner ads allows you to monetize your iOS apps with banner ads. This guide explains how to add banner ads to your app. If you're interested in other kinds of ad units, see the list of available types.
 
 ### Set up the SDK
 
-**Manual**
-
-* [Download](https://github.com/hyperads/ios-sdk/releases) and extract the HADFramework for iOS.
-* Open your project target General tab.
-* Drag the HADFramework.framework file to Embedded Binaries.
-* Open your project target Build Settings tab. (Required only for Objective-C projects)
-* Set "Embedded Content Contains Swift Code" to Yes. (Required only for Objective-C projects)
-* Add the AdSupport framework to your project.
-
-### iOS 7
-
-If you want to support iOS7 - [download](https://github.com/hyperads/ios-sdk/releases/tag/v2.0.3) our legacy SDK. It supports only NativeAds.
+[Please complete these steps](../README.md#set-up-the-sdk)
 
 ### Swift implementation
 
@@ -48,18 +20,18 @@ import HADFramework
 Swift 2.2
 ```swift
 func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-  // Override point for customization after application launch.
-  HAD.create()
-  return true
+// Override point for customization after application launch.
+HAD.create()
+return true
 }
 ```
 
 Swift 3.0
 ```swift
 private func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-    // Override point for customization after application launch.
-    HAD.create()
-    return true
+// Override point for customization after application launch.
+HAD.create()
+return true
 }
 ```
 
@@ -70,7 +42,7 @@ import UIKit
 import HADFramework
 
 class MyViewController: UIViewController, HADBannerViewDelegate {
-    var bannerView: HADBannerView!
+var bannerView: HADBannerView!
 }
 ```
 
@@ -79,20 +51,20 @@ class MyViewController: UIViewController, HADBannerViewDelegate {
 Swift 2.2
 ```swift
 override func viewDidLoad() {
-    super.viewDidLoad()
-    bannerView = HADBannerView(frame: CGRectMake(0,0, view.frame.size.width, 50))
-    view.addSubview(bannerView)
-    bannerView.loadAd("PLACEMENT_ID", bannerSize: .Height50, delegate: self)
+super.viewDidLoad()
+bannerView = HADBannerView(frame: CGRectMake(0,0, view.frame.size.width, 50))
+view.addSubview(bannerView)
+bannerView.loadAd("PLACEMENT_ID", bannerSize: .Height50, delegate: self)
 }
 ```
 
 Swift 3.0
 ```swift
 override func viewDidLoad() {
-    super.viewDidLoad()
-    bannerView = HADBannerView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 50))
-    view.addSubview(bannerView)
-    bannerView.loadAd(placementId: "PLACEMENT_ID", bannerSize: .height50, delegate: self)
+super.viewDidLoad()
+bannerView = HADBannerView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 50))
+view.addSubview(bannerView)
+bannerView.loadAd(placementId: "PLACEMENT_ID", bannerSize: .height50, delegate: self)
 }
 ```
 
@@ -101,20 +73,20 @@ override func viewDidLoad() {
 Swift 2.2
 ```swift
 override func viewDidLoad() {
-    super.viewDidLoad()
-    bannerView = HADBannerView(frame: CGRectMake(10, 100, 300, 250))
-    view.addSubview(bannerView)
-    bannerView.loadAd("PLACEMENT_ID", bannerSize: .Block300x250, delegate: self)
+super.viewDidLoad()
+bannerView = HADBannerView(frame: CGRectMake(10, 100, 300, 250))
+view.addSubview(bannerView)
+bannerView.loadAd("PLACEMENT_ID", bannerSize: .Block300x250, delegate: self)
 }
 ```
 
 Swift 3.0
 ```swift
 override func viewDidLoad() {
-    super.viewDidLoad()
-    bannerView = HADBannerView(frame: CGRect(x: 10, y: 100, width: 300, height: 250))
-    view.addSubview(bannerView)
-    bannerView.loadAd(placementId: "PLACEMENT_ID", bannerSize: .block300x250, delegate: self)
+super.viewDidLoad()
+bannerView = HADBannerView(frame: CGRect(x: 10, y: 100, width: 300, height: 250))
+view.addSubview(bannerView)
+bannerView.loadAd(placementId: "PLACEMENT_ID", bannerSize: .block300x250, delegate: self)
 }
 ```
 
@@ -124,15 +96,15 @@ override func viewDidLoad() {
 //MARK: HADBannerViewDelegate
 
 func HADViewDidLoad(view: HADBannerView) {
-    print("AD LOADED")
+print("AD LOADED")
 }
 
 func HADViewDidClick(view: HADBannerView) {
-    print("CLICKED AD")
+print("CLICKED AD")
 }
 
 func HADView(view: HADBannerView, didFailWithError error: NSError?) {
-    print("ERROR: %@", error?.localizedDescription)
+print("ERROR: %@", error?.localizedDescription)
 }
 ```
 
@@ -149,9 +121,9 @@ func HADView(view: HADBannerView, didFailWithError error: NSError?) {
 
 ```objective_c
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  // Override point for customization after application launch.
-  [HAD create];
-  return YES;
+// Override point for customization after application launch.
+[HAD create];
+return YES;
 }
 ```
 
@@ -169,10 +141,10 @@ func HADView(view: HADBannerView, didFailWithError error: NSError?) {
 
 ```objective_c
 -(void)viewDidLoad {
-    [super viewDidLoad];
-    self.bannerView = [[HADBannerView alloc] initWithFrame:CGRectMake(0,0, self.view.frame.size.width, 50)];
-    [self.view addSubview:self.bannerView];
-    [self.bannerView loadAd:@"PLACEMENT_ID" bannerSize:HADBannerSizeHeight50 delegate:self];
+[super viewDidLoad];
+self.bannerView = [[HADBannerView alloc] initWithFrame:CGRectMake(0,0, self.view.frame.size.width, 50)];
+[self.view addSubview:self.bannerView];
+[self.bannerView loadAd:@"PLACEMENT_ID" bannerSize:HADBannerSizeHeight50 delegate:self];
 }
 ```
 
@@ -180,10 +152,10 @@ func HADView(view: HADBannerView, didFailWithError error: NSError?) {
 
 ```objective_c
 -(void)viewDidLoad {
-    [super viewDidLoad];
-    self.bannerView = [[HADBannerView alloc] initWithFrame:CGRectMake(10, 100, 300, 250)];
-    [self.view addSubview:self.bannerView];
-    [self.bannerView loadAd:@"PLACEMENT_ID" bannerSize:HADBannerSizeBlock300x250 delegate:self];
+[super viewDidLoad];
+self.bannerView = [[HADBannerView alloc] initWithFrame:CGRectMake(10, 100, 300, 250)];
+[self.view addSubview:self.bannerView];
+[self.bannerView loadAd:@"PLACEMENT_ID" bannerSize:HADBannerSizeBlock300x250 delegate:self];
 }
 ```
 
@@ -194,15 +166,15 @@ Before v2.1.0
 #pragma mark - HADBannerViewDelegate
 
 -(void)HADViewDidLoad:(HADBannerView *)view {
-    NSLog(@"HADViewDidLoad");
+NSLog(@"HADViewDidLoad");
 }
 
 -(void)HADView:(HADBannerView *)view didFailWithError:(NSError *)error {
-    NSLog(@"HADViewDidFai:l %@", error);
+NSLog(@"HADViewDidFai:l %@", error);
 }
 
 -(void)HADViewDidClick:(HADBannerView *)view {
-    NSLog(@"HADViewDidClick");
+NSLog(@"HADViewDidClick");
 }
 ```
 
@@ -211,15 +183,15 @@ After v2.1.0
 #pragma mark - HADBannerViewDelegate
 
 -(void)HADViewDidLoadWithView:(HADBannerView *)view {
-    NSLog(@"HADViewDidLoad");
+NSLog(@"HADViewDidLoad");
 }
 
 -(void)HADViewWithView:(HADBannerView *)view didFailWithError:(NSError *)error {
-    NSLog(@"HADViewDidFai:l %@", error);
+NSLog(@"HADViewDidFai:l %@", error);
 }
 
 -(void)HADViewDidClickWithView:(HADBannerView *)view {
-    NSLog(@"HADViewDidClick");
+NSLog(@"HADViewDidClick");
 }
 ```
 
@@ -254,30 +226,30 @@ import HADFramework
 import UIKit
 
 class ViewController: UIViewController, GADBannerViewDelegate {
-    var bannerView: GADBannerView!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        let request = GADRequest()
-        //Banner 320x50
-        bannerView = GADBannerView(adSize: GADAdSize.init(size: CGSizeMake(320, 50), flags: 0))
-        bannerView.frame.origin.x = (UIScreen.mainScreen().bounds.width-320)/2
-        bannerView.frame.origin.y = 100
-        bannerView.adUnitID = "YOUR_ADUNIT_ID"
-        bannerView.rootViewController = self
-        bannerView.delegate = self
-        view.addSubview(bannerView)
-        bannerView.loadRequest(request)
-    }
-    
-    //MARK: GADBannerViewDelegate
-    func adViewDidReceiveAd(bannerView: GADBannerView!) {
-        print("adViewDidReceiveAd")
-    }
-    
-    func adView(bannerView: GADBannerView!, didFailToReceiveAdWithError error: GADRequestError!) {
-        print("didFailToReceiveAdWithError: \(error)")
-    }
+var bannerView: GADBannerView!
+
+override func viewDidLoad() {
+super.viewDidLoad()
+let request = GADRequest()
+//Banner 320x50
+bannerView = GADBannerView(adSize: GADAdSize.init(size: CGSizeMake(320, 50), flags: 0))
+bannerView.frame.origin.x = (UIScreen.mainScreen().bounds.width-320)/2
+bannerView.frame.origin.y = 100
+bannerView.adUnitID = "YOUR_ADUNIT_ID"
+bannerView.rootViewController = self
+bannerView.delegate = self
+view.addSubview(bannerView)
+bannerView.loadRequest(request)
+}
+
+//MARK: GADBannerViewDelegate
+func adViewDidReceiveAd(bannerView: GADBannerView!) {
+print("adViewDidReceiveAd")
+}
+
+func adView(bannerView: GADBannerView!, didFailToReceiveAdWithError error: GADRequestError!) {
+print("didFailToReceiveAdWithError: \(error)")
+}
 }
 ```
 
@@ -288,30 +260,30 @@ import HADFramework
 import UIKit
 
 class ViewController: UIViewController, GADBannerViewDelegate {
-    var bannerView: GADBannerView!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        let request = GADRequest()
-        //Banner 320x50
-        bannerView = GADBannerView(adSize: GADAdSize.init(size: CGSize(with: 320, height: 50), flags: 0))
-        bannerView.frame.origin.x = (UIScreen.main.bounds.width-320)/2
-        bannerView.frame.origin.y = 100
-        bannerView.adUnitID = "YOUR_ADUNIT_ID"
-        bannerView.rootViewController = self
-        bannerView.delegate = self
-        view.addSubview(bannerView)
-        bannerView.loadRequest(request)
-    }
-    
-    //MARK: GADBannerViewDelegate
-    func adViewDidReceiveAd(bannerView: GADBannerView!) {
-        print("adViewDidReceiveAd")
-    }
-    
-    func adView(bannerView: GADBannerView!, didFailToReceiveAdWithError error: GADRequestError!) {
-        print("didFailToReceiveAdWithError: \(error)")
-    }
+var bannerView: GADBannerView!
+
+override func viewDidLoad() {
+super.viewDidLoad()
+let request = GADRequest()
+//Banner 320x50
+bannerView = GADBannerView(adSize: GADAdSize.init(size: CGSize(with: 320, height: 50), flags: 0))
+bannerView.frame.origin.x = (UIScreen.main.bounds.width-320)/2
+bannerView.frame.origin.y = 100
+bannerView.adUnitID = "YOUR_ADUNIT_ID"
+bannerView.rootViewController = self
+bannerView.delegate = self
+view.addSubview(bannerView)
+bannerView.loadRequest(request)
+}
+
+//MARK: GADBannerViewDelegate
+func adViewDidReceiveAd(bannerView: GADBannerView!) {
+print("adViewDidReceiveAd")
+}
+
+func adView(bannerView: GADBannerView!, didFailToReceiveAdWithError error: GADRequestError!) {
+print("didFailToReceiveAdWithError: \(error)")
+}
 }
 ```
 
@@ -360,40 +332,40 @@ import HADFramework
 import UIKit
 
 class ViewController: UIViewController, MPAdViewDelegate {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        //Banner 320x50
-        let m = MPAdView(adUnitId: "YOUR_AD_UNIT", size: CGSizeMake(320, 50))
-        m.delegate = self
-        m.frame = CGRectMake((UIScreen.mainScreen().bounds.width-320)/2, 100, 320, 50)
-        view.addSubview(m)
-        m.loadAd()
-    }
+override func viewDidLoad() {
+super.viewDidLoad()
+//Banner 320x50
+let m = MPAdView(adUnitId: "YOUR_AD_UNIT", size: CGSizeMake(320, 50))
+m.delegate = self
+m.frame = CGRectMake((UIScreen.mainScreen().bounds.width-320)/2, 100, 320, 50)
+view.addSubview(m)
+m.loadAd()
+}
 
-    //MARK: MPAdViewDelegate
-    func viewControllerForPresentingModalView() -> UIViewController! {
-        return self
-    }
-    
-    func adViewDidLoadAd(view: MPAdView!) {
-        print("adViewDidLoadAd")
-    }
-    
-    func adViewDidFailToLoadAd(view: MPAdView!) {
-        print("adViewDidFailToLoadAd")
-    }
-    
-    func didDismissModalViewForAd(view: MPAdView!) {
-        print("didDismissModalViewForAd")
-    }
-    
-    func willPresentModalViewForAd(view: MPAdView!) {
-        print("willPresentModalViewForAd")
-    }
-    
-    func willLeaveApplicationFromAd(view: MPAdView!) {
-        print("willLeaveApplicationFromAd")
-    }
+//MARK: MPAdViewDelegate
+func viewControllerForPresentingModalView() -> UIViewController! {
+return self
+}
+
+func adViewDidLoadAd(view: MPAdView!) {
+print("adViewDidLoadAd")
+}
+
+func adViewDidFailToLoadAd(view: MPAdView!) {
+print("adViewDidFailToLoadAd")
+}
+
+func didDismissModalViewForAd(view: MPAdView!) {
+print("didDismissModalViewForAd")
+}
+
+func willPresentModalViewForAd(view: MPAdView!) {
+print("willPresentModalViewForAd")
+}
+
+func willLeaveApplicationFromAd(view: MPAdView!) {
+print("willLeaveApplicationFromAd")
+}
 }
 ```
 
@@ -403,40 +375,40 @@ import HADFramework
 import UIKit
 
 class ViewController: UIViewController, MPAdViewDelegate {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        //Banner 320x50
-        let m = MPAdView(adUnitId: "YOUR_AD_UNIT", size: CGSize(width: 320, height: 50))
-        m.delegate = self
-        m.frame = CGRect(x: (UIScreen.main.bounds.width-320)/2, y: 100, width: 320, height: 50)
-        view.addSubview(m)
-        m.loadAd()
-    }
+override func viewDidLoad() {
+super.viewDidLoad()
+//Banner 320x50
+let m = MPAdView(adUnitId: "YOUR_AD_UNIT", size: CGSize(width: 320, height: 50))
+m.delegate = self
+m.frame = CGRect(x: (UIScreen.main.bounds.width-320)/2, y: 100, width: 320, height: 50)
+view.addSubview(m)
+m.loadAd()
+}
 
-    //MARK: MPAdViewDelegate
-    func viewControllerForPresentingModalView() -> UIViewController! {
-        return self
-    }
-    
-    func adViewDidLoadAd(view: MPAdView!) {
-        print("adViewDidLoadAd")
-    }
-    
-    func adViewDidFailToLoadAd(view: MPAdView!) {
-        print("adViewDidFailToLoadAd")
-    }
-    
-    func didDismissModalViewForAd(view: MPAdView!) {
-        print("didDismissModalViewForAd")
-    }
-    
-    func willPresentModalViewForAd(view: MPAdView!) {
-        print("willPresentModalViewForAd")
-    }
-    
-    func willLeaveApplicationFromAd(view: MPAdView!) {
-        print("willLeaveApplicationFromAd")
-    }
+//MARK: MPAdViewDelegate
+func viewControllerForPresentingModalView() -> UIViewController! {
+return self
+}
+
+func adViewDidLoadAd(view: MPAdView!) {
+print("adViewDidLoadAd")
+}
+
+func adViewDidFailToLoadAd(view: MPAdView!) {
+print("adViewDidFailToLoadAd")
+}
+
+func didDismissModalViewForAd(view: MPAdView!) {
+print("didDismissModalViewForAd")
+}
+
+func willPresentModalViewForAd(view: MPAdView!) {
+print("willPresentModalViewForAd")
+}
+
+func willLeaveApplicationFromAd(view: MPAdView!) {
+print("willLeaveApplicationFromAd")
+}
 }
 ```
 

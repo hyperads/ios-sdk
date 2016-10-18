@@ -1,30 +1,11 @@
 # Interstitial ads
 
-## Mobile Web
-
-* Go to the Publisher UI
-* Create new App
-* Create new Placement for it
-* On placements list click on Tag & SDK and select appropriate integration.
-
-## iOS
 
 The HyperAdX Interstitial ads allows you to monetize your iOS apps with banner ads. This guide explains how to add banner ads to your app. If you're interested in other kinds of ad units, see the list of available types.
 
 ### Set up the SDK
 
-**Manual**
-
-* [Download](https://github.com/hyperads/ios-sdk/releases) and extract the HADFramework for iOS.
-* Open your project target General tab.
-* Drag the HADFramework.framework file to Embedded Binaries.
-* Open your project target Build Settings tab. (Required only for Objective-C projects)
-* Set "Embedded Content Contains Swift Code" to Yes. (Required only for Objective-C projects)
-* Add the AdSupport framework to your project.
-
-### iOS 7
-
-If you want to support iOS7 - [download](https://github.com/hyperads/ios-sdk/releases/tag/v2.0.3) our legacy SDK. It supports only NativeAds.
+[Please complete these steps](../README.md#set-up-the-sdk)
 
 ### Swift implementation
 
