@@ -1,6 +1,8 @@
 ![HyperADx Logo](http://d2n7xvwjxl8766.cloudfront.net/assets/site/logo-e04518160888e1f8b3795f0ce01e1909.png)
 
-#HyperADx iOS SDK
+## HyperAdX iOS SDK
+
+Hyper is a leading monetization and advertising platform which enables its partners and clients to use all the power of native advertising.
 
 ## Getting Started
 
