@@ -18,15 +18,6 @@ import HADFramework
 
 > And in your application didFinishLaunchingWithOptions method call HAD.create()
 
-Swift 2.2
-```swift
-func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-  // Override point for customization after application launch.
-  HAD.create()
-  return true
-}
-```
-
 Swift 3.0
 ```swift
 private func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -63,21 +54,6 @@ func loadInterstitalAd() {
 ```
 
 > Now that you have added the code to load the ad, add the following functions to handle loading failures and to display the ad once it has loaded:
-
-Swift 2.2
-```swift
-//MARK: HADInterstitial Delegate
-
-func HADInterstitialDidLoad(controller: HADInterstitial) {
-  controller.modalTransitionStyle = .CoverVertical
-  controller.modalPresentationStyle = .FullScreen
-  presentViewController(controller, animated: true, completion: nil)
-}
-
-func HADInterstitialDidFail(controller: HADInterstitial, error: NSError?) {
-  print("HADInterstitialDidFail: \(error)")
-}
-```
 
 Swift 3.0
 ```swift
@@ -158,23 +134,6 @@ func HADInterstitialDidClose(controller: HADInterstitial) {
 
 > Now that you have added the code to load the ad, add the following functions to handle loading failures and to display the ad once it has loaded:
 
-Before v2.1.0
-```objective_c
-#pragma mark - HADInterstitialDelegate
-
--(void)HADInterstitialDidLoad:(HADInterstitial *)controller {
-  NSLog(@"HADInterstitialDidLoad");
-  self.interstitial.modalPresentationStyle = UIModalPresentationFullScreen;
-  self.interstitial.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-  [self presentViewController:self.interstitial animated:YES completion:nil];
-}
-
--(void)HADInterstitialDidFail:(HADInterstitial *)controller error:(NSError *)error {
-  NSLog(@"HADInterstitialDidFail: %@", error);
-}
-```
-
-After v2.1.0
 ```objective_c
 #pragma mark - HADInterstitialDelegate
 
@@ -192,22 +151,6 @@ After v2.1.0
 
 > Optionally, you can add the following functions to handle the cases where the full screen ad is closed or when the user clicks on it:
 
-Before v2.1.0
-```objective_c
--(void)HADInterstitialDidClick:(HADInterstitial *)controller {
-  NSLog(@"HADInterstitialDidClick");
-}
-
--(void)HADInterstitialWillClose:(HADInterstitial *)controller {
-  NSLog(@"HADInterstitialWillClose");
-}
-
--(void)HADInterstitialDidClose:(HADInterstitial *)controller {
-  NSLog(@"HADInterstitialDidClose");
-}
-```
-
-After v2.1.0
 ```objective_c
 -(void)HADInterstitialDidClickWithController:(HADInterstitial *)controller {
   NSLog(@"HADInterstitialDidClick");
@@ -352,78 +295,3 @@ class ViewController: UIViewController, MPInterstitialAdControllerDelegate {
 ```
 
 > This is your Hyperadx Interstitial MoPub adapter. Now you can use Mopub as usual.
-
-## Android
-
-The HyperAdX Interstitial ads allows you to monetize your Android apps with banner ads. This guide explains how to add banner ads to your app. If you’re interested in other kinds of ad units, see the list of available types.
-
-Sample projects:
-
-* [Download](https://github.com/hyperads/android-sdk/releases) latest release and extract the Example app for Android.
-
-### Set up the SDK
-
-> Add following under manifest tag to your AndroidManifest.xml:
-
-```xml
-<uses-permission android:name="android.permission.INTERNET"/>
-<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-```
-
-> Put the HyperAdxSDK_xxx.jar in “libs” folder in your Android Studio or Eclipse. Add it to dependencies in build.grandle file. Also you need to add google play services.
-
-```groove
-dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:appcompat-v7:23.4.0'
-    compile 'com.android.support:support-v4:23.4.0'
-    compile 'com.google.android.gms:play-services-ads:9.0.2'
-    compile 'com.google.android.gms:play-services-base:9.0.2'
-}
-```
-
-> Then, create a function that requests a interstitial ad. The SDK will log the impression and handle the click automatically.
-
-```java
-private void loadInterstitialAd() {
-        interstitialAd = new HADInterstitialAd(this /*Strongly recomend to use Activity context*/,
-                getString(R.string.Placement)); //Interstitial AD constructor.
-
-        interstitialAd.setAdListener(new InterstitialAdListener() { // Set Listener
-            @Override
-            public void onAdLoaded(com.hyperadx.lib.sdk.interstitialads.Ad ad) { // Called when AD is Loaded
-                iAd = ad;
-                Toast.makeText(MainActivity.this, "Interstitial Ad loaded", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onError(com.hyperadx.lib.sdk.interstitialads.Ad Ad, String error) { // Called when load is fail
-                Toast.makeText(MainActivity.this, "Interstitial Ad failed to load with error: " + error, Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onInterstitialDisplayed() { // Called when Ad was impressed
-                Toast.makeText(MainActivity.this, "Tracked Interstitial Ad impression", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onInterstitialDismissed(com.hyperadx.lib.sdk.interstitialads.Ad ad) { // Called when Ad was dissnissed by user
-                Toast.makeText(MainActivity.this, "Interstitial Ad Dismissed", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onAdClicked() { // Called when user click on AD
-                Toast.makeText(MainActivity.this, "Tracked Interstitial Ad click", Toast.LENGTH_SHORT).show();
-
-            }
-        });
-        interstitialAd.loadAd(); // Call to load AD
-    }
-
-public void showInterstitial(View view) {
-    if (iAd != null)
-        InterstitialAd.show(iAd); // Call to show AD
-    else
-        Toast.makeText(this, "The Interstitial AD not ready yet. Try again!", Toast.LENGTH_LONG).show();
-}
-```
