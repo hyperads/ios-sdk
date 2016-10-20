@@ -14,7 +14,7 @@ The HyperAdX's Native Ads allows you to build a customized experience for the ad
 
 ### Swift implementation
 
-> Now, in your View Controller implementation file, import the SDK and declare that you implement the `HADNativeAdDelegate` protocol as well as declare and connect instance variables to your Storyboard or .XIB:
+Now, in your View Controller implementation file, import the SDK and declare that you implement the `HADNativeAdDelegate` protocol as well as declare and connect instance variables to your Storyboard or .XIB:
 
 ```swift
 import HADFramework
@@ -27,49 +27,47 @@ class MyViewController: UIViewController, HADNativeAdDelegate {
     @IBOutlet weak var cta: UIButton?
 
     var nativeAd: HADNativeAd! = nil
-
 }
 ```
 
-> Then, add a method in your View Controller's implementation file that initializes `HADNativeAd` and request an ad to load:
+Then, add a method in your View Controller's implementation file that initializes `HADNativeAd` and request an ad to load:
 
 ```swift
 override func viewDidLoad() {
-	super.viewDidLoad()
 	nativeAd = HADNativeAd(placementId: "PLACEMENT_ID", delegate: self)
 	nativeAd.loadAd()
 }
 ```
 
-> You may set `content` param on HADNativeAd initialization to get only needed properties. If you didn't set `content` param then you get all properties.
+You may set `content` param on HADNativeAd initialization to get only needed properties. If you didn't set `content` param then you get all properties.
 
 
-> to get title text
+to get title text
 
 ```swift
 .Title
 ```
 
-> to get description text
+to get description text
 
 ```swift
 .Description
 ```
 
-> to get banner
+to get banner
 
 ```swift
 .Banner
 ```
 
-> to get icon
+to get icon
 
 ```swift
 .Icon
 ```
 
 
-> Now that you have added the code to load the ad, add the following functions to handle loading failures and to construct the ad once it has loaded:
+Now that you have added the code to load the ad, add the following functions to handle loading failures and to construct the ad once it has loaded:
 
 ```swift
 //MARK: HADNativeAd Delegate
@@ -102,7 +100,7 @@ func HADNativeAdDidClick(nativeAd: HADNativeAd) {
 }
 ```
 
-> Handle click on your implementation of "call to action" button
+Handle click on your implementation of "call to action" button
 
 ```swift
 @IBAction func adClicked() {
@@ -112,7 +110,7 @@ func HADNativeAdDidClick(nativeAd: HADNativeAd) {
 
 ### Objective-C implementation
 
-> Now, in your View Controller implementation file, import the SDK header and declare that you implement the `HADNativeAdDelegate` protocol as well as declare and connect instance variables to your Storyboard or .XIB:
+Now, in your View Controller implementation file, import the SDK header and declare that you implement the `HADNativeAdDelegate` protocol as well as declare and connect instance variables to your Storyboard or .XIB:
 
 ```objective_c
 #import <HADFramework/HADFramework.h>
@@ -127,44 +125,43 @@ func HADNativeAdDidClick(nativeAd: HADNativeAd) {
 @end
 ```
 
-> Then, add a method in your View Controller's implementation file that initializes `HADNativeAd` and request an ad to load:
+Then, add a method in your View Controller's implementation file that initializes `HADNativeAd` and request an ad to load:
 
 ```objective_c
 - (void)viewDidLoad {
-	[super viewDidLoad];
 	self.nativeAd = [[HADNativeAd alloc] initWithPlacementId:@"PLACEMENT_ID" content:@[HADAdContentTitle, HADAdContentDescription, HADAdContentBanner, HADAdContentIcon] delegate:self];
     	[self.nativeAd loadAd];
 }
 ```
 
-> You may set `content` param on HADNativeAd initialization to get only needed properties. If you didn't set `content` param then you get all properties.
+You may set `content` param on HADNativeAd initialization to get only needed properties. If you didn't set `content` param then you get all properties.
 
 
-> to get title text
+to get title text
 
 ```objective_c
 HADAdContentTitle
 ```
 
-> to get description text
+to get description text
 
 ```objective_c
 HADAdContentDescription
 ```
 
-> to get banner
+to get banner
 
 ```objective_c
 HADAdContentBanner
 ```
 
-> to get icon
+to get icon
 
 ```objective_c
 HADAdContentIcon
 ```
 
-> Now that you have added the code to load the ad, add the following functions to handle loading failures and to construct the ad once it has loaded:
+Now that you have added the code to load the ad, add the following functions to handle loading failures and to construct the ad once it has loaded:
 
 ```objective_c
 -(void)HADNativeAdDidFailWithNativeAd:(HADNativeAd *)nativeAd error:(NSError *)error {
@@ -196,7 +193,7 @@ HADAdContentIcon
 }
 ```
 
-> Handle click on your implementation of "call to action" button
+Handle click on your implementation of "call to action" button
 
 ```objective_c
 - (IBAction)handleClick:(id)sender {
@@ -256,7 +253,6 @@ class MyViewController: UIViewController, HADBannerTemplateViewDelegate {
     @IBOutlet weak var bannerTemplateView: HADBannerTemplateView!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
         //Just set HADBannerTemplateTypes param in loadAd method
         bannerTemplateView.loadAd(placementId: "PLACEMENT_ID", bannerTemplate: .blockOne, delegate: self)
         //And customize everything
@@ -303,7 +299,6 @@ class MyViewController: UIViewController, HADBannerTemplateViewDelegate {
 
 @interface MyViewController : UIViewController <HADNativeAdDelegate>
 -(void)viewDidLoad {
-	[super viewDidLoad];
 	//Just set HADBannerTemplateTypes param in loadAd method
 	[self.bannerTemplateView loadAd:@"PLACEMENT_ID" bannerTemplate:HADBannerTemplateTypesBlockOne delegate:self];
 	//And customize everything

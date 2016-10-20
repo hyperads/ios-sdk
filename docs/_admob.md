@@ -32,7 +32,7 @@ Now you can setting up your Xcode project.
 
 **NOTE** - In the Objective-C only project you must create swift header file as described [here](http://stackoverflow.com/questions/24102104/how-to-import-swift-code-to-objective-c)
 
-> Just create AdMob banner Ad as usually:
+Just create AdMob banner Ad as usually:
 
 ```swift
 import GoogleMobileAds
@@ -43,7 +43,6 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     var bannerView: GADBannerView!
 
     override func viewDidLoad() {
-        super.viewDidLoad()
         let request = GADRequest()
         //Banner 320x50
         bannerView = GADBannerView(adSize: GADAdSize.init(size: CGSizeMake(320, 50), flags: 0))
@@ -80,7 +79,7 @@ Now you can setting up your Xcode project.
 
 **NOTE** - In the Objective-C only project you must create swift header file as described [here](http://stackoverflow.com/questions/24102104/how-to-import-swift-code-to-objective-c)
 
-> Just create AdMob interstitial Ad as usually:
+Just create AdMob interstitial Ad as usually:
 
 ```swift
 import GoogleMobileAds
@@ -91,7 +90,6 @@ class ViewController: UIViewController, GADInterstitialDelegate {
     var interstitial: GADInterstitial!
 
     override func viewDidLoad() {
-        super.viewDidLoad()
         let request = GADRequest()
         //Interstitial
         interstitial = GADInterstitial(adUnitID: "YOUR_ADUNIT_ID")

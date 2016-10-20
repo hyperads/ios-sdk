@@ -36,8 +36,8 @@ Setup SDKs:
 
 **You can use the test placement `5b3QbMRQ`**
 
-> Add `HADNativeCustomEvent.swift` and `HADNativeAdAdapter.swift` adapter files in your project
-> Implement MoPub NativeViewController:
+Add `HADNativeCustomEvent.swift` and `HADNativeAdAdapter.swift` adapter files in your project
+Implement MoPub NativeViewController:
 
 ```swift
 import HADFramework
@@ -52,7 +52,6 @@ class NativeViewController: UIViewController, MPNativeAdRendering, MPNativeAdDel
     @IBOutlet weak var mainImageView: UIImageView!
 
     override func viewDidLoad() {
-        super.viewDidLoad()
         let settings = MPStaticNativeAdRendererSettings()
         settings.renderingViewClass = NativeView.self
         let config = MPStaticNativeAdRenderer.rendererConfigurationWithRendererSettings(settings)
