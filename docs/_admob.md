@@ -9,15 +9,15 @@
 **You will get UnitId string like 'ca-app-pub-+++++++++++++/+++++++++++++'. For the next few hours you may get the AdMob errors with codes 0 or 2. Just be patient.**
 
 ![Admob 1]
-(/images/adapters/ios/AdMobBanner1.png)
+(docs/images/adapters/ios/AdMobBanner1.png)
 
 ![Admob 2]
-(/images/adapters/ios/AdMobBanner2.png)
+(docs/images/adapters/ios/AdMobBanner2.png)
 
 * Then you need to add new mediation source.
 
 ![Admob 3]
-(/images/adapters/ios/AdMobBanner3.png)
+(docs/images/adapters/ios/AdMobBanner3.png)
 
 ### Banner
 
