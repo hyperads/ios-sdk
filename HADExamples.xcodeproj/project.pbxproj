@@ -45,13 +45,6 @@
 		477F58171D38835100D1AD6C /* NativeTemplateLineOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 477F58161D38835100D1AD6C /* NativeTemplateLineOne.m */; };
 		477F581A1D38835A00D1AD6C /* NativeTemplateLineTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = 477F58191D38835A00D1AD6C /* NativeTemplateLineTwo.m */; };
 		477F581D1D38836300D1AD6C /* NativeTemplateLineThree.m in Sources */ = {isa = PBXBuildFile; fileRef = 477F581C1D38836300D1AD6C /* NativeTemplateLineThree.m */; };
-		47B0B9D31D72E9280095891E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47B0B9D21D72E9280095891E /* Images.xcassets */; };
-		47CAB3E11D71E8BD000B6B0C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 47CAB3E01D71E8BD000B6B0C /* main.m */; };
-		47CAB3E41D71E8BD000B6B0C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 47CAB3E31D71E8BD000B6B0C /* AppDelegate.m */; };
-		47CAB3EA1D71E8BD000B6B0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47CAB3E81D71E8BD000B6B0C /* Main.storyboard */; };
-		47CAB3EC1D71E8BD000B6B0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47CAB3EB1D71E8BD000B6B0C /* Assets.xcassets */; };
-		47CAB4B11D722A48000B6B0C /* NativeAd.m in Sources */ = {isa = PBXBuildFile; fileRef = 47CAB4B01D722A48000B6B0C /* NativeAd.m */; };
-		47F9CFBF1D7309CA006B3685 /* HADFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47F9CFBD1D7309BB006B3685 /* HADFramework.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -133,17 +126,6 @@
 		477F58191D38835A00D1AD6C /* NativeTemplateLineTwo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeTemplateLineTwo.m; sourceTree = "<group>"; };
 		477F581B1D38836300D1AD6C /* NativeTemplateLineThree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeTemplateLineThree.h; sourceTree = "<group>"; };
 		477F581C1D38836300D1AD6C /* NativeTemplateLineThree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeTemplateLineThree.m; sourceTree = "<group>"; };
-		47B0B9D21D72E9280095891E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		47CAB3DD1D71E8BD000B6B0C /* HADObjCiOS7Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HADObjCiOS7Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		47CAB3E01D71E8BD000B6B0C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		47CAB3E21D71E8BD000B6B0C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		47CAB3E31D71E8BD000B6B0C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		47CAB3E91D71E8BD000B6B0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		47CAB3EB1D71E8BD000B6B0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		47CAB3F01D71E8BD000B6B0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		47CAB4AF1D722A48000B6B0C /* NativeAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeAd.h; sourceTree = "<group>"; };
-		47CAB4B01D722A48000B6B0C /* NativeAd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeAd.m; sourceTree = "<group>"; };
-		47F9CFBD1D7309BB006B3685 /* HADFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HADFramework.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,14 +145,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		47CAB3DA1D71E8BD000B6B0C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				47F9CFBF1D7309CA006B3685 /* HADFramework.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -180,7 +154,6 @@
 				471C4D641D251A1F00699B11 /* HADFramework.framework */,
 				471C4D851D251B5000699B11 /* HADSwiftExamples */,
 				471C4DAD1D251D5B00699B11 /* HADObjcExamples */,
-				47CAB3DE1D71E8BD000B6B0C /* HADObjCiOS7Example */,
 				471C4D4B1D2519FA00699B11 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -190,7 +163,6 @@
 			children = (
 				471C4D841D251B5000699B11 /* HADSwiftExamples.app */,
 				471C4DAC1D251D5B00699B11 /* HADObjcExamples.app */,
-				47CAB3DD1D71E8BD000B6B0C /* HADObjCiOS7Example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -267,31 +239,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		47CAB3DE1D71E8BD000B6B0C /* HADObjCiOS7Example */ = {
-			isa = PBXGroup;
-			children = (
-				47CAB3E21D71E8BD000B6B0C /* AppDelegate.h */,
-				47CAB3E31D71E8BD000B6B0C /* AppDelegate.m */,
-				47CAB4AF1D722A48000B6B0C /* NativeAd.h */,
-				47CAB4B01D722A48000B6B0C /* NativeAd.m */,
-				47F9CFBD1D7309BB006B3685 /* HADFramework.framework */,
-				47CAB3E81D71E8BD000B6B0C /* Main.storyboard */,
-				47CAB3EB1D71E8BD000B6B0C /* Assets.xcassets */,
-				47B0B9D21D72E9280095891E /* Images.xcassets */,
-				47CAB3F01D71E8BD000B6B0C /* Info.plist */,
-				47CAB3DF1D71E8BD000B6B0C /* Supporting Files */,
-			);
-			path = HADObjCiOS7Example;
-			sourceTree = "<group>";
-		};
-		47CAB3DF1D71E8BD000B6B0C /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				47CAB3E01D71E8BD000B6B0C /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -331,23 +278,6 @@
 			productReference = 471C4DAC1D251D5B00699B11 /* HADObjcExamples.app */;
 			productType = "com.apple.product-type.application";
 		};
-		47CAB3DC1D71E8BD000B6B0C /* HADObjCiOS7Example */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 47CAB3F31D71E8BD000B6B0C /* Build configuration list for PBXNativeTarget "HADObjCiOS7Example" */;
-			buildPhases = (
-				47CAB3D91D71E8BD000B6B0C /* Sources */,
-				47CAB3DA1D71E8BD000B6B0C /* Frameworks */,
-				47CAB3DB1D71E8BD000B6B0C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = HADObjCiOS7Example;
-			productName = HADObjCiOS7Example;
-			productReference = 47CAB3DD1D71E8BD000B6B0C /* HADObjCiOS7Example.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -362,9 +292,6 @@
 						CreatedOnToolsVersion = 7.3.1;
 					};
 					471C4DAB1D251D5B00699B11 = {
-						CreatedOnToolsVersion = 7.3.1;
-					};
-					47CAB3DC1D71E8BD000B6B0C = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
 				};
@@ -384,7 +311,6 @@
 			targets = (
 				471C4D831D251B5000699B11 /* HADSwiftExamples */,
 				471C4DAB1D251D5B00699B11 /* HADObjcExamples */,
-				47CAB3DC1D71E8BD000B6B0C /* HADObjCiOS7Example */,
 			);
 		};
 /* End PBXProject section */
@@ -407,16 +333,6 @@
 				471C4DF41D252BCA00699B11 /* Main.storyboard in Resources */,
 				471C4DBE1D251D5B00699B11 /* LaunchScreen.storyboard in Resources */,
 				471C4DBB1D251D5B00699B11 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		47CAB3DB1D71E8BD000B6B0C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				47B0B9D31D72E9280095891E /* Images.xcassets in Resources */,
-				47CAB3EC1D71E8BD000B6B0C /* Assets.xcassets in Resources */,
-				47CAB3EA1D71E8BD000B6B0C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,16 +381,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		47CAB3D91D71E8BD000B6B0C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				47CAB4B11D722A48000B6B0C /* NativeAd.m in Sources */,
-				47CAB3E41D71E8BD000B6B0C /* AppDelegate.m in Sources */,
-				47CAB3E11D71E8BD000B6B0C /* main.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
@@ -494,20 +400,13 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		47CAB3E81D71E8BD000B6B0C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				47CAB3E91D71E8BD000B6B0C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		471C4D5F1D2519FA00699B11 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -523,7 +422,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -542,10 +441,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -553,6 +453,7 @@
 		471C4D601D2519FA00699B11 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -568,7 +469,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -581,9 +482,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -592,7 +494,9 @@
 		471C4D941D251B5000699B11 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -608,7 +512,9 @@
 		471C4D951D251B5000699B11 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -623,8 +529,9 @@
 		471C4DC11D251D5B00699B11 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -639,8 +546,9 @@
 		471C4DC21D251D5B00699B11 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -648,54 +556,6 @@
 				INFOPLIST_FILE = HADObjcExamples/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hyperadx.HADObjcExamples;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		47CAB3F11D71E8BD000B6B0C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/HADObjCiOS7Example",
-				);
-				HEADER_SEARCH_PATHS = $SOURCE_ROOT/include;
-				INFOPLIST_FILE = HADObjCiOS7Example/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mihaelisaev.HADObjCiOS7Example;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		47CAB3F21D71E8BD000B6B0C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/HADObjCiOS7Example",
-				);
-				HEADER_SEARCH_PATHS = $SOURCE_ROOT/include;
-				INFOPLIST_FILE = HADObjCiOS7Example/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mihaelisaev.HADObjCiOS7Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -726,15 +586,6 @@
 			buildConfigurations = (
 				471C4DC11D251D5B00699B11 /* Debug */,
 				471C4DC21D251D5B00699B11 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		47CAB3F31D71E8BD000B6B0C /* Build configuration list for PBXNativeTarget "HADObjCiOS7Example" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				47CAB3F11D71E8BD000B6B0C /* Debug */,
-				47CAB3F21D71E8BD000B6B0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

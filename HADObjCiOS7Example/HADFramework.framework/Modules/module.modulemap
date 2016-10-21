@@ -1,6 +1,0 @@
-framework module HADFrameworkObjC {
-  umbrella header "HADFrameworkObjC.h"
-
-  export *
-  module * { export * }
-}
