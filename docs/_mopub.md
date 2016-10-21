@@ -16,17 +16,17 @@ Setup SDKs:
 * Create an "Hyperadx" Network in Mopub's dashboard and connect it to your Ad Units. In Mopub's dashboard select Networks > Add New network
 
 ![Mopub-1]
-(docs/images/adapters/ios/mopub1.png)
+(images/adapters/ios/mopub1.png)
 
 * Then select Custom Native Network
 
 ![Mopub-2]
-(docs/images/adapters/ios/mopub2.png)
+(images/adapters/ios/mopub2.png)
 
 * Complete the fields accordingly to the Ad Unit that you want to use
 
 ![Mopub-3]
-(docs/images/adapters/ios/mopub3.png)
+(images/adapters/ios/mopub3.png)
 
 ### Native ads
 
