@@ -106,7 +106,7 @@ class NativeViewController: UIViewController, MPNativeAdRendering, MPNativeAdDel
 }
 ```
 
-> And implement MoPubNativeAdRenderer, e.g.:
+And implement MoPubNativeAdRenderer, e.g.:
 
 ```swift
 class NativeView: UIView, MPNativeAdRenderer {
@@ -148,7 +148,7 @@ class NativeView: UIView, MPNativeAdRenderer {
 
 **You can use the test placement `5b3QbMRQ`**
 
-> Add `HADInterstitialCustomEvent.swift` adapter in your project. Implement MoPub Interstitial:
+Add `HADInterstitialCustomEvent.swift` adapter in your project. Implement MoPub Interstitial:
 
 ```swift
 import HADFramework
@@ -188,7 +188,7 @@ Custom Event Class Data: `{"PLACEMENT":"<YOUR PLACEMENT>"}`
 
 **You can use the test placement `5b3QbMRQ`**
 
-> Add `HADBannerCustomEvent.swift` adapter in your project
+Add `HADBannerCustomEvent.swift` adapter in your project
 Implement MoPub Banner:
 
 ```swift
@@ -233,4 +233,4 @@ class ViewController: UIViewController, MPAdViewDelegate {
 }
 ```
 
-> This is your adapter. Now you can use Mopub as usual.
+This is your adapter. Now you can use Mopub as usual.
