@@ -9,15 +9,15 @@
 **You will get UnitId string like 'ca-app-pub-+++++++++++++/+++++++++++++'. For the next few hours you may get the AdMob errors with codes 0 or 2. Just be patient.**
 
 ![Admob 1]
-(/images/adapters/ios/AdMobBanner1.png)
+(images/adapters/ios/AdMobBanner1.png)
 
 ![Admob 2]
-(/images/adapters/ios/AdMobBanner2.png)
+(images/adapters/ios/AdMobBanner2.png)
 
 * Then you need to add new mediation source.
 
 ![Admob 3]
-(/images/adapters/ios/AdMobBanner3.png)
+(images/adapters/ios/AdMobBanner3.png)
 
 ### Banner
 
@@ -32,7 +32,7 @@ Now you can setting up your Xcode project.
 
 **NOTE** - In the Objective-C only project you must create swift header file as described [here](http://stackoverflow.com/questions/24102104/how-to-import-swift-code-to-objective-c)
 
-> Just create AdMob banner Ad as usually:
+Just create AdMob banner Ad as usually:
 
 ```swift
 import GoogleMobileAds
@@ -43,7 +43,6 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     var bannerView: GADBannerView!
 
     override func viewDidLoad() {
-        super.viewDidLoad()
         let request = GADRequest()
         //Banner 320x50
         bannerView = GADBannerView(adSize: GADAdSize.init(size: CGSizeMake(320, 50), flags: 0))
@@ -80,7 +79,7 @@ Now you can setting up your Xcode project.
 
 **NOTE** - In the Objective-C only project you must create swift header file as described [here](http://stackoverflow.com/questions/24102104/how-to-import-swift-code-to-objective-c)
 
-> Just create AdMob interstitial Ad as usually:
+Just create AdMob interstitial Ad as usually:
 
 ```swift
 import GoogleMobileAds
@@ -91,7 +90,6 @@ class ViewController: UIViewController, GADInterstitialDelegate {
     var interstitial: GADInterstitial!
 
     override func viewDidLoad() {
-        super.viewDidLoad()
         let request = GADRequest()
         //Interstitial
         interstitial = GADInterstitial(adUnitID: "YOUR_ADUNIT_ID")

@@ -16,17 +16,17 @@ Setup SDKs:
 * Create an "Hyperadx" Network in Mopub's dashboard and connect it to your Ad Units. In Mopub's dashboard select Networks > Add New network
 
 ![Mopub-1]
-(/images/adapters/ios/mopub1.png)
+(images/adapters/ios/mopub1.png)
 
 * Then select Custom Native Network
 
 ![Mopub-2]
-(/images/adapters/ios/mopub2.png)
+(images/adapters/ios/mopub2.png)
 
 * Complete the fields accordingly to the Ad Unit that you want to use
 
 ![Mopub-3]
-(/images/adapters/ios/mopub3.png)
+(images/adapters/ios/mopub3.png)
 
 ### Native ads
 
@@ -36,8 +36,8 @@ Setup SDKs:
 
 **You can use the test placement `5b3QbMRQ`**
 
-> Add `HADNativeCustomEvent.swift` and `HADNativeAdAdapter.swift` adapter files in your project
-> Implement MoPub NativeViewController:
+Add `HADNativeCustomEvent.swift` and `HADNativeAdAdapter.swift` adapter files in your project
+Implement MoPub NativeViewController:
 
 ```swift
 import HADFramework
@@ -52,7 +52,6 @@ class NativeViewController: UIViewController, MPNativeAdRendering, MPNativeAdDel
     @IBOutlet weak var mainImageView: UIImageView!
 
     override func viewDidLoad() {
-        super.viewDidLoad()
         let settings = MPStaticNativeAdRendererSettings()
         settings.renderingViewClass = NativeView.self
         let config = MPStaticNativeAdRenderer.rendererConfigurationWithRendererSettings(settings)
@@ -107,7 +106,7 @@ class NativeViewController: UIViewController, MPNativeAdRendering, MPNativeAdDel
 }
 ```
 
-> And implement MoPubNativeAdRenderer, e.g.:
+And implement MoPubNativeAdRenderer, e.g.:
 
 ```swift
 class NativeView: UIView, MPNativeAdRenderer {
@@ -149,7 +148,7 @@ class NativeView: UIView, MPNativeAdRenderer {
 
 **You can use the test placement `5b3QbMRQ`**
 
-> Add `HADInterstitialCustomEvent.swift` adapter in your project. Implement MoPub Interstitial:
+Add `HADInterstitialCustomEvent.swift` adapter in your project. Implement MoPub Interstitial:
 
 ```swift
 import HADFramework
@@ -189,7 +188,7 @@ Custom Event Class Data: `{"PLACEMENT":"<YOUR PLACEMENT>"}`
 
 **You can use the test placement `5b3QbMRQ`**
 
-> Add `HADBannerCustomEvent.swift` adapter in your project
+Add `HADBannerCustomEvent.swift` adapter in your project
 Implement MoPub Banner:
 
 ```swift
@@ -234,4 +233,4 @@ class ViewController: UIViewController, MPAdViewDelegate {
 }
 ```
 
-> This is your adapter. Now you can use Mopub as usual.
+This is your adapter. Now you can use Mopub as usual.

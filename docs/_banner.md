@@ -8,8 +8,9 @@ The HyperADX Banner ads allow you to monetize your iOS apps with banner ads. Thi
 
 ### Swift implementation
 
-> First of all, in your AppDelegate file, create an instance of HADFramework
-> Import the SDK
+First of all, in your AppDelegate file, create an instance of HADFramework
+
+Import the SDK
 
 ```swift
 import HADFramework
@@ -19,83 +20,80 @@ import HADFramework
 
 ```swift
 private func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-// Override point for customization after application launch.
-HAD.create()
-return true
+    HAD.create()
+    return true
 }
 ```
 
-> Ok, let's move to your View Controller. Import the SDK, declare that you implement the HADBannerViewDelegate protocol and add an instance variable for the interstitial ad unit:
+Ok, let's move to your View Controller. Import the SDK, declare that you implement the HADBannerViewDelegate protocol and add an instance variable for the interstitial ad unit:
 
 ```swift
 import UIKit
 import HADFramework
 
 class MyViewController: UIViewController, HADBannerViewDelegate {
-var bannerView: HADBannerView!
+    var bannerView: HADBannerView!
 }
 ```
 
-> Then, on your View Controller's viewDidLoad implementation, use property of the HADBannerView class and add it to your view. Since HADBannerView is a subclass of UIView, you can add it to your view hierarchy just as with any other view:
+Then, on your View Controller's viewDidLoad implementation, use property of the HADBannerView class and add it to your view. Since HADBannerView is a subclass of UIView, you can add it to your view hierarchy just as with any other view:
 
 ```swift
 override func viewDidLoad() {
-super.viewDidLoad()
-bannerView = HADBannerView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 50))
-view.addSubview(bannerView)
-bannerView.loadAd(placementId: "PLACEMENT_ID", bannerSize: .height50, delegate: self)
+    bannerView = HADBannerView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 50))
+    view.addSubview(bannerView)
+    bannerView.loadAd(placementId: "PLACEMENT_ID", bannerSize: .height50, delegate: self)
 }
 ```
 
-> If you are building your app for iPad, consider using the `HADBannerSize.Height90` size instead. The HADFramework also supports the 300x250 ad size. Configure the HADBannerView with the following ad size: `HADBannerSize.Block300x250`:
+If you are building your app for iPad, consider using the `HADBannerSize.Height90` size instead. The HADFramework also supports the 300x250 ad size. Configure the HADBannerView with the following ad size: `HADBannerSize.Block300x250`:
 
 ```swift
 override func viewDidLoad() {
-super.viewDidLoad()
-bannerView = HADBannerView(frame: CGRect(x: 10, y: 100, width: 300, height: 250))
-view.addSubview(bannerView)
-bannerView.loadAd(placementId: "PLACEMENT_ID", bannerSize: .block300x250, delegate: self)
+    bannerView = HADBannerView(frame: CGRect(x: 10, y: 100, width: 300, height: 250))
+    view.addSubview(bannerView)
+    bannerView.loadAd(placementId: "PLACEMENT_ID", bannerSize: .block300x250, delegate: self)
 }
 ```
 
-> Then, add and implement the following three functions in your View Controller implementation file to handle ad loading failures and completions:
+Then, add and implement the following three functions in your View Controller implementation file to handle ad loading failures and completions:
 
 ```swift
 //MARK: HADBannerViewDelegate
 
 func HADViewDidLoad(view: HADBannerView) {
-print("AD LOADED")
+    print("AD LOADED")
 }
 
 func HADViewDidClick(view: HADBannerView) {
-print("CLICKED AD")
+    print("CLICKED AD")
 }
 
 func HADView(view: HADBannerView, didFailWithError error: NSError?) {
-print("ERROR: %@", error?.localizedDescription)
+    print("ERROR: %@", error?.localizedDescription)
 }
 ```
 
 ### Objective-C implementation
 
-> First of all, in your AppDelegate file create an instance of HADFramework
-> Import the SDK header in AppDelegate.h:
+First of all, in your AppDelegate file create an instance of HADFramework
+
+Import the SDK header in AppDelegate.h:
 
 ```objective_c
 #import <HADFramework/HADFramework.h>
 ```
 
-> And in your application didFinishLaunchingWithOptions method call [HAD create]
+And in your application didFinishLaunchingWithOptions method call [HAD create]
 
 ```objective_c
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-// Override point for customization after application launch.
-[HAD create];
-return YES;
+    [HAD create];
+    return YES;
 }
 ```
 
-> Ok, let's move to your View Controller. In implementation file, import the SDK header, declare that you implement the HADBannerViewDelegate protocol and add an instance variable for the banner view:
+Ok, let's move to your View Controller. In implementation file, import the SDK header, declare that you implement the HADBannerViewDelegate protocol and add an instance variable for the banner view:
 
 ```objective_c
 #import <HADFramework/HADFramework.h>
@@ -105,42 +103,40 @@ return YES;
 @end
 ```
 
-> Then, on your View Controller's viewDidLoad implementation, use property of the HADBannerView class and add it to your view. Since HADBannerView is a subclass of UIView, you can add it to your view hierarchy just as with any other view:
+Then, on your View Controller's viewDidLoad implementation, use property of the HADBannerView class and add it to your view. Since HADBannerView is a subclass of UIView, you can add it to your view hierarchy just as with any other view:
 
 ```objective_c
 -(void)viewDidLoad {
-[super viewDidLoad];
-self.bannerView = [[HADBannerView alloc] initWithFrame:CGRectMake(0,0, self.view.frame.size.width, 50)];
-[self.view addSubview:self.bannerView];
-[self.bannerView loadAd:@"PLACEMENT_ID" bannerSize:HADBannerSizeHeight50 delegate:self];
+    self.bannerView = [[HADBannerView alloc] initWithFrame:CGRectMake(0,0, self.view.frame.size.width, 50)];
+    [self.view addSubview:self.bannerView];
+    [self.bannerView loadAd:@"PLACEMENT_ID" bannerSize:HADBannerSizeHeight50 delegate:self];
 }
 ```
 
-> If you are building your app for iPad, consider using the `HADBannerSizeHeight90` size instead. The HADFramework also supports the 300x250 ad size. Configure the HADBannerView with the following ad size: `HADBannerSizeBlock300x250`:
+If you are building your app for iPad, consider using the `HADBannerSizeHeight90` size instead. The HADFramework also supports the 300x250 ad size. Configure the HADBannerView with the following ad size: `HADBannerSizeBlock300x250`:
 
 ```objective_c
 -(void)viewDidLoad {
-[super viewDidLoad];
-self.bannerView = [[HADBannerView alloc] initWithFrame:CGRectMake(10, 100, 300, 250)];
-[self.view addSubview:self.bannerView];
-[self.bannerView loadAd:@"PLACEMENT_ID" bannerSize:HADBannerSizeBlock300x250 delegate:self];
+    self.bannerView = [[HADBannerView alloc] initWithFrame:CGRectMake(10, 100, 300, 250)];
+    [self.view addSubview:self.bannerView];
+    [self.bannerView loadAd:@"PLACEMENT_ID" bannerSize:HADBannerSizeBlock300x250 delegate:self];
 }
 ```
 
-> Then, add and implement the following three functions in your View Controller implementation file to handle ad loading failures and completions:
+Then, add and implement the following three functions in your View Controller implementation file to handle ad loading failures and completions:
 
 ```objective_c
 #pragma mark - HADBannerViewDelegate
 
 -(void)HADViewDidLoadWithView:(HADBannerView *)view {
-NSLog(@"HADViewDidLoad");
+    NSLog(@"HADViewDidLoad");
 }
 
 -(void)HADViewWithView:(HADBannerView *)view didFailWithError:(NSError *)error {
-NSLog(@"HADViewDidFai:l %@", error);
+    NSLog(@"HADViewDidFai:l %@", error);
 }
 
 -(void)HADViewDidClickWithView:(HADBannerView *)view {
-NSLog(@"HADViewDidClick");
+    NSLog(@"HADViewDidClick");
 }
 ```
