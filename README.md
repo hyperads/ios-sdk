@@ -48,7 +48,10 @@ Also, our advertisers and media buying department make higher bids for more enga
 
 * [Examples & events types](docs/_segments.md)
 
+### Adapters for integration with Networks
 
+* [MoPub](docs/_mopub.md)
+* [AdMob](docs/_admob.md)
 
 
 
