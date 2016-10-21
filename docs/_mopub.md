@@ -2,18 +2,18 @@
 
 * [Download](https://github.com/hyperads/ios-sdk/releases) and extract the HADFramework for iOS.
 
-* You can find Mopub adapter example in HyperadxiOSADs_Sample_VERSION/Mediation Adapters/MoPub/.
+* You can find Mopub adapter example in /Mediation Adapters/MoPub/.
 
 Setup SDKs:
 
 * [Integrate](https://github.com/mopub/mopub-ios-sdk/wiki/Manual-Native-Ads-Integration-for-iOS) with Mopub SDK
-* Install Hyperadx SDK
+* Install HyperADX SDK
 
 **NOTE** - In the Objective-C only project you must create swift header file as described [here](http://stackoverflow.com/questions/24102104/how-to-import-swift-code-to-objective-c)
 
 ### Setup Mopub Dashboard
 
-* Create an "Hyperadx" Network in Mopub's dashboard and connect it to your Ad Units. In Mopub's dashboard select Networks > Add New network
+* Create an "HyperADX" Network in Mopub's dashboard and connect it to your Ad Units. In Mopub's dashboard select Networks > Add New network
 
 ![Mopub-1]
 (images/adapters/ios/mopub1.png)

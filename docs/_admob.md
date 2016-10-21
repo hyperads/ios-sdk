@@ -2,7 +2,7 @@
 
 * [Download](https://github.com/hyperads/ios-sdk/releases) and extract the HADFramework for iOS.
 
-* You can find Admob adapter example in HyperadxiOSADs_Sample_VERSION/Mediation Adapters/AdMob/.
+* You can find Admob adapter example in /Mediation Adapters/AdMob/.
 
 * First of all you need to add new app in AdMob console.
 
@@ -21,13 +21,13 @@
 
 ### Banner
 
-* Fill `Class Name` field with a `HADCustomEventBanner`. And a `Parameter` with your HyperAdx statement string.
+* Fill `Class Name` field with a `HADCustomEventBanner`. And a `Parameter` with your HyperADX statement string.
 
 * Setup eCPM for new network
 
 Now you can setting up your Xcode project.
 
-* Put HyperAdx-SDK as described above
+* Put HyperADX-SDK as described above
 * Add HADCustomEventBanner.swift file
 
 **NOTE** - In the Objective-C only project you must create swift header file as described [here](http://stackoverflow.com/questions/24102104/how-to-import-swift-code-to-objective-c)
@@ -68,13 +68,13 @@ class ViewController: UIViewController, GADBannerViewDelegate {
 
 ### Interstitial
 
-* Fill `Class Name` field with a `HADCustomEventInterstitial`. And a `Parameter` with your HyperAdx statement string.
+* Fill `Class Name` field with a `HADCustomEventInterstitial`. And a `Parameter` with your HyperADX statement string.
 
 * Setup eCPM for new network
 
 Now you can setting up your Xcode project.
 
-* Put HyperAdx-SDK as described above
+* Put HyperADX-SDK as described above
 * Add HADCustomEventInterstitial.swift file
 
 **NOTE** - In the Objective-C only project you must create swift header file as described [here](http://stackoverflow.com/questions/24102104/how-to-import-swift-code-to-objective-c)
