@@ -32,7 +32,7 @@ This step is required to work around an [App Store submission bug](http://www.op
 * Set **Always Embed Swift Standard Libraries** to **Yes**.
 
 ##### for iOS 7
-* If you want to support iOS7 - [download](https://github.com/hyperads/ios-sdk/releases/tag/v2.0.3) our legacy SDK. It supports only NativeAds.
+* If you want to support iOS7 - [download](https://github.com/hyperads/ios-sdk/releases/tag/v2.0.4) our legacy SDK. It supports only NativeAds.
 
 
 ## Ad types
