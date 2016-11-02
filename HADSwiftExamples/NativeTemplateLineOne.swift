@@ -44,6 +44,6 @@ class NativeTemplateLineOne: UIViewController, HADBannerTemplateViewDelegate {
     }
     
     func HADTemplateView(view: HADBannerTemplateView, didFailWithError error: NSError?) {
-        print("ERROR: %@", error?.localizedDescription)
+        print("ERROR: \(error?.localizedDescription)")
     }
 }
