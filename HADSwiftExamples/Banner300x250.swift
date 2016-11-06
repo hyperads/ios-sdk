@@ -26,6 +26,6 @@ class Banner300x250: UIViewController, HADBannerViewDelegate {
     }
     
     func HADView(view: HADBannerView, didFailWithError error: NSError?) {
-        print("ERROR: %@", error?.localizedDescription)
+        print("ERROR: \(error?.localizedDescription)")
     }
 }

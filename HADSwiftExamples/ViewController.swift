@@ -37,7 +37,7 @@ class ViewController: UIViewController, HADInterstitialDelegate {
     }
     
     func HADInterstitialDidFail(controller: HADInterstitial, error: NSError?) {
-        print("ERROR: %@", error?.localizedDescription)
+        print("ERROR: \(error?.localizedDescription)")
     }
 }
 

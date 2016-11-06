@@ -21,7 +21,7 @@ class ADCollectionCell: UICollectionViewCell, HADBannerViewDelegate {
     }
     
     func HADView(view: HADBannerView, didFailWithError error: NSError?) {
-        print("ERROR: %@", error?.localizedDescription)
+        print("ERROR: \(error?.localizedDescription)")
     }
 }
 
