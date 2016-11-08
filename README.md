@@ -2,7 +2,7 @@
 
 ## HyperADX iOS SDK
 
-Hyper is a leading monetization and advertising platform which enables its partners and clients to use all the power of native advertising.
+Hyper is a leading monetization and advertising platform, which enables its partners and clients to use all the power of native advertising.
 
 ## Getting Started
 
