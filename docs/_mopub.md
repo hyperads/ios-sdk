@@ -1,8 +1,13 @@
 # Mopub Adapter
 
-* [Download](https://github.com/hyperads/ios-sdk/releases) and extract the HADFramework for iOS.
+You can configure MoPub adapter to serve Hyperadx native, banner and interstitial ads through MoPub's mediation solution. The example of  Mopub adapter example is located in
+[ /Mediation Adapters/MoPub/](https://github.com/hyperads/ios-sdk/tree/master/Mediation%20adapters/MoPub).
 
-* You can find Mopub adapter example in /Mediation Adapters/MoPub/.
+Please take the following steps to implement MoPub adapter: 
+
+1. [Download](https://github.com/hyperads/ios-sdk/releases) and extract the HADFramework for iOS.
+
+
 
 Setup SDKs:
 

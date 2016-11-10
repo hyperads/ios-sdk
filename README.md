@@ -2,7 +2,7 @@
 
 ## HyperADX iOS SDK
 
-Hyper is a leading monetization and advertising platform which enables its partners and clients to use all the power of native advertising.
+Hyper is a leading monetization and advertising platform, which enables its partners and clients to use all the power of native advertising.
 
 ## Getting Started
 
@@ -42,7 +42,7 @@ This step is required to work around an [App Store submission bug](http://www.op
 
 ## Supported Ad types
 
-You can implement the following ad formats for your iOS application:
+You can implement the following ad formats in your iOS application:
 
 * [Banner](docs/_banner.md)
 * [Interstitial](docs/_interstitial.md)
@@ -50,11 +50,11 @@ You can implement the following ad formats for your iOS application:
 
 ## User segmentation events
 
-With sending in-app events triggered by your users you can improve your monetization and get higher earnings.
-
-HyperADX automatically builds audiences using your in-app data (provided by the events) and assigns high performing campaigns individually to each segment.
-
-Also, our advertisers and media buying department make higher bids for more engaged users.
+Ad users are different in their behaviors, needs and expectations. Applying user segmentation delivers the best-fitting ad experience to your users.  
+Custom ad targeting results in increazing your monetization values and obtaining maximum value from every user. HyperADX provides user segmentation feature
+by processing in-app events triggered by the users. Based on the user segmentation events HyperADX automatically builds audiences and assigns high 
+performing campaigns individually to each segment. Beides our advertisers and media buying department encourage the most engaged users by making higher
+bids for them. The sections below describe how to configure sending the events in your application. 
 
 * [Examples & event types](docs/_segments.md)
 
