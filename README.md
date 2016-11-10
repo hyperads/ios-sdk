@@ -53,14 +53,17 @@ You can implement the following ad formats in your iOS application:
 Ad users are different in their behaviors, needs and expectations. Applying user segmentation delivers the best-fitting ad experience to your users.  
 Custom ad targeting results in increazing your monetization values and obtaining maximum value from every user. HyperADX provides user segmentation feature
 by processing in-app events triggered by the users. Based on the user segmentation events HyperADX automatically builds audiences and assigns high 
-performing campaigns individually to each segment. Beides our advertisers and media buying department encourage the most engaged users by making higher
-bids for them. The sections below describe how to configure sending the events in your application. 
+performing campaigns individually to each segment. Besides our advertisers and media buying department encourage the most engaged users by making higher
+bids for them. 
+
+The sections below describe how to configure sending the events in your application. 
 
 * [Examples & event types](docs/_segments.md)
 
 ### Adapters for integration with popular Networks
 
 HyperADX provides MoPub and AdMob adapters for iOS applications. Publishers using MoPub and AdMob to mediate ad networks for their iOS apps can now take advantage of serving Hypeadx's native (MoPub only), interstitia and banner ads through MoPub's and AdMob's mediation solutions.
+
 The sections below will let you know how to add the network adapter.
 
 * [MoPub](docs/_mopub.md)
