@@ -21,7 +21,7 @@ The following platforms and environments are supported:
 
 Please complete the steps listed below to download and set-up HADFramework - Hyper SDK for iOS.
 
-* [Download](https://github.com/hyperads/ios-sdk/releases) latest release and extract the HADFramework for iOS.
+* [Download](https://github.com/hyperads/ios-sdk/releases) the latest release and extract the HADFramework for iOS.
 * Open your project target _General_ tab.
 * Drag the `HADFramework.framework` file to _Embedded Binaries_. Make sure **Copy items if needed** is selected.
 * Add the `AdSupport` and `CoreTelephony` frameworks to your project.
@@ -56,13 +56,13 @@ by processing in-app events triggered by the users. Based on the user segmentati
 performing campaigns individually to each segment. Besides our advertisers and media buying department encourage the most engaged users by making higher
 bids for them. 
 
-The sections below describe how to configure sending the events in your application. 
+The section below describe how to configure sending the events in your application. 
 
 * [Examples & event types](docs/_segments.md)
 
 ### Adapters for integration with popular Networks
 
-HyperADX provides MoPub and AdMob adapters for iOS applications. Publishers using MoPub and AdMob to mediate ad networks for their iOS apps can now take advantage of serving Hypeadx's native (MoPub only), interstitia and banner ads through MoPub's and AdMob's mediation solutions.
+HyperADX provides MoPub and AdMob adapters for iOS applications. Publishers using MoPub and AdMob to mediate ad networks for their iOS apps can now take advantage of serving Hypeadx's native (MoPub only), interstitial and banner ads through MoPub's and AdMob's mediation solutions.
 
 The sections below will let you know how to add the network adapter.
 
