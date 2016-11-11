@@ -5,7 +5,7 @@ You can configure MoPub adapter to serve Hyperadx native, banner and interstitia
 
 Please take the following steps to implement MoPub adapter: 
 
-1. [Download](https://github.com/hyperads/ios-sdk/releases) and extract the HADFramework for iOS.
+* [Download](https://github.com/hyperads/ios-sdk/releases) and extract the HADFramework for iOS.
 
 
 
@@ -14,7 +14,7 @@ Setup SDKs:
 * [Integrate](https://github.com/mopub/mopub-ios-sdk/wiki/Manual-Native-Ads-Integration-for-iOS) with Mopub SDK
 * Install HyperADX SDK
 
-**NOTE** - In the Objective-C only project you must create swift header file as described [here](http://stackoverflow.com/questions/24102104/how-to-import-swift-code-to-objective-c)
+**NOTE** In Objective-C projects you will need to create a Swift header file as described [here](http://stackoverflow.com/questions/24102104/how-to-import-swift-code-to-objective-c)
 
 ### Setup Mopub Dashboard
 
@@ -28,21 +28,25 @@ Setup SDKs:
 ![Mopub-2]
 (images/adapters/ios/mopub2.png)
 
-* Complete the fields accordingly to the Ad Unit that you want to use
+* Fill in the fields accordingly to the Ad Unit that you want to use
 
 ![Mopub-3]
 (images/adapters/ios/mopub3.png)
 
 ### Native ads
 
+For Native ads:
+
 * Add HADNativeAdAdapter.swift and HADNativeCustomEvent.swift files
+
+Specify the following values for the fields:
+ 
 * Custom Event Class: `HADNativeCustomEvent`
 * Custom Event Class Data: `{"PLACEMENT":"<YOUR PLACEMENT>"}`
 
 **You can use the test placement `5b3QbMRQ`**
 
-Add `HADNativeCustomEvent.swift` and `HADNativeAdAdapter.swift` adapter files in your project
-Implement MoPub NativeViewController:
+Add `HADNativeCustomEvent.swift` and `HADNativeAdAdapter.swift` adapter files in your project. Implement MoPub NativeViewController:
 
 ```swift
 import HADFramework
@@ -148,6 +152,8 @@ class NativeView: UIView, MPNativeAdRenderer {
 
 ### Interstitial
 
+For Interstitial ads specify the following values for the fields:
+
 * Custom Event Class: `HADInterstitialCustomEvent`
 * Custom Event Class Data: `{"PLACEMENT":"<YOUR PLACEMENT>"}`
 
@@ -187,14 +193,15 @@ class ViewController: UIViewController, MPInterstitialAdControllerDelegate {
 
 ### Banner
 
-Custom Event Class: `HADBannerCustomEvent`
+For Banner ads specify the following values for the fields:
 
-Custom Event Class Data: `{"PLACEMENT":"<YOUR PLACEMENT>"}`
+* Custom Event Class: `HADBannerCustomEvent`
+
+* Custom Event Class Data: `{"PLACEMENT":"<YOUR PLACEMENT>"}`
 
 **You can use the test placement `5b3QbMRQ`**
 
-Add `HADBannerCustomEvent.swift` adapter in your project
-Implement MoPub Banner:
+Add `HADBannerCustomEvent.swift` adapter in your project. Implement MoPub Banner:
 
 ```swift
 import HADFramework
