@@ -1,10 +1,6 @@
-#  User's segmentation events
+#  User segmentation events
 
-With sending in-app events triggered by your users you can improve your monetization and get higher earnings.
-
-Our platform automatically build audiences using your in-app data (provided by your events) and assigns high performing campaigns individually to each segment.
-
-Also our advertisers and mediabuying department make higher bids for more engaged users.
+Custom ad targeting results in increazing your monetization values and obtaining maximum value from every user. HyperADX provides user segmentation feature by processing in-app events triggered by the users. Based on the user segmentation events HyperADX automatically builds audiences and assigns high performing campaigns individually to each segment. Besides our advertisers and media buying department encourage the most engaged users by making higher bids for them.
 
 You can send the events very easy. Just call the method `sendEvent(type: HADEventType)` from HADEvent class.
 
@@ -13,6 +9,8 @@ Swift example: `HADEvent.sendEvent(.AchievementUnlocked)`
 Objective-C example: `[HADEvent sendEvent:HADEventTypeAchievementUnlocked];`
 
 ## Event codes
+
+The following event codes are implemented:
 
 **Authenticate events**
 
