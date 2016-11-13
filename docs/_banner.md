@@ -1,22 +1,21 @@
 # Banner
 
-The HyperADX Banner ads allow you to monetize your iOS apps with banner ads. This guide explains how to add banner ads to your app. If you're interested in other kinds of ad units, see the list of available types.
+The HyperADX Banner ads allow you to monetize your iOS apps with interstitial ads. This guide explains how to add interstitial ads to your app.
+See the [list of available types](../README.md#ad-types) for information of other supported ad formats.
 
 ### Set up the SDK
 
-[Please complete these steps](../README.md#set-up-the-sdk)
+Please complete the steps mentioned in the [Setup the SDK](../README.md#set-up-the-sdk) section to set up the SDK.
 
 ### Swift implementation
 
-First of all, in your AppDelegate file, create an instance of HADFramework
-
-Import the SDK
+First of all, in your AppDelegate file, create an instance of HADFramework. Import the SDK:
 
 ```swift
 import HADFramework
 ```
 
-> And in your application didFinishLaunchingWithOptions method call HAD.create()
+> And in your application didFinishLaunchingWithOptions method call HAD.create():
 
 ```swift
 private func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -76,15 +75,13 @@ func HADView(view: HADBannerView, didFailWithError error: NSError?) {
 
 ### Objective-C implementation
 
-First of all, in your AppDelegate file create an instance of HADFramework
-
-Import the SDK header in AppDelegate.h:
+First of all, in your AppDelegate file create an instance of HADFramework. Import the SDK header in AppDelegate.h:
 
 ```objective_c
 #import <HADFramework/HADFramework.h>
 ```
 
-And in your application didFinishLaunchingWithOptions method call [HAD create]
+And in your application didFinishLaunchingWithOptions method call [HAD create]:
 
 ```objective_c
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
