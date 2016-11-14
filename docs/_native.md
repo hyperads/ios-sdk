@@ -4,13 +4,13 @@ The HyperADX's Native Ads allows you to build a customized experience for the ad
 
 **There are three actions you will need to take to implement this in your app:**
 
-* Request an ad
-* Use the returned ad metadata to build a custom native UI
-* Register the ad's view with the `HADNativeAd` instance
+* Request an ad.
+* Use the returned ad metadata to build a custom native UI.
+* Register the ad's view with the `HADNativeAd` instance.
 
 ### Set up the SDK
 
-[Please complete these steps](../README.md#set-up-the-sdk)
+Please complete the steps mentioned in the [Setup the SDK](../README.md#set-up-the-sdk) section to set up the SDK.
 
 ### Swift implementation
 
@@ -39,35 +39,35 @@ override func viewDidLoad() {
 }
 ```
 
-You may set `content` param on HADNativeAd initialization to get only needed properties. If you didn't set `content` param then you get all properties.
+You may set the `content` param on HADNativeAd initialization to get only the required properties. If you didn't set the `content` param  you will get all properties.
 
 
-to get title text
+to get the title text:
 
 ```swift
 .Title
 ```
 
-to get description text
+to get the description text:
 
 ```swift
 .Description
 ```
 
-to get banner
+to get the banner:
 
 ```swift
 .Banner
 ```
 
-to get icon
+to get the icon:
 
 ```swift
 .Icon
 ```
 
 
-Now that you have added the code to load the ad, add the following functions to handle loading failures and to construct the ad once it has loaded:
+Now as you have added the code to load the ad, add the following functions to handle loading failures and to construct the ad once it has loaded:
 
 ```swift
 //MARK: HADNativeAd Delegate
@@ -137,25 +137,25 @@ Then, add a method in your View Controller's implementation file that initialize
 You may set `content` param on HADNativeAd initialization to get only needed properties. If you didn't set `content` param then you get all properties.
 
 
-to get title text
+to get the title text:
 
 ```objective_c
 HADAdContentTitle
 ```
 
-to get description text
+to get the description text:
 
 ```objective_c
 HADAdContentDescription
 ```
 
-to get banner
+to get the banner:
 
 ```objective_c
 HADAdContentBanner
 ```
 
-to get icon
+to get the icon:
 
 ```objective_c
 HADAdContentIcon
@@ -193,7 +193,7 @@ Now that you have added the code to load the ad, add the following functions to 
 }
 ```
 
-Handle click on your implementation of "call to action" button
+Handle click on your implementation of "call to action" button:
 
 ```objective_c
 - (IBAction)handleClick:(id)sender {
@@ -207,7 +207,7 @@ The Native Ad templates allows you to use prepared Ad banner views but with poss
 
 Just add HADBannerTemplateView to your view controller and set desired banner template and custom params.
 
-### You can choose from six layouts:
+### You can choose one of the following  six layouts:
 
 Layout | Description
 --------- | -----------
@@ -220,7 +220,7 @@ Layout | Description
 
 ### Custom params
 
-All custom params starts with `custom` prefix
+The custom params starts with `custom` prefix
 
 Group | Param | Description
 --------- | ----------- | -----------
