@@ -15,7 +15,7 @@ First of all, in your AppDelegate file, create an instance of HADFramework. Impo
 import HADFramework
 ```
 
-> And in your application didFinishLaunchingWithOptions method call HAD.create():
+And in your application didFinishLaunchingWithOptions method call HAD.create():
 
 ```swift
 private func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
