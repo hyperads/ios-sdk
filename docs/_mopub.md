@@ -11,24 +11,28 @@ Please take the following steps to implement MoPub adapter:
 
 Setup SDKs:
 
-* [Integrate](https://github.com/mopub/mopub-ios-sdk/wiki/Manual-Native-Ads-Integration-for-iOS) with Mopub SDK
-* Install HyperADX SDK
+* [Integrate](https://github.com/mopub/mopub-ios-sdk/wiki/Manual-Native-Ads-Integration-for-iOS) with Mopub SDK.
+* Install HyperADX SDK.
 
-**NOTE** In Objective-C projects you will need to create a Swift header file as described [here](http://stackoverflow.com/questions/24102104/how-to-import-swift-code-to-objective-c)
+**NOTE** In Objective-C projects you will need to create a Swift header file as described [here.](http://stackoverflow.com/questions/24102104/how-to-import-swift-code-to-objective-c)
 
 ### Setup Mopub Dashboard
 
-* Create an "HyperADX" Network in Mopub's dashboard and connect it to your Ad Units. In Mopub's dashboard select Networks > Add New network
+* Create the "HyperADX" Network in Mopub's dashboard and connect the network to your Ad Units. 
+
+Log into MoPub.
+
+In Mopub's dashboard select **Networks > Add a Network.**
 
 ![Mopub-1]
 (images/adapters/ios/mopub1.png)
 
-* Then select Custom Native Network
+* Then select **Custom Native Network.**
 
 ![Mopub-2]
 (images/adapters/ios/mopub2.png)
 
-* Fill in the fields accordingly to the Ad Unit that you want to use
+* Fill in the fields accordingly to the Ad Unit that you want to use.
 
 ![Mopub-3]
 (images/adapters/ios/mopub3.png)
@@ -37,7 +41,7 @@ Setup SDKs:
 
 For Native ads:
 
-* Add HADNativeAdAdapter.swift and HADNativeCustomEvent.swift files
+* Add HADNativeAdAdapter.swift and HADNativeCustomEvent.swift files.
 
 Specify the following values for the fields:
  
