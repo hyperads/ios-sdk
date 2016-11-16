@@ -12,7 +12,7 @@ Please take the following steps to implement MoPub adapter:
 Setup SDKs:
 
 * [Integrate](https://github.com/mopub/mopub-ios-sdk/wiki/Manual-Native-Ads-Integration-for-iOS) with Mopub SDK.
-* Install HyperADX SDK.
+* [Install HyperADX SDK](https://github.com/hyperads/ios-sdk#set-up-the-sdk).
 
 **NOTE** In Objective-C projects you will need to create a Swift header file as described [here.](http://stackoverflow.com/questions/24102104/how-to-import-swift-code-to-objective-c)
 
