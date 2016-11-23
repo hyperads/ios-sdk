@@ -1,33 +1,46 @@
 # Admob adapter
 
-* [Download](https://github.com/hyperads/ios-sdk/releases) and extract the HADFramework for iOS.
+You can configure Admob adapter to serve Hyperadx banner and interstitial ads through Admob's mediation solution. The example of Admob adapter example is located in 
+[ /Mediation Adapters/Admob/](https://github.com/hyperads/ios-sdk/tree/master/Mediation%20adapters/Admob).
 
-* You can find Admob adapter example in /Mediation Adapters/AdMob/.
+Please take the following steps to implement Admob adapter: 
 
-* First of all you need to add new app in AdMob console.
+* First, please [download](https://github.com/hyperads/ios-sdk/releases) and [install HyperADX SDK](https://github.com/hyperads/ios-sdk#set-up-the-sdk).
 
-**You will get UnitId string like 'ca-app-pub-+++++++++++++/+++++++++++++'. For the next few hours you may get the AdMob errors with codes 0 or 2. Just be patient.**
+### Setup Admob Dashboard
 
-![Admob 1]
+* Add a new app in the AdMob dashboard.
+
+You will get UnitId string like 'ca-app-pub-+++++++++++++/+++++++++++++'. For the next few hours you may get the AdMob errors with codes 0 or 2. Just be patient.
+
+* Add a new ad unit. Click **+NEW AD UNIT** to do this. 
+
+![Admob-1]
 (images/adapters/ios/AdMobBanner1.png)
 
-![Admob 2]
+* Select an ad format and enter the relevant details.
+
+![Admob-2]
 (images/adapters/ios/AdMobBanner2.png)
 
-* Then you need to add new mediation source.
+* Then add a new mediation source. Select your application from the **All apps** list on the left-hand side. Click the link in the **Mediation** column to the right of the ad unit you want to modify. Click **+ New APP NETWORK.** Add the custom event: 
 
-![Admob 3]
+![Admob-3]
 (images/adapters/ios/AdMobBanner3.png)
 
 ### Banner
 
-* Fill `Class Name` field with a `HADCustomEventBanner`. And a `Parameter` with your HyperADX statement string.
+Specify the following values for the fields:
+
+* `Class Name`:  `HADCustomEventBanner`.
+* 'Label': Specify a name for yout custom event that will be used in reporting
+* `Parameter`:  specify your HyperADX statement string. You can use the test placement `5b3QbMRQ`
 
 * Setup eCPM for new network
 
-Now you can setting up your Xcode project.
+Now you can set up your Xcode project.
 
-* Put HyperADX-SDK as described above
+* [Install HyperADX SDK](https://github.com/hyperads/ios-sdk#set-up-the-sdk) as described above
 * Add HADCustomEventBanner.swift file
 
 **NOTE** - In the Objective-C only project you must create swift header file as described [here](http://stackoverflow.com/questions/24102104/how-to-import-swift-code-to-objective-c)
@@ -68,13 +81,17 @@ class ViewController: UIViewController, GADBannerViewDelegate {
 
 ### Interstitial
 
-* Fill `Class Name` field with a `HADCustomEventInterstitial`. And a `Parameter` with your HyperADX statement string.
+Specify the following values for the fields:
+
+* `Class Name`:  ``HADCustomEventInterstitialr`.
+* 'Label': Specify a name for yout custom event that will be used in reporting
+* `Parameter`:  specify your HyperADX statement string. You can use the test placement `5b3QbMRQ`
 
 * Setup eCPM for new network
 
-Now you can setting up your Xcode project.
+Now you can set up your Xcode project.
 
-* Put HyperADX-SDK as described above
+* [Install HyperADX SDK](https://github.com/hyperads/ios-sdk#set-up-the-sdk) as described above
 * Add HADCustomEventInterstitial.swift file
 
 **NOTE** - In the Objective-C only project you must create swift header file as described [here](http://stackoverflow.com/questions/24102104/how-to-import-swift-code-to-objective-c)
