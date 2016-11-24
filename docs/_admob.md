@@ -1,7 +1,7 @@
 # Admob adapter
 
 You can configure Admob adapter to serve Hyperadx banner and interstitial ads through Admob's mediation solution. The example of Admob adapter example is located in 
-[ /Mediation Adapters/Admob/](https://github.com/hyperads/ios-sdk/tree/master/Mediation%20adapters/Admob).
+[ /Mediation Adapters/Admob/](https://github.com/hyperads/ios-sdk/tree/master/Mediation%20adapters/AdMob).
 
 Please take the following steps to implement Admob adapter: 
 
@@ -32,9 +32,9 @@ You will get UnitId string like 'ca-app-pub-+++++++++++++/+++++++++++++'. For th
 
 Specify the following values for the fields:
 
-* `Class Name`:  `HADCustomEventBanner`.
-* 'Label': Specify a name for yout custom event that will be used in reporting
-* `Parameter`:  specify your HyperADX statement string. You can use the test placement `5b3QbMRQ`
+* Class Name:  `HADCustomEventBanner`.
+* Label: Specify a name for yout custom event that will be used in reporting.
+* Parameter:  specify your HyperADX statement string. You can use the test placement '5b3QbMRQ'.
 
 * Setup eCPM for new network
 
@@ -83,9 +83,9 @@ class ViewController: UIViewController, GADBannerViewDelegate {
 
 Specify the following values for the fields:
 
-* `Class Name`:  ``HADCustomEventInterstitialr`.
-* 'Label': Specify a name for yout custom event that will be used in reporting
-* `Parameter`:  specify your HyperADX statement string. You can use the test placement `5b3QbMRQ`
+* Class Name:  ``HADCustomEventInterstitialr.
+* Label: Specify a name for yout custom event that will be used in reporting.
+* Parameter:  specify your HyperADX statement string. You can use the test placement '5b3QbMRQ'.
 
 * Setup eCPM for new network
 
