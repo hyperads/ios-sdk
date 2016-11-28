@@ -13,8 +13,23 @@
 		47CAB3EA1D71E8BD000B6B0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47CAB3E81D71E8BD000B6B0C /* Main.storyboard */; };
 		47CAB3EC1D71E8BD000B6B0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47CAB3EB1D71E8BD000B6B0C /* Assets.xcassets */; };
 		47CAB4B11D722A48000B6B0C /* NativeAd.m in Sources */ = {isa = PBXBuildFile; fileRef = 47CAB4B01D722A48000B6B0C /* NativeAd.m */; };
-		6C0D49B61DEC53E20019A969 /* HADFrameworkObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C0D49B51DEC53E20019A969 /* HADFrameworkObjC.framework */; };
+		6C0D49BC1DEC7F6C0019A969 /* HADFrameworkObjC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C0D49B51DEC53E20019A969 /* HADFrameworkObjC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6C0D49BD1DEC7F9E0019A969 /* HADFrameworkObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C0D49B51DEC53E20019A969 /* HADFrameworkObjC.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6C0D49BB1DEC7DA80019A969 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6C0D49BC1DEC7F6C0019A969 /* HADFrameworkObjC.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		47B0B9D21D72E9280095891E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -35,7 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C0D49B61DEC53E20019A969 /* HADFrameworkObjC.framework in Frameworks */,
+				6C0D49BD1DEC7F9E0019A969 /* HADFrameworkObjC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +108,8 @@
 				47CAB3D91D71E8BD000B6B0C /* Sources */,
 				47CAB3DA1D71E8BD000B6B0C /* Frameworks */,
 				47CAB3DB1D71E8BD000B6B0C /* Resources */,
+				6C0D49BB1DEC7DA80019A969 /* Embed Frameworks */,
+				6C0D49B81DEC7C960019A969 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -148,6 +165,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6C0D49B81DEC7C960019A969 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/HADFrameworkObjC.framework/strip-frameworks.sh\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		47CAB3D91D71E8BD000B6B0C /* Sources */ = {
