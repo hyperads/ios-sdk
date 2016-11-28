@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <HADFramework/HADFramework.h>
+#import <HADFrameworkObjC/HADFrameworkObjC.h>
 
 @interface NativeAd : UIViewController
 
