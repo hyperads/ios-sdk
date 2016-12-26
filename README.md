@@ -35,7 +35,7 @@ There are three advertiser assets that must always be included in your native ad
 
 * Ad Title
 * CTA (Call-to-Action) Button (eg. Install Now, Learn More)
-* Object of **HADMediaView must be used** for banner's image loading and showing and presented on the stage
+* Object of **HADMediaView must be used** for banner image loading and must be presented on the stage
 
 ## Ad implementation
 
