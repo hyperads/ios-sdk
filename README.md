@@ -30,6 +30,12 @@ bash "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/HADFrameworkObjC.framework
 ```
 This step is required to work around an [App Store submission bug](http://www.openradar.me/radar?id=6409498411401216) when archiving universal binaries
 
+## Ad implementation requirements
+There are three advertiser assets that must always be included in your native ad design. Failing to include any of these three items could result in HyperADX disabling your placement. The three assets are:
+
+* Ad Title
+* CTA (Call-to-Action) Button (eg. Install Now, Learn More)
+* Object of HADMediaView must be used for banner's image loading and showing and presented on the stage
 
 ## Ad implementation
 
