@@ -12,6 +12,13 @@ The HyperADX's Native Ads allows you to build a customized experience for the ad
 
 [Please complete these steps](../README.md#set-up-the-sdk)
 
+## Requirements
+There are three advertiser assets that must always be included in your native ad design. Failing to include any of these three items could result in HyperADX disabling your placement. The three assets are:
+
+* Ad Title
+* CTA (Call-to-Action) Button (eg. Install Now, Learn More)
+* Object of HADMediaView must be used and presented
+
 ### Swift implementation
 
 > Now, in your View Controller implementation file, import the SDK and declare that you implement the `HADNativeAdDelegate` protocol as well as declare and connect instance variables to your Storyboard or .XIB:
