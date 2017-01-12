@@ -260,6 +260,7 @@
 				471C4D811D251B5000699B11 /* Frameworks */,
 				471C4D821D251B5000699B11 /* Resources */,
 				6CC06B901DB6365000AA3140 /* Embed Frameworks */,
+				6C0D49BF1DEC81970019A969 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -278,6 +279,7 @@
 				471C4DA91D251D5B00699B11 /* Frameworks */,
 				471C4DAA1D251D5B00699B11 /* Resources */,
 				471C4DC51D251D9400699B11 /* Embed Frameworks */,
+				6C0D49BE1DEC80F00019A969 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -346,6 +348,35 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6C0D49BE1DEC80F00019A969 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/HADFramework.framework/strip-frameworks.sh\"";
+		};
+		6C0D49BF1DEC81970019A969 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/HADFramework.framework/strip-frameworks.sh\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		471C4D801D251B5000699B11 /* Sources */ = {
