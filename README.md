@@ -48,17 +48,6 @@ You can implement the following ad formats in your iOS application:
 * [Interstitial](docs/_interstitial.md)
 * [Native](docs/_native.md)
 
-## User segmentation events
-
-Ad users are different in their behaviors, needs and expectations. Applying user segmentation delivers the best-fitting ad experience to your users.  
-Custom ad targeting results in increazing your monetization values and obtaining maximum value from every user. HyperADX provides user segmentation feature
-by processing in-app events triggered by the users. Based on the user segmentation events HyperADX automatically builds audiences and assigns high 
-performing campaigns individually to each segment. Besides our advertisers and media buying department encourage the most engaged users by making higher
-bids for them. 
-
-The section below describe how to configure sending the events in your application. 
-
-* [Examples & event types](docs/_segments.md)
 
 ### Adapters for integration with popular Networks
 

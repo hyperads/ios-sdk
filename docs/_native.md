@@ -58,7 +58,7 @@ Cache Constants | Description
 `ALL` | Pre-cache all (icon, images, and video)
 
 
-3. The next step is to show ad when content is ready. You would need to implement hadNativeAdDidLoad method in ViewController.m file.
+3. The next step is to show ad when content is ready. You would need to implement `hadNativeAdDidLoad` method in View Controller file.
 
 ```swift
 //MARK: HADNativeAd Delegate

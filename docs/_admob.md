@@ -11,8 +11,6 @@ Please take the following steps to implement Admob adapter:
 
 * Add a new app in the AdMob dashboard.
 
-You will get UnitId string like 'ca-app-pub-+++++++++++++/+++++++++++++'. For the next few hours you may get the AdMob errors with codes 0 or 2. Just be patient.
-
 * Add a new ad unit. Click **+NEW AD UNIT** to do this. 
 
 ![Admob-1]
@@ -28,12 +26,14 @@ You will get UnitId string like 'ca-app-pub-+++++++++++++/+++++++++++++'. For th
 ![Admob-3]
 (images/adapters/ios/AdMobBanner3.png)
 
+* You will get UnitId string like 'ca-app-pub-+++++++++++++/+++++++++++++'. For the next few hours you may get the AdMob errors with codes 0 or 2 with text "No ad to show.". Just be patient.
+
 ### Banner
 
 Specify the following values for the fields:
 
 * `Class Name`:  `HADCustomEventBanner`.
-* 'Label': Specify a name for yout custom event that will be used in reporting
+* `Label`: Specify a name for yout custom event that will be used in reporting
 * `Parameter`:  specify your HyperADX statement string. You can use the test placement `5b3QbMRQ`
 
 * Setup eCPM for new network
@@ -83,8 +83,8 @@ class ViewController: UIViewController, GADBannerViewDelegate {
 
 Specify the following values for the fields:
 
-* `Class Name`:  ``HADCustomEventInterstitialr`.
-* 'Label': Specify a name for yout custom event that will be used in reporting
+* `Class Name`:  `HADCustomEventInterstitial`.
+* `Label`: Specify a name for yout custom event that will be used in reporting
 * `Parameter`:  specify your HyperADX statement string. You can use the test placement `5b3QbMRQ`
 
 * Setup eCPM for new network
