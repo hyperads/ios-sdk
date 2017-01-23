@@ -1,6 +1,6 @@
 # Banner
 
-The HyperADX Banner ads allow you to monetize your iOS apps with interstitial ads. This guide explains how to add interstitial ads to your app.
+The HyperADX Banner ads allow you to monetize your iOS apps with banner ads. This guide explains how to add banner ads to your app.
 See the [list of available types](../README.md#ad-types) for information of other supported ad formats.
 
 ### Set up the SDK
