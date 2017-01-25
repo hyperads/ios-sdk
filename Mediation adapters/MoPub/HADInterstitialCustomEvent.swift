@@ -10,11 +10,13 @@ import Foundation
 import HADFramework
 
 @objc(HADInterstitialCustomEvent)
-class HADInterstitialCustomEvent: MPInterstitialCustomEvent, HADInterstitialDelegate {
-    var interstitial: HADInterstitial!
+class HADInterstitialCustomEvent: MPInterstitialCustomEvent, HADInterstitialAdDelegate {
+    
+    var interstitial: HADInterstitialAd!
+    
     override func requestInterstitial(withCustomEventInfo info: [AnyHashable : Any]!) {
-        if let placementId = info["placementId"] as? String {
-            interstitial = HADInterstitial(placementId: placementId)
+        if let placementId = info["PLACEMENT"] as? String {
+            interstitial = HADInterstitialAd(placementID: placementId)
             interstitial.delegate = self
             interstitial.loadAd()
         } else {
@@ -31,23 +33,23 @@ class HADInterstitialCustomEvent: MPInterstitialCustomEvent, HADInterstitialDele
     
     //MARK: HADInterstitial Delegate
     
-    func HADInterstitialDidLoad(controller: HADInterstitial) {
-        delegate.interstitialCustomEvent(self, didLoadAd: controller)
+    func hadInterstitialAdDidLoad(interstitialAd: HADInterstitialAd) {
+        delegate.interstitialCustomEvent(self, didLoadAd: interstitialAd)
     }
     
-    func HADInterstitialDidClick(controller: HADInterstitial) {
+    func hadInterstitialAdDidClick(interstitialAd: HADInterstitialAd) {
         delegate.interstitialCustomEventDidReceiveTap(self)
     }
     
-    func HADInterstitialDidClose(controller: HADInterstitial) {
+    func hadInterstitialAdDidClose(interstitialAd: HADInterstitialAd) {
         delegate.interstitialCustomEventDidDisappear(self)
     }
     
-    func HADInterstitialWillClose(controller: HADInterstitial) {
+    func hadInterstitialAdWillClose(interstitialAd: HADInterstitialAd) {
         delegate.interstitialCustomEventWillDisappear(self)
     }
     
-    func HADInterstitialDidFail(controller: HADInterstitial, error: NSError?) {
+    func hadInterstitialAdDidFail(interstitialAd: HADInterstitialAd, withError error: NSError?) {
         delegate.interstitialCustomEvent(self, didFailToLoadAdWithError: error)
     }
 }

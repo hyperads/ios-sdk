@@ -3,52 +3,51 @@
 //  HADFramework
 //
 //  Created by Mihael Isaev on 11/07/16.
-//  Copyright © 2016 Mihael Isaev. All rights reserved.
+//  Copyright © 2016 HyperADX. All rights reserved.
 //
 
 import GoogleMobileAds
 import HADFramework
 
 @objc(HADCustomEventInterstitial)
-class HADCustomEventInterstitial: NSObject, GADCustomEventInterstitial, HADInterstitialDelegate {
+class HADCustomEventInterstitial: NSObject, GADCustomEventInterstitial, HADInterstitialAdDelegate {
     
     var delegate: GADCustomEventInterstitialDelegate?
-    var interstitial: HADInterstitial!
+    var interstitial: HADInterstitialAd!
     
     //MARK: GADCustomEventInterstitial
-    
-    func requestInterstitialAdWithParameter(serverParameter: String!, label serverLabel: String!, request: GADCustomEventRequest!) {
-        interstitial = HADInterstitial(placementId: serverParameter)
+    func requestAd(withParameter serverParameter: String?, label serverLabel: String?, request: GADCustomEventRequest) {
+        interstitial = HADInterstitialAd(placementID: serverParameter!)
         interstitial.delegate = self
         interstitial.loadAd()
     }
     
-    func presentFromRootViewController(rootViewController: UIViewController!) {
+    func present(fromRootViewController rootViewController: UIViewController) {
         delegate?.customEventInterstitialWillPresent(self)
-        interstitial.modalTransitionStyle = .CoverVertical
-        interstitial.modalPresentationStyle = .FullScreen
-        rootViewController.presentViewController(interstitial, animated: true, completion: nil)
+        interstitial.modalTransitionStyle = .coverVertical
+        interstitial.modalPresentationStyle = .fullScreen
+        rootViewController.present(interstitial, animated: true, completion: nil)
     }
     
     //MARK: HADInterstitial Delegate
     
-    func HADInterstitialDidLoad(controller: HADInterstitial) {
+    func hadInterstitialAdDidLoad(interstitialAd: HADInterstitialAd) {
         delegate?.customEventInterstitialDidReceiveAd(self)
     }
     
-    func HADInterstitialDidClick(controller: HADInterstitial) {
+    func hadInterstitialAdDidClick(interstitialAd: HADInterstitialAd) {
         delegate?.customEventInterstitialWasClicked(self)
     }
     
-    func HADInterstitialDidClose(controller: HADInterstitial) {
+    func hadInterstitialAdDidClose(interstitialAd: HADInterstitialAd) {
         delegate?.customEventInterstitialDidDismiss(self)
     }
     
-    func HADInterstitialWillClose(controller: HADInterstitial) {
+    func hadInterstitialAdWillClose(interstitialAd: HADInterstitialAd) {
         delegate?.customEventInterstitialWillDismiss(self)
     }
     
-    func HADInterstitialDidFail(controller: HADInterstitial, error: NSError?) {
+    func hadInterstitialAdDidFail(interstitialAd: HADInterstitialAd, withError error: NSError?) {
         delegate?.customEventInterstitial(self, didFailAd: error)
     }
 }

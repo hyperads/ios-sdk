@@ -3,35 +3,42 @@
 //  HADFramework
 //
 //  Created by Mihael Isaev on 11/07/16.
-//  Copyright © 2016 Mihael Isaev. All rights reserved.
+//  Copyright © 2016 HyperADX. All rights reserved.
 //
 
 import GoogleMobileAds
 import HADFramework
 
 @objc(HADCustomEventBanner)
-class HADCustomEventBanner: NSObject, GADCustomEventBanner, HADBannerViewDelegate {
+class HADCustomEventBanner: NSObject, GADCustomEventBanner, HADAdViewDelegate {
     
     var delegate: GADCustomEventBannerDelegate?
     
     //MARK: GADCustomEventBanner
     
-    func requestBannerAd(adSize: GADAdSize, parameter: String, label: String, request: GADCustomEventRequest) {
-        let bannerView = HADBannerView(frame: CGRectMake(0, 0, adSize.size.width, adSize.size.height))
-        bannerView.loadAd(parameter, bannerSize: HADBannerSize.Height50, delegate: self)
+    func requestAd(_ adSize: GADAdSize, parameter serverParameter: String?, label serverLabel: String?, request: GADCustomEventRequest) {
+        
+        let bannerView = HADAdView(placementID: serverParameter!, adSize:.height50Banner, viewController: delegate?.viewControllerForPresentingModalView)
+        bannerView.loadAd()
+        bannerView.delegate = self
+        
+        bannerView.frame = CGRect(x:0, y:0, width:adSize.size.width, height:adSize.size.height);
     }
     
-    //MARK: HADBannerViewDelegate
+    //MARK: HADAdViewDelegate
     
-    func HADViewDidLoad(view: HADBannerView) {
-        delegate?.customEventBanner(self, didReceiveAd: view)
+    func hadViewDidLoad(adView: HADAdView) {
+        print("hadViewDidLoad")
+        delegate?.customEventBanner(self, didReceiveAd: adView)
     }
     
-    func HADView(view: HADBannerView, didFailWithError error: NSError?) {
-        delegate?.customEventBanner(self, didFailAd: error)
-    }
-    
-    func HADViewDidClick(view: HADBannerView) {
+    func hadViewDidClick(adView: HADAdView) {
+        print("hadViewDidClick")
         delegate?.customEventBannerWasClicked(self)
+    }
+    
+    func hadViewDidFail(adView: HADAdView, withError error: NSError?) {
+        print("hadViewDidFail: \(error?.localizedDescription)")
+        delegate?.customEventBanner(self, didFailAd: error)
     }
 }
