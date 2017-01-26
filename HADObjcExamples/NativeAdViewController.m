@@ -10,6 +10,7 @@
 #import <HADFramework/HADFramework.h>
 
 @interface NativeAdViewController () <HADNativeAdDelegate>
+
 @property (strong, nonatomic) HADNativeAd *nativeAd;
 
 @property (weak, nonatomic) IBOutlet UIView *adView;
@@ -64,11 +65,11 @@
 }
 
 -(void)hadNativeAdDidClickWithNativeAd:(HADNativeAd *)nativeAd{
-    
+    NSLog(@"hadNativeAdDidClickWithNativeAd");
 }
 
 -(void)hadNativeAdDidFailWithNativeAd:(HADNativeAd *)nativeAd withError:(NSError *)error{
-    
+    NSLog(@"hadNativeAdDidFailWithNativeAd %@", error.description);
 }
 
 @end

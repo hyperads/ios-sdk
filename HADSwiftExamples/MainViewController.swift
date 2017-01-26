@@ -49,25 +49,6 @@ class MainViewController: UIViewController {
     
     var interstitialAd:HADInterstitialAd?
     
-    @IBAction func showBannerHeight50() {
-        showBanner(size: .height50Banner)
-    }
-    
-    @IBAction func showBannerHeight90() {
-        showBanner(size: .height90Banner)
-    }
-    
-    @IBAction func showBannerHeight250() {
-        showBanner(size: .height250Rectangle)
-    }
-    
-    //new way
-    @IBAction func createInterstitialController() {
-        interstitialAd = HADInterstitialAd(placementID: "5b3QbMRQ")
-        interstitialAd?.delegate = self
-        interstitialAd?.loadAd()
-    }
-    
     override open func viewDidLoad() {
         super.viewDidLoad()
         

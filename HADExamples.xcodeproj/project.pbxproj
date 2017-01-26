@@ -41,6 +41,7 @@
 		6CF7665C1E38DA1C00D5E8D4 /* NativeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF766551E38DA1C00D5E8D4 /* NativeViewController.swift */; };
 		6CF7665D1E38DA1C00D5E8D4 /* TemplatesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF766561E38DA1C00D5E8D4 /* TemplatesTableViewController.swift */; };
 		6CF766611E38FEF700D5E8D4 /* NativeAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF766601E38FEF700D5E8D4 /* NativeAdViewController.m */; };
+		6CF766641E3A25DC00D5E8D4 /* NativeTemplatesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF766631E3A25DC00D5E8D4 /* NativeTemplatesTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -120,6 +121,8 @@
 		6CF766561E38DA1C00D5E8D4 /* TemplatesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplatesTableViewController.swift; sourceTree = "<group>"; };
 		6CF7665F1E38FEF700D5E8D4 /* NativeAdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeAdViewController.h; sourceTree = "<group>"; };
 		6CF766601E38FEF700D5E8D4 /* NativeAdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeAdViewController.m; sourceTree = "<group>"; };
+		6CF766621E3A25DC00D5E8D4 /* NativeTemplatesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeTemplatesTableViewController.h; sourceTree = "<group>"; };
+		6CF766631E3A25DC00D5E8D4 /* NativeTemplatesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeTemplatesTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,10 +171,7 @@
 				6CF766521E38DA1C00D5E8D4 /* MainViewController.swift */,
 				6CF766501E38DA1C00D5E8D4 /* BannerCollectionViewController.swift */,
 				6CF766511E38DA1C00D5E8D4 /* BannerTableViewController.swift */,
-				6CF766531E38DA1C00D5E8D4 /* NativeCollectionViewController.swift */,
-				6CF766541E38DA1C00D5E8D4 /* NativeTableViewController.swift */,
-				6CF766551E38DA1C00D5E8D4 /* NativeViewController.swift */,
-				6CF766561E38DA1C00D5E8D4 /* TemplatesTableViewController.swift */,
+				6CF766661E3A271200D5E8D4 /* Native */,
 				6CF7664D1E38D9FD00D5E8D4 /* Main.storyboard */,
 				471C4D8F1D251B5000699B11 /* LaunchScreen.storyboard */,
 				471C4D921D251B5000699B11 /* Info.plist */,
@@ -186,8 +186,7 @@
 				471C4DB21D251D5B00699B11 /* AppDelegate.m */,
 				471C4DDE1D252B7300699B11 /* ViewController.h */,
 				471C4DDF1D252B7300699B11 /* ViewController.m */,
-				6CF7665F1E38FEF700D5E8D4 /* NativeAdViewController.h */,
-				6CF766601E38FEF700D5E8D4 /* NativeAdViewController.m */,
+				6CF766651E3A25E700D5E8D4 /* Native */,
 				6CF7665E1E38FEC100D5E8D4 /* Dep */,
 				471C4DF31D252BCA00699B11 /* Main.storyboard */,
 				471C4DBA1D251D5B00699B11 /* Assets.xcassets */,
@@ -237,6 +236,28 @@
 				477F581C1D38836300D1AD6C /* NativeTemplateLineThree.m */,
 			);
 			name = Dep;
+			sourceTree = "<group>";
+		};
+		6CF766651E3A25E700D5E8D4 /* Native */ = {
+			isa = PBXGroup;
+			children = (
+				6CF7665F1E38FEF700D5E8D4 /* NativeAdViewController.h */,
+				6CF766601E38FEF700D5E8D4 /* NativeAdViewController.m */,
+				6CF766621E3A25DC00D5E8D4 /* NativeTemplatesTableViewController.h */,
+				6CF766631E3A25DC00D5E8D4 /* NativeTemplatesTableViewController.m */,
+			);
+			name = Native;
+			sourceTree = "<group>";
+		};
+		6CF766661E3A271200D5E8D4 /* Native */ = {
+			isa = PBXGroup;
+			children = (
+				6CF766531E38DA1C00D5E8D4 /* NativeCollectionViewController.swift */,
+				6CF766541E38DA1C00D5E8D4 /* NativeTableViewController.swift */,
+				6CF766551E38DA1C00D5E8D4 /* NativeViewController.swift */,
+				6CF766561E38DA1C00D5E8D4 /* TemplatesTableViewController.swift */,
+			);
+			name = Native;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -392,6 +413,7 @@
 				471C4DE01D252B7300699B11 /* ViewController.m in Sources */,
 				471C4DE61D252B8A00699B11 /* BannerHeight90.m in Sources */,
 				471C4DB31D251D5B00699B11 /* AppDelegate.m in Sources */,
+				6CF766641E3A25DC00D5E8D4 /* NativeTemplatesTableViewController.m in Sources */,
 				6CF766611E38FEF700D5E8D4 /* NativeAdViewController.m in Sources */,
 				477F58171D38835100D1AD6C /* NativeTemplateLineOne.m in Sources */,
 				477F580E1D38833000D1AD6C /* NativeTemplateBlockOne.m in Sources */,
