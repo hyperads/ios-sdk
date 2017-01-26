@@ -38,10 +38,6 @@ extension NativeCollectionViewController: HADNativeAdDelegate {
     func hadNativeAdDidClick(nativeAd: HADNativeAd) {
         print("hadNativeAdDidClick")
     }
-    
-    //func nativeAdDidFinishHandlingClick(nativeAd: HADNativeAd) {
-    //    print("nativeAdDidFinishHandlingClick")
-    //}
 }
 
 //MARK: - HADNativeAdsManagerDelegate implementation
@@ -75,20 +71,13 @@ class NativeCollectionViewController: UICollectionViewController, UICollectionVi
     var adsManager:HADNativeAdsManager?
     var ads:HADNativeAdCollectionViewCellProvider?
     var _collectionViewContentArray:[String]?
-    var adCellsCreated:Bool = false
     
     let stride = 37
-    
-    var alreadyLoadedAdsInRows = [Int]()
-    var alreadyLoadedAds = [Int: HADNativeAd]()
     
     override open func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView?.register(NativeCollectionCell.self, forCellWithReuseIdentifier: "Cell")
         self.loadNativeAds()
-        
-        print("\(self.collectionView?.frame)")
-        print("\(self.collectionView?.contentSize)")
     }
     
     func collectionViewContentArray() -> [String]?

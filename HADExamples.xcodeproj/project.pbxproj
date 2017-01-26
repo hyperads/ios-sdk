@@ -22,12 +22,6 @@
 		471C4DF41D252BCA00699B11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 471C4DF31D252BCA00699B11 /* Main.storyboard */; };
 		474696EE1D9E8EC000C2C496 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 474696ED1D9E8EC000C2C496 /* CollectionViewController.m */; };
 		474696F11D9E8EEE00C2C496 /* ADCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 474696F01D9E8EEE00C2C496 /* ADCollectionCell.m */; };
-		477F580E1D38833000D1AD6C /* NativeTemplateBlockOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 477F580D1D38833000D1AD6C /* NativeTemplateBlockOne.m */; };
-		477F58111D38833A00D1AD6C /* NativeTemplateBlockTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = 477F58101D38833A00D1AD6C /* NativeTemplateBlockTwo.m */; };
-		477F58141D38834500D1AD6C /* NativeTemplateBlockThree.m in Sources */ = {isa = PBXBuildFile; fileRef = 477F58131D38834500D1AD6C /* NativeTemplateBlockThree.m */; };
-		477F58171D38835100D1AD6C /* NativeTemplateLineOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 477F58161D38835100D1AD6C /* NativeTemplateLineOne.m */; };
-		477F581A1D38835A00D1AD6C /* NativeTemplateLineTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = 477F58191D38835A00D1AD6C /* NativeTemplateLineTwo.m */; };
-		477F581D1D38836300D1AD6C /* NativeTemplateLineThree.m in Sources */ = {isa = PBXBuildFile; fileRef = 477F581C1D38836300D1AD6C /* NativeTemplateLineThree.m */; };
 		6CC06B941DB63F5700AA3140 /* HADFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CC06B931DB63F5700AA3140 /* HADFramework.framework */; };
 		6CC06B951DB63F5700AA3140 /* HADFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6CC06B931DB63F5700AA3140 /* HADFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6CC06B961DB63F5C00AA3140 /* HADFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CC06B931DB63F5700AA3140 /* HADFramework.framework */; };
@@ -42,6 +36,8 @@
 		6CF7665D1E38DA1C00D5E8D4 /* TemplatesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF766561E38DA1C00D5E8D4 /* TemplatesTableViewController.swift */; };
 		6CF766611E38FEF700D5E8D4 /* NativeAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF766601E38FEF700D5E8D4 /* NativeAdViewController.m */; };
 		6CF766641E3A25DC00D5E8D4 /* NativeTemplatesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF766631E3A25DC00D5E8D4 /* NativeTemplatesTableViewController.m */; };
+		6CF766691E3A340100D5E8D4 /* NativeAdTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF766681E3A340100D5E8D4 /* NativeAdTableViewController.m */; };
+		6CF7666C1E3A341300D5E8D4 /* NativeCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF7666B1E3A341300D5E8D4 /* NativeCollectionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -98,18 +94,6 @@
 		474696ED1D9E8EC000C2C496 /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
 		474696EF1D9E8EEE00C2C496 /* ADCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADCollectionCell.h; sourceTree = "<group>"; };
 		474696F01D9E8EEE00C2C496 /* ADCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADCollectionCell.m; sourceTree = "<group>"; };
-		477F580C1D38833000D1AD6C /* NativeTemplateBlockOne.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeTemplateBlockOne.h; sourceTree = "<group>"; };
-		477F580D1D38833000D1AD6C /* NativeTemplateBlockOne.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeTemplateBlockOne.m; sourceTree = "<group>"; };
-		477F580F1D38833A00D1AD6C /* NativeTemplateBlockTwo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeTemplateBlockTwo.h; sourceTree = "<group>"; };
-		477F58101D38833A00D1AD6C /* NativeTemplateBlockTwo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeTemplateBlockTwo.m; sourceTree = "<group>"; };
-		477F58121D38834500D1AD6C /* NativeTemplateBlockThree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeTemplateBlockThree.h; sourceTree = "<group>"; };
-		477F58131D38834500D1AD6C /* NativeTemplateBlockThree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeTemplateBlockThree.m; sourceTree = "<group>"; };
-		477F58151D38835100D1AD6C /* NativeTemplateLineOne.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeTemplateLineOne.h; sourceTree = "<group>"; };
-		477F58161D38835100D1AD6C /* NativeTemplateLineOne.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeTemplateLineOne.m; sourceTree = "<group>"; };
-		477F58181D38835A00D1AD6C /* NativeTemplateLineTwo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeTemplateLineTwo.h; sourceTree = "<group>"; };
-		477F58191D38835A00D1AD6C /* NativeTemplateLineTwo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeTemplateLineTwo.m; sourceTree = "<group>"; };
-		477F581B1D38836300D1AD6C /* NativeTemplateLineThree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeTemplateLineThree.h; sourceTree = "<group>"; };
-		477F581C1D38836300D1AD6C /* NativeTemplateLineThree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeTemplateLineThree.m; sourceTree = "<group>"; };
 		6CC06B931DB63F5700AA3140 /* HADFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HADFramework.framework; sourceTree = "<group>"; };
 		6CF7664E1E38D9FD00D5E8D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6CF766501E38DA1C00D5E8D4 /* BannerCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerCollectionViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +107,10 @@
 		6CF766601E38FEF700D5E8D4 /* NativeAdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeAdViewController.m; sourceTree = "<group>"; };
 		6CF766621E3A25DC00D5E8D4 /* NativeTemplatesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeTemplatesTableViewController.h; sourceTree = "<group>"; };
 		6CF766631E3A25DC00D5E8D4 /* NativeTemplatesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeTemplatesTableViewController.m; sourceTree = "<group>"; };
+		6CF766671E3A340100D5E8D4 /* NativeAdTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeAdTableViewController.h; sourceTree = "<group>"; };
+		6CF766681E3A340100D5E8D4 /* NativeAdTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeAdTableViewController.m; sourceTree = "<group>"; };
+		6CF7666A1E3A341300D5E8D4 /* NativeCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeCollectionViewController.h; sourceTree = "<group>"; };
+		6CF7666B1E3A341300D5E8D4 /* NativeCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeCollectionViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,18 +210,6 @@
 				471C4DF11D252BBB00699B11 /* ADCell.m */,
 				474696EF1D9E8EEE00C2C496 /* ADCollectionCell.h */,
 				474696F01D9E8EEE00C2C496 /* ADCollectionCell.m */,
-				477F580C1D38833000D1AD6C /* NativeTemplateBlockOne.h */,
-				477F580D1D38833000D1AD6C /* NativeTemplateBlockOne.m */,
-				477F580F1D38833A00D1AD6C /* NativeTemplateBlockTwo.h */,
-				477F58101D38833A00D1AD6C /* NativeTemplateBlockTwo.m */,
-				477F58121D38834500D1AD6C /* NativeTemplateBlockThree.h */,
-				477F58131D38834500D1AD6C /* NativeTemplateBlockThree.m */,
-				477F58151D38835100D1AD6C /* NativeTemplateLineOne.h */,
-				477F58161D38835100D1AD6C /* NativeTemplateLineOne.m */,
-				477F58181D38835A00D1AD6C /* NativeTemplateLineTwo.h */,
-				477F58191D38835A00D1AD6C /* NativeTemplateLineTwo.m */,
-				477F581B1D38836300D1AD6C /* NativeTemplateLineThree.h */,
-				477F581C1D38836300D1AD6C /* NativeTemplateLineThree.m */,
 			);
 			name = Dep;
 			sourceTree = "<group>";
@@ -245,6 +221,10 @@
 				6CF766601E38FEF700D5E8D4 /* NativeAdViewController.m */,
 				6CF766621E3A25DC00D5E8D4 /* NativeTemplatesTableViewController.h */,
 				6CF766631E3A25DC00D5E8D4 /* NativeTemplatesTableViewController.m */,
+				6CF766671E3A340100D5E8D4 /* NativeAdTableViewController.h */,
+				6CF766681E3A340100D5E8D4 /* NativeAdTableViewController.m */,
+				6CF7666A1E3A341300D5E8D4 /* NativeCollectionViewController.h */,
+				6CF7666B1E3A341300D5E8D4 /* NativeCollectionViewController.m */,
 			);
 			name = Native;
 			sourceTree = "<group>";
@@ -252,10 +232,10 @@
 		6CF766661E3A271200D5E8D4 /* Native */ = {
 			isa = PBXGroup;
 			children = (
-				6CF766531E38DA1C00D5E8D4 /* NativeCollectionViewController.swift */,
-				6CF766541E38DA1C00D5E8D4 /* NativeTableViewController.swift */,
 				6CF766551E38DA1C00D5E8D4 /* NativeViewController.swift */,
 				6CF766561E38DA1C00D5E8D4 /* TemplatesTableViewController.swift */,
+				6CF766541E38DA1C00D5E8D4 /* NativeTableViewController.swift */,
+				6CF766531E38DA1C00D5E8D4 /* NativeCollectionViewController.swift */,
 			);
 			name = Native;
 			sourceTree = "<group>";
@@ -415,17 +395,13 @@
 				471C4DB31D251D5B00699B11 /* AppDelegate.m in Sources */,
 				6CF766641E3A25DC00D5E8D4 /* NativeTemplatesTableViewController.m in Sources */,
 				6CF766611E38FEF700D5E8D4 /* NativeAdViewController.m in Sources */,
-				477F58171D38835100D1AD6C /* NativeTemplateLineOne.m in Sources */,
-				477F580E1D38833000D1AD6C /* NativeTemplateBlockOne.m in Sources */,
-				477F581A1D38835A00D1AD6C /* NativeTemplateLineTwo.m in Sources */,
-				477F58111D38833A00D1AD6C /* NativeTemplateBlockTwo.m in Sources */,
 				471C4DB01D251D5B00699B11 /* main.m in Sources */,
 				471C4DEF1D252BB100699B11 /* TableViewController.m in Sources */,
-				477F58141D38834500D1AD6C /* NativeTemplateBlockThree.m in Sources */,
+				6CF7666C1E3A341300D5E8D4 /* NativeCollectionViewController.m in Sources */,
 				471C4DF21D252BBB00699B11 /* ADCell.m in Sources */,
 				471C4DE31D252B8000699B11 /* BannerHeight50.m in Sources */,
-				477F581D1D38836300D1AD6C /* NativeTemplateLineThree.m in Sources */,
 				474696F11D9E8EEE00C2C496 /* ADCollectionCell.m in Sources */,
+				6CF766691E3A340100D5E8D4 /* NativeAdTableViewController.m in Sources */,
 				471C4DE91D252B9600699B11 /* Banner300x250.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

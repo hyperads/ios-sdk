@@ -17,10 +17,6 @@ extension NativeTableViewController: HADNativeAdDelegate {
     func hadNativeAdDidClick(nativeAd: HADNativeAd) {
         print("hadNativeAdDidClick")
     }
-    
-    //func nativeAdDidFinishHandlingClick(nativeAd: HADNativeAd) {
-    //    print("nativeAdDidFinishHandlingClick")
-    //}
 }
 
 //MARK: - HADNativeAdsManagerDelegate implementation
@@ -56,9 +52,6 @@ class NativeTableViewController: UITableViewController {
     var _tableViewContentArray:[String]?
     
     let stride = 15
-    
-    var alreadyLoadedAdsInRows = [Int]()
-    var alreadyLoadedAds = [Int: HADNativeAd]()
     
     override open func viewDidLoad() {
         super.viewDidLoad()

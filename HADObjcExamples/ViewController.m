@@ -23,9 +23,9 @@
     [super viewDidLoad];
     
     self.sectionNames = @[@"Native", @"Interstitial"];//, @"Banners"
-    self.sectionRows = @[@[@"Native Ad", @"Native Ads Templates"],@[@"Interstitial"],@[@"Banner Ad Height 50", @"Banner Ad Height 90", @"Banner Ad 300x250", @"TableView with Banner Ads", @"CollectionView with Banner Ads"]];
+    self.sectionRows = @[@[@"Native Ad", @"Native Ads Templates", @"TableView with Native Ads", @"CollectionView with Native Ads"],@[@"Interstitial"],@[@"Banner Ad Height 50", @"Banner Ad Height 90", @"Banner Ad 300x250", @"TableView with Banner Ads", @"CollectionView with Banner Ads"]];
     
-    //, @"TableView with Native Ads", @"CollectionView with Native Ads"
+    //
     
     [self.tableView setDelegate:self];
     [self.tableView setDataSource:self];
