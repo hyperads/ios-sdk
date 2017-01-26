@@ -44,8 +44,6 @@
 
 -(void)hadNativeAdDidLoadWithNativeAd:(HADNativeAd *)nativeAd{
     
-    //[self.nativeAd.icon]
-    
     if (self.nativeAd != nil) {
         [self.nativeAd unregisterView];
     }
@@ -60,8 +58,7 @@
     
     HADNativeAdView *adView = [HADNativeAdView nativeAdViewWithNativeAd:nativeAd
                                                              withType:self.templateType withAttributes:attributes];
-    
-    [self.view addSubview:adView];
+
     
     int height;
     

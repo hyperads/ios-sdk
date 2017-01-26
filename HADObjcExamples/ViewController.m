@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-@interface ViewController () <HADInterstitialAdDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface ViewController () <HADInterstitialAdDelegate, HADAdViewDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) HADInterstitialAd *interstitial;
@@ -22,15 +22,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.sectionNames = @[@"Native", @"Interstitial"];//, @"Banners"
+    self.sectionNames = @[@"Native", @"Interstitial", @"Banners"];
     self.sectionRows = @[@[@"Native Ad", @"Native Ads Templates", @"TableView with Native Ads", @"CollectionView with Native Ads"],@[@"Interstitial"],@[@"Banner Ad Height 50", @"Banner Ad Height 90", @"Banner Ad 300x250", @"TableView with Banner Ads", @"CollectionView with Banner Ads"]];
-    
-    //
     
     [self.tableView setDelegate:self];
     [self.tableView setDataSource:self];
-    
-    // Do any additional setup after loading the view, typically from a nib.
 }
 
 
@@ -72,6 +68,12 @@
         [self performSegueWithIdentifier:adName sender:nil];
     }else if ([adName isEqualToString:@"Interstitial"]){
         [self showInterstitial];
+    }else if ([adName isEqualToString:@"Banner Ad Height 50"]){
+        [self showBanner:HADAdSizeHeight50Banner];
+    }else if ([adName isEqualToString:@"Banner Ad Height 90"]){
+        [self showBanner:HADAdSizeHeight90Banner];
+    }else if ([adName isEqualToString:@"Banner Ad 300x250"]){
+        [self showBanner:HADAdSizeHeight250Rectangle];
     }else{
         NSLog(@"Not yet implemented");
         
@@ -84,6 +86,48 @@
     self.interstitial = [[HADInterstitialAd alloc] initWithPlacementID:@"5b3QbMRQ"];
     self.interstitial.delegate = self;
     [self.interstitial loadAd];
+}
+
+- (void)showBanner:(HADAdSize)size {
+    
+    HADAdView *adView = [[HADAdView alloc] initWithPlacementID:@"5b3QbMRQ" adSize:size viewController:self];
+    adView.delegate = self;
+    [adView loadAd];
+    
+    //create controller
+    UIViewController *adController = [UIViewController new];
+    adController.view.backgroundColor = [UIColor lightGrayColor];
+    [adController.view addSubview:adView];
+    
+    //set ad size
+    int adHeight;
+    
+    if(size == HADAdSizeHeight250Rectangle){
+        adHeight = 250;
+    }else if(size == HADAdSizeHeight50Banner){
+        adHeight = 50;
+    }else if(size == HADAdSizeHeight90Banner){
+        adHeight = 90;
+    }
+
+    adView.frame = CGRectMake(0, 100, self.view.frame.size.width, adHeight);
+    
+    //show controller with ad
+    [self.navigationController pushViewController:adController animated:@YES];
+}
+
+#pragma mark - HADAdViewDelegate
+
+-(void)hadViewDidLoadWithAdView:(HADAdView *)adView{
+    NSLog(@"hadViewDidLoadWithAdView");
+}
+
+-(void)hadViewDidClickWithAdView:(HADAdView *)adView{
+    NSLog(@"hadViewDidClickWithAdView");
+}
+
+-(void)hadViewDidFailWithAdView:(HADAdView *)adView withError:(NSError *)error{
+    NSLog(@"hadViewDidFailWithAdView: %@", error);
 }
 
 #pragma mark - HADInterstitialAdDelegate
