@@ -87,7 +87,6 @@ Cache Constants | Description
 Step 3. The next step is to show ad when content is ready. You would need to implement `hadNativeAdDidLoad` method in View Controller file.
 
 ```swift
-//MARK: HADNativeAd Delegate
 func hadNativeAdDidLoad(nativeAd: HADNativeAd) {
     if self.nativeAd != nil {
         self.nativeAd.unregisterView()
@@ -176,18 +175,22 @@ You will call `loadImageAsyncWithBlock` to asynchronously load the image content
 For finer control of what is clickable, you can use the ` registerViewForInteraction:withViewController:withClickableViews:` method to register a list of views that can be clicked. For example if we only want to make the ad image and the call to action button clickable in the previous example, we can write like this:
 
 ```swift
-//MARK: HADNativeAd Delegate
 func hadNativeAdDidLoad(nativeAd: HADNativeAd) {
 ...
-    self.nativeAd.registerViewForInteraction(adView: self.adView, withViewController: self, withClickableViews: [mediaView, ctaButton])
+    self.nativeAd.registerViewForInteraction(adView: self.adView, 
+                                withViewController: self, withClickableViews: [mediaView, ctaButton])
 ...
 }
 ```
 
 ```objective-c
 ...
-    self.nativeAd.registerViewForInteraction(adView: self.adView, withViewController: self, withClickableViews: [descLabel, iconImageView, ctaButton])
+-(void)hadNativeAdDidLoadWithNativeAd:(HADNativeAd *)nativeAd{
 ...
+    self.nativeAd.registerViewForInteraction(adView: self.adView, 
+                                withViewController: self, withClickableViews: [descLabel, iconImageView, ctaButton])
+...
+}
 ```
 
 ## Native Ads Template
@@ -209,17 +212,11 @@ func hadNativeAdDidLoad(nativeAd: HADNativeAd) {
 ```objective-c
 -(void)hadNativeAdDidLoadWithNativeAd:(HADNativeAd *)nativeAd{
 
-    if (self.nativeAd != nil) {
-        [self.nativeAd unregisterView];
-    }
-
-    self.nativeAd = nativeAd;
-
     HADNativeAdView *adView = [HADNativeAdView nativeAdViewWithNativeAd:nativeAd withType:HADNativeAdViewTypeHeight300];
     [self.view addSubview:adView];
 
     adView.frame = CGRectMake(0, 100, self.view.bounds.size.width, 300);
-    [self.nativeAd registerViewForInteractionWithAdView:adView withViewController:self];
+    [nativeAd registerViewForInteractionWithAdView:adView withViewController:self];
 }
 ```
 
@@ -254,8 +251,8 @@ You will need to build `HADNativeAdViewAttributes` object and provide a loaded n
 
 
 ```swift
-func hadNativeAdDidLoad(nativeAd: HADNativeAd) {
-
+func hadNativeAdDidLoad(nativeAd: HADNativeAd) 
+{
     let attributes:HADNativeAdViewAttributes = HADNativeAdViewAttributes();
     attributes.backgroundColor = UIColor.black
     attributes.buttonColor = UIColor.red
@@ -267,10 +264,9 @@ func hadNativeAdDidLoad(nativeAd: HADNativeAd) {
 ```
 
 ```objective-c
--(void)hadNativeAdDidLoadWithNativeAd:(HADNativeAd *)nativeAd{
-
+-(void)hadNativeAdDidLoadWithNativeAd:(HADNativeAd *)nativeAd
+{
     HADNativeAdViewAttributes *attributes = [[HADNativeAdViewAttributes alloc] init];
-
     attributes.backgroundColor = [UIColor blackColor];
     attributes.buttonColor = [UIColor redColor];
     attributes.buttonTitleColor = [UIColor whiteColor];
@@ -348,22 +344,23 @@ self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: kDefaultCe
 ```
 
 ```objective-c
-[self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kDefaultCellIdentifier];	
+[self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier: kDefaultCellIdentifier];	
 ```
 
 You will need to implement the required methods for `UITableViewDataSource` and `UITableViewDelegate` to show contents in the table view.
 ```swift
-override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int 
+{
     return self.tableViewContentArray.count
 }
 
-override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell 
+{
     let cell = tableView.dequeueReusableCell(withIdentifier: kDefaultCellIdentifier, for: indexPath)
-    var label = "---"
     if let newIndexPath = ads?.adjustNonAdCell(indexPath:indexPath, forStride:stride) {
-        label = (tableViewContentArray()?[newIndexPath.row])!
+        indexPath = newIndexPath
     }
-    cell.textLabel?.text = label
+    cell.textLabel?.text = (tableViewContentArray()?[indexPath.row])!
     return cell
 }
 ```
@@ -429,7 +426,7 @@ override open func viewDidLoad() {
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kDefaultCellIdentifier];
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier: kDefaultCellIdentifier];
 
     if (!self.adsManager) {
         self.adsManager = [[HADNativeAdsManager alloc] initWithPlacementID:@"PLACEMENT_ID" numAdsRequested:5];
@@ -458,7 +455,7 @@ func nativeAdsLoaded() {
 }
 
 func nativeAdsFailedToLoad(error: NSError?) {
-    print("HADNativeAdsManagerDelegate nativeAdsFailedToLoad")
+    print("Native ad failed to load with error: \(error)")
 }
 ```
 
@@ -478,8 +475,6 @@ In this step, you will learn how to use `HADNativeAdTableViewCellProvider` to di
 1. In `nativeAdsLoaded` method, add the following lines of code.
 ```swift
 func nativeAdsLoaded() {
-    print("Native ad was loaded, constructing native UI...")
-
     let cellProvider = HADNativeAdTableViewCellProvider(manager: adsManager, forType: .height300)
     ads = cellProvider
     ads?.delegate = self
@@ -491,7 +486,6 @@ func nativeAdsLoaded() {
 
 ```objective-c
 - (void)nativeAdsLoaded {
-    NSLog(@"Native ad was loaded, constructing native UI...");
     HADNativeAdTableViewCellProvider *cellProvider = [[HADNativeAdTableViewCellProvider alloc] initWithManager:self.adsManager forType:HADNativeAdViewTypeHeight300];
     self.ads = cellProvider;
     self.ads.delegate = self;
@@ -524,7 +518,7 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
         var label = "---"
         // In this example we need to adjust the index back to the domain of the data.
         if let newIndexPath = ads?.adjustNonAdCell(indexPath:indexPath, forStride:stride) {
-            label = (tableViewContentArray()?[newIndexPath.row])!
+        label = (tableViewContentArray()?[newIndexPath.row])!
         }
         cell.textLabel?.text = label
         return cell
@@ -565,8 +559,6 @@ override func tableView(_ tableView: UITableView, heightForRowAt indexPath: Inde
         return cell;
     }
 }
-
-#pragma mark - UITableViewDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
