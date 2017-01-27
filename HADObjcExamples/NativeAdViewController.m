@@ -34,8 +34,6 @@
 
 -(void)hadNativeAdDidLoadWithNativeAd:(HADNativeAd *)nativeAd{
     
-    //[self.nativeAd.icon]
-    
     if (self.nativeAd != nil) {
         [self.nativeAd unregisterView];
     }

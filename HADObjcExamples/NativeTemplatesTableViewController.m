@@ -52,8 +52,8 @@
     
     HADNativeAdViewAttributes *attributes = [[HADNativeAdViewAttributes alloc] init];
     
-    attributes.backgroundColor = [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1];
-    attributes.buttonColor = [UIColor colorWithRed:66/255.0 green:108/255.0 blue:173/255.0 alpha:1];
+    attributes.backgroundColor = [UIColor blackColor];
+    attributes.buttonColor = [UIColor redColor];
     attributes.buttonTitleColor = [UIColor whiteColor];
     
     HADNativeAdView *adView = [HADNativeAdView nativeAdViewWithNativeAd:nativeAd

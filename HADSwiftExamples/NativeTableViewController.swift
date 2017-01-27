@@ -51,11 +51,12 @@ class NativeTableViewController: UITableViewController {
     var ads:HADNativeAdTableViewCellProvider?
     var _tableViewContentArray:[String]?
     
+    let kDefaultCellIdentifier = "Cell"
     let stride = 15
     
     override open func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: kDefaultCellIdentifier)
         self.loadNativeAds()
     }
     
@@ -95,12 +96,11 @@ class NativeTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        
         // For ad cells just as the ad cell provider, for normal cells do whatever you would do.
         if ads?.isAdCell(indexPath:indexPath, forStride:stride) == true {
             return (ads?.cellOf(tableView, forRowAt: indexPath))!
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: kDefaultCellIdentifier, for: indexPath)
             var label = "---"
             // In this example we need to adjust the index back to the domain of the data.
             if let newIndexPath = ads?.adjustNonAdCell(indexPath:indexPath, forStride:stride) {
