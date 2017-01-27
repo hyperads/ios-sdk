@@ -29,8 +29,6 @@
     [self.tableView setDataSource:self];
 }
 
-
-
 #pragma mark - UITableViewDelegate
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -75,10 +73,7 @@
     }else if ([adName isEqualToString:@"Banner Ad 300x250"]){
         [self showBanner:HADAdSizeHeight250Rectangle];
     }else{
-        NSLog(@"Not yet implemented");
-        
-        //[self showBanner:HADAdSizeHeight50Banner];
-        //[self performSegueWithIdentifier:adName sender:nil];
+        [self performSegueWithIdentifier:adName sender:nil];
     }
 }
 

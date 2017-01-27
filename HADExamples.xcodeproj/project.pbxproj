@@ -38,6 +38,8 @@
 		6CF766641E3A25DC00D5E8D4 /* NativeTemplatesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF766631E3A25DC00D5E8D4 /* NativeTemplatesTableViewController.m */; };
 		6CF766691E3A340100D5E8D4 /* NativeAdTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF766681E3A340100D5E8D4 /* NativeAdTableViewController.m */; };
 		6CF7666C1E3A341300D5E8D4 /* NativeCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF7666B1E3A341300D5E8D4 /* NativeCollectionViewController.m */; };
+		6CF7666F1E3B5D4000D5E8D4 /* BannerCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF7666E1E3B5D4000D5E8D4 /* BannerCollectionViewController.m */; };
+		6CF766721E3B5D5C00D5E8D4 /* BannerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF766711E3B5D5C00D5E8D4 /* BannerTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -111,6 +113,10 @@
 		6CF766681E3A340100D5E8D4 /* NativeAdTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeAdTableViewController.m; sourceTree = "<group>"; };
 		6CF7666A1E3A341300D5E8D4 /* NativeCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeCollectionViewController.h; sourceTree = "<group>"; };
 		6CF7666B1E3A341300D5E8D4 /* NativeCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeCollectionViewController.m; sourceTree = "<group>"; };
+		6CF7666D1E3B5D4000D5E8D4 /* BannerCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerCollectionViewController.h; sourceTree = "<group>"; };
+		6CF7666E1E3B5D4000D5E8D4 /* BannerCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerCollectionViewController.m; sourceTree = "<group>"; };
+		6CF766701E3B5D5C00D5E8D4 /* BannerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerTableViewController.h; sourceTree = "<group>"; };
+		6CF766711E3B5D5C00D5E8D4 /* BannerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +180,10 @@
 				471C4DB21D251D5B00699B11 /* AppDelegate.m */,
 				471C4DDE1D252B7300699B11 /* ViewController.h */,
 				471C4DDF1D252B7300699B11 /* ViewController.m */,
+				6CF766701E3B5D5C00D5E8D4 /* BannerTableViewController.h */,
+				6CF766711E3B5D5C00D5E8D4 /* BannerTableViewController.m */,
+				6CF7666D1E3B5D4000D5E8D4 /* BannerCollectionViewController.h */,
+				6CF7666E1E3B5D4000D5E8D4 /* BannerCollectionViewController.m */,
 				6CF766651E3A25E700D5E8D4 /* Native */,
 				6CF7665E1E38FEC100D5E8D4 /* Dep */,
 				471C4DF31D252BCA00699B11 /* Main.storyboard */,
@@ -392,11 +402,13 @@
 				474696EE1D9E8EC000C2C496 /* CollectionViewController.m in Sources */,
 				471C4DE01D252B7300699B11 /* ViewController.m in Sources */,
 				471C4DE61D252B8A00699B11 /* BannerHeight90.m in Sources */,
+				6CF766721E3B5D5C00D5E8D4 /* BannerTableViewController.m in Sources */,
 				471C4DB31D251D5B00699B11 /* AppDelegate.m in Sources */,
 				6CF766641E3A25DC00D5E8D4 /* NativeTemplatesTableViewController.m in Sources */,
 				6CF766611E38FEF700D5E8D4 /* NativeAdViewController.m in Sources */,
 				471C4DB01D251D5B00699B11 /* main.m in Sources */,
 				471C4DEF1D252BB100699B11 /* TableViewController.m in Sources */,
+				6CF7666F1E3B5D4000D5E8D4 /* BannerCollectionViewController.m in Sources */,
 				6CF7666C1E3A341300D5E8D4 /* NativeCollectionViewController.m in Sources */,
 				471C4DF21D252BBB00699B11 /* ADCell.m in Sources */,
 				471C4DE31D252B8000699B11 /* BannerHeight50.m in Sources */,
