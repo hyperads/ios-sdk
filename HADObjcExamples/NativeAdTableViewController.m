@@ -48,7 +48,7 @@ static int const kRowStrideForAdCell = 15;
         self.adsManager.delegate = self;
         
         // Configure native ad manager to wait to call nativeAdsLoaded until all ad assets are loaded
-        //self.adsManager.mediaCachePolicy = HADNativeAdsCachePolicyAll;
+        self.adsManager.mediaCachePolicy = HADNativeAdsCachePolicyAll;
     }
     
     [self.adsManager loadAds];
@@ -66,6 +66,10 @@ static int const kRowStrideForAdCell = 15;
     
     [self.tableView reloadData];
     [self.tableView layoutIfNeeded];
+}
+
+-(void)nativeAdsFailedToLoadWithError:(NSError *)error{
+    NSLog(@"Native ad failed to load with error: %@", error);
 }
 
 #pragma mark - Table view data source

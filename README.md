@@ -51,7 +51,7 @@ You can implement the following ad formats in your iOS application:
 
 ### Adapters for integration with popular Networks
 
-HyperADX provides MoPub and AdMob adapters for iOS applications. Publishers using MoPub and AdMob to mediate ad networks for their iOS apps can now take advantage of serving Hypeadx's native (MoPub only), interstitial and banner ads through MoPub's and AdMob's mediation solutions.
+HyperADX provides MoPub and AdMob adapters for iOS applications. Publishers using MoPub and AdMob to mediate ad networks for their iOS apps can now take advantage of serving HypeADX's, interstitial and banner ads through MoPub's and AdMob's mediation solutions.
 
 The sections below will let you know how to add the network adapter.
 
