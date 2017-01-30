@@ -14,7 +14,7 @@ Please complete the steps mentioned in the [Setup the SDK](../README.md#getting-
 
 ## Implementation
 
-Step 1. Now, in your View Controller implementation file, import the SDK and declare that you implement the `HADNativeAdDelegate` protocol as well as declare and connect instance variables to your Storyboard or .XIB:
+*Step 1.* Now, in your View Controller implementation file, import the SDK and declare that you implement the `HADNativeAdDelegate` protocol as well as declare and connect instance variables to your Storyboard or .XIB:
 
 ```swift
 import HADFramework
@@ -45,7 +45,7 @@ class MyViewController: UIViewController, HADNativeAdDelegate {
 @end
 ```
 
-Step 2. Then, add a method in your View Controller's implementation file that initializes `HADNativeAd` and request an ad to load:
+*Step 2.* Then, add a method in your View Controller's implementation file that initializes `HADNativeAd` and request an ad to load:
 
 ```swift
 override func viewDidLoad() {
@@ -84,7 +84,7 @@ Cache Constants | Description
 `ALL` | Pre-cache all (icon, images, and video)
 
 
-Step 3. The next step is to show ad when content is ready. You would need to implement `hadNativeAdDidLoad` method in View Controller file.
+*Step 3.* The next step is to show ad when content is ready. You would need to implement `hadNativeAdDidLoad` method in View Controller file.
 
 ```swift
 func hadNativeAdDidLoad(nativeAd: HADNativeAd) {
@@ -383,7 +383,7 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
 #### Step 2: Use NativeAdManager to Request Ads
 You now have created a table view sample app that shows regular cells. Next, you will use `NativeAdManager` to request ads.
 
-1. In this sample app, it will show one ad cell for every 15 regular cells. First define a static variable used for calculating which cell contains ad content as follows:
+*1.* In this sample app, it will show one ad cell for every 15 regular cells. First define a static variable used for calculating which cell contains ad content as follows:
 ```swift
 let stride = 15
 ```
@@ -392,7 +392,7 @@ let stride = 15
 static NSInteger const kRowStrideForAdCell = 15; 
 ```
 
-2. Add `HADNativeAdsManagerDelegate` and `HADNativeAdDelegate` delegates to the ViewController class.
+*2.* Add `HADNativeAdsManagerDelegate` and `HADNativeAdDelegate` delegates to the ViewController class.
 ```swift
 class TableViewController: UITableViewController, HADNativeAdsManagerDelegate, HADNativeAdDelegate
 ```
@@ -404,7 +404,7 @@ class TableViewController: UITableViewController, HADNativeAdsManagerDelegate, H
 `HADNativeAdsManagerDelegate` is used for notifying whether ads are finished loading by `HADNativeAdsManager` or an error is returned.
 `HADNativeAdDelegate` is used for notifying an ad being viewed or clicked by a user.
 
-3. In viewDidLoad method, add the following lines of code:
+*3.* In viewDidLoad method, add the following lines of code:
 ```swift
 override open func viewDidLoad() {
     super.viewDidLoad()
@@ -448,7 +448,7 @@ In this example, let's request maximum 5 number of ads. This can be set in `[HAD
 Set `mediaCachePolicy` to be `HADNativeAdsCachePolicyAll`. This will configure the native ad to wait to be called in `nativeAdDidLoad` method until all ad assets are loaded. 
 You need to call `[self.adsManager loadAds];` to load ad. 
 
-4. You need to implement `nativeAdsLoaded` and `nativeAdsFailedToLoadWithError` to check if ads are loaded successfully by the adsManager as follows:
+*4.* You need to implement `nativeAdsLoaded` and `nativeAdsFailedToLoadWithError` to check if ads are loaded successfully by the adsManager as follows:
 ```swift
 func nativeAdsLoaded() {
     print("Native ad was loaded, constructing native UI...")

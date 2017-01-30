@@ -19,7 +19,7 @@ HAD.setKeywords(value: "sport,cinema")
 If your app already knows a user's gender, it can provide that information in the ad request for targeting purposes. The information is also forwarded to ad network mediation adapters if mediation is enabled. `HADUserGender` enum contains two possible values.
 
 ```swift
-HAD.setGender(value:.male)
+HAD.setGender(value: .male)
 ```
 
 * Age
@@ -28,12 +28,12 @@ If your app already knows a user's age, it can provide that information in the a
 
 You can set year of birth:
 ```swift
-HAD.setYearOfBirth(value:1983)
+HAD.setYearOfBirth(value: 1983)
 ```
 
 or just age:
 ```swift
-HAD.setAge(value:33)
+HAD.setAge(value: 33)
 ```
 
 * Additional parameters
