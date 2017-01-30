@@ -47,7 +47,7 @@ You can implement the following ad formats in your iOS application:
 * [Banner](docs/_banner.md)
 * [Interstitial](docs/_interstitial.md)
 * [Native & Native video](docs/_native.md)
-
+* [Ad targeting](docs/_target.md)
 
 ### Adapters for integration with popular Networks
 

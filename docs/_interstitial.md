@@ -16,9 +16,14 @@ See the [list of available types](../README.md#ad-types) for information of othe
 import UIKit
 import HADFramework
 
-class MyViewController: UIViewController, HADInterstitialAdDelegate {
+class MyViewController: UIViewController, HADInterstitialAdDelegate
+```
 
-}
+```objective-c
+#import <UIKit/UIKit.h>
+#import <HADFramework/HADFramework.h>
+
+@interface MyViewController () <HADInterstitialAdDelegate>
 ```
 
 2. Next, implement `viewDidLoad` method and `interstitialAdDidLoad`.
@@ -37,12 +42,25 @@ func hadInterstitialAdDidLoad(interstitialAd: HADInterstitialAd) {
 }
 ```
 
+```objective-c
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    HADInterstitialAd *interstitialAd = [[HADInterstitialAd alloc] initWithPlacementID:@"PLACEMENT_ID"];
+    interstitialAd.delegate = self;
+    [interstitialAd loadAd];
+}
+
+-(void)hadInterstitialAdDidLoadWithInterstitialAd:(HADInterstitialAd *)interstitialAd{
+    [interstitialAd showAdFromRootViewController:self];
+}
+```
+
 Replace `PLACEMENT_ID` with your own placement id string. If you don't have a placement id or don't know how to get one, you can refer to the [Setup the SDK](../README.md#set-up-the-sdk)
 
 Optionally, you can add the following functions to handle the cases when the ad is shown, is clicked or closed by users:
 
 ```swift
-// MARK: - HADInterstitialAdDelegate
 func hadInterstitialAdDidClick(interstitialAd: HADInterstitialAd) {
     print("hadInterstitialDidClick")
 }
@@ -57,5 +75,19 @@ func hadInterstitialAdWillClose(interstitialAd: HADInterstitialAd) {
 
 func hadInterstitialAdDidFail(interstitialAd: HADInterstitialAd, withError error: NSError?) {
     print("hadInterstitialDidFail: \(error)")
+}
+```
+
+```objective-c
+-(void)hadInterstitialAdDidFailWithInterstitialAd:(HADInterstitialAd *)interstitialAd withError:(NSError *)error{
+    NSLog(@"HADInterstitialDidFail: %@", error);
+}
+
+-(void)hadInterstitialAdDidClickWithInterstitialAd:(HADInterstitialAd *)interstitialAd{
+    NSLog(@"HADInterstitialDidClick");
+}
+
+-(void)hadInterstitialAdWillCloseWithInterstitialAd:(HADInterstitialAd *)interstitialAd{
+    NSLog(@"HADInterstitialWillClose");
 }
 ```

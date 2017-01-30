@@ -37,123 +37,6 @@ In Mopub's dashboard select **Networks > Add a Network.**
 ![Mopub-3]
 (images/adapters/ios/mopub3.png)
 
-### Native ads
-
-For Native ads:
-
-* Add HADNativeAdAdapter.swift and HADNativeCustomEvent.swift files.
-
-Specify the following values for the fields:
- 
-* Custom Event Class: `HADNativeCustomEvent`
-* Custom Event Class Data: `{"PLACEMENT":"<YOUR PLACEMENT>"}`
-
-**You can use the test placement `5b3QbMRQ`**
-
-Add `HADNativeCustomEvent.swift` and `HADNativeAdAdapter.swift` adapter files in your project. Implement MoPub NativeViewController:
-
-```swift
-import HADFramework
-import UIKit
-
-class NativeViewController: UIViewController, MPNativeAdRendering, MPNativeAdDelegate {
-    @IBOutlet weak var nativeView: NativeView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var mainTextLabel: UILabel!
-    @IBOutlet weak var callToActionLabel: UILabel!
-    @IBOutlet weak var iconImageView: UIImageView!
-    @IBOutlet weak var mainImageView: UIImageView!
-
-    override func viewDidLoad() {
-        let settings = MPStaticNativeAdRendererSettings()
-        settings.renderingViewClass = NativeView.self
-        let config = MPStaticNativeAdRenderer.rendererConfigurationWithRendererSettings(settings)
-        config.supportedCustomEvents = ["HADNativeCustomEvent"]
-        let request = MPNativeAdRequest(adUnitIdentifier: "YOUR_AD_UNIT", rendererConfigurations: [config])
-        request.startWithCompletionHandler { (request, nativeAd, error) in
-            if error != nil {
-                print("Loading error")
-            } else {
-                print("Ad loaded")
-                nativeAd.delegate = self
-                do {
-                    let v = try nativeAd.retrieveAdView()
-                    v.frame = self.view.bounds
-                    self.view.addSubview(v)
-                } catch let error {
-                    print("ERROR: \(error)")
-                }
-            }
-        }
-    }
-
-    //MARK: MPNativeAdRendering
-    func nativeTitleTextLabel() -> UILabel! {
-        return titleLabel
-    }
-
-    func nativeMainTextLabel() -> UILabel! {
-        return mainTextLabel
-    }
-
-    func nativeCallToActionTextLabel() -> UILabel! {
-        return callToActionLabel!
-    }
-
-    func nativeIconImageView() -> UIImageView! {
-        return iconImageView
-    }
-
-    func nativeMainImageView() -> UIImageView! {
-        return mainImageView
-    }
-
-    func nativeVideoView() -> UIView! {
-        return UIView()
-    }
-
-    //MARK: MPNativeAdDelegate
-    func viewControllerForPresentingModalView() -> UIViewController! {
-        return self
-    }
-}
-```
-
-And implement MoPubNativeAdRenderer, e.g.:
-
-```swift
-class NativeView: UIView, MPNativeAdRenderer {
-    //MARK: MPNativeAdRenderer
-    var settings: MPNativeAdRendererSettings!
-
-    required init!(rendererSettings: MPNativeAdRendererSettings!) {
-        super.init(frame: CGRectZero)
-        settings = rendererSettings
-    }
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-
-    static func rendererConfigurationWithRendererSettings(rendererSettings: MPNativeAdRendererSettings!) -> MPNativeAdRendererConfiguration! {
-        let settings = MPStaticNativeAdRendererSettings()
-        settings.renderingViewClass = NativeView.self
-        let config = MPNativeAdRendererConfiguration()
-        config.rendererSettings = settings
-        config.supportedCustomEvents = ["NativeView"]
-        return config
-    }
-
-    func retrieveViewWithAdapter(adapter: MPNativeAdAdapter!) throws -> UIView {
-        return UIView()
-    }
-}
-```
-
 ### Interstitial
 
 For Interstitial ads specify the following values for the fields:
@@ -183,14 +66,11 @@ class ViewController: UIViewController, MPInterstitialAdControllerDelegate {
     //MARK: MPInterstitialAdControllerDelegate
     func interstitialDidLoadAd(interstitial: MPInterstitialAdController!) {
         print("interstitialDidLoadAd")
-        interstitial.showFromViewController(self)
+        interstitial.show(from: self)
     }
 
     func interstitialDidFailToLoadAd(inter: MPInterstitialAdController!) {
         print("interstitialDidFailToLoadAd")
-        interstitial = MPInterstitialAdController(forAdUnitId: "5b0f8ff979a840b4928ca7fd14ec82e7")
-        interstitial.delegate = self
-        interstitial.loadAd()
     }
 }
 ```
@@ -215,9 +95,9 @@ class ViewController: UIViewController, MPAdViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         //Banner 320x50
-        let m = MPAdView(adUnitId: "YOUR_AD_UNIT", size: CGSizeMake(320, 50))
+        let m = MPAdView(adUnitId: "YOUR_AD_UNIT", size: CGSize(width: 320, height: 50))
         m.delegate = self
-        m.frame = CGRectMake((UIScreen.mainScreen().bounds.width-320)/2, 100, 320, 50)
+        m.frame = CGRectMake(x: (UIScreen.main.bounds.width-320)/2, y: 100, width: 320, height: 50)
         view.addSubview(m)
         m.loadAd()
     }

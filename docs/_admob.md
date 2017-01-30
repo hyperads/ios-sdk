@@ -58,8 +58,8 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     override func viewDidLoad() {
         let request = GADRequest()
         //Banner 320x50
-        bannerView = GADBannerView(adSize: GADAdSize.init(size: CGSizeMake(320, 50), flags: 0))
-        bannerView.frame.origin.x = (UIScreen.mainScreen().bounds.width-320)/2
+        bannerView = GADBannerView(adSize: GADAdSize.init(size: CGSize(width: 320, height: 50), flags: 0))
+        bannerView.frame.origin.x = (UIScreen.main.bounds.width-320)/2
         bannerView.frame.origin.y = 100
         bannerView.adUnitID = "YOUR_ADUNIT_ID"
         bannerView.rootViewController = self
@@ -116,7 +116,7 @@ class ViewController: UIViewController, GADInterstitialDelegate {
 
     @IBAction func createAndLoadInterstitial() {
         if interstitial.isReady {
-            interstitial.presentFromRootViewController(self)
+            interstitial.present(fromRootViewController: self)
         } else {
             print("Ad wasn't ready")
         }

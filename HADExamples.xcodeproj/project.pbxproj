@@ -14,14 +14,7 @@
 		471C4DBB1D251D5B00699B11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 471C4DBA1D251D5B00699B11 /* Assets.xcassets */; };
 		471C4DBE1D251D5B00699B11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 471C4DBC1D251D5B00699B11 /* LaunchScreen.storyboard */; };
 		471C4DE01D252B7300699B11 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 471C4DDF1D252B7300699B11 /* ViewController.m */; };
-		471C4DE31D252B8000699B11 /* BannerHeight50.m in Sources */ = {isa = PBXBuildFile; fileRef = 471C4DE21D252B8000699B11 /* BannerHeight50.m */; };
-		471C4DE61D252B8A00699B11 /* BannerHeight90.m in Sources */ = {isa = PBXBuildFile; fileRef = 471C4DE51D252B8A00699B11 /* BannerHeight90.m */; };
-		471C4DE91D252B9600699B11 /* Banner300x250.m in Sources */ = {isa = PBXBuildFile; fileRef = 471C4DE81D252B9600699B11 /* Banner300x250.m */; };
-		471C4DEF1D252BB100699B11 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 471C4DEE1D252BB100699B11 /* TableViewController.m */; };
-		471C4DF21D252BBB00699B11 /* ADCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 471C4DF11D252BBB00699B11 /* ADCell.m */; };
 		471C4DF41D252BCA00699B11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 471C4DF31D252BCA00699B11 /* Main.storyboard */; };
-		474696EE1D9E8EC000C2C496 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 474696ED1D9E8EC000C2C496 /* CollectionViewController.m */; };
-		474696F11D9E8EEE00C2C496 /* ADCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 474696F01D9E8EEE00C2C496 /* ADCollectionCell.m */; };
 		6CC06B941DB63F5700AA3140 /* HADFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CC06B931DB63F5700AA3140 /* HADFramework.framework */; };
 		6CC06B951DB63F5700AA3140 /* HADFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6CC06B931DB63F5700AA3140 /* HADFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6CC06B961DB63F5C00AA3140 /* HADFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CC06B931DB63F5700AA3140 /* HADFramework.framework */; };
@@ -81,21 +74,7 @@
 		471C4DBF1D251D5B00699B11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		471C4DDE1D252B7300699B11 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		471C4DDF1D252B7300699B11 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		471C4DE11D252B8000699B11 /* BannerHeight50.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerHeight50.h; sourceTree = "<group>"; };
-		471C4DE21D252B8000699B11 /* BannerHeight50.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerHeight50.m; sourceTree = "<group>"; };
-		471C4DE41D252B8A00699B11 /* BannerHeight90.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerHeight90.h; sourceTree = "<group>"; };
-		471C4DE51D252B8A00699B11 /* BannerHeight90.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerHeight90.m; sourceTree = "<group>"; };
-		471C4DE71D252B9600699B11 /* Banner300x250.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Banner300x250.h; sourceTree = "<group>"; };
-		471C4DE81D252B9600699B11 /* Banner300x250.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Banner300x250.m; sourceTree = "<group>"; };
-		471C4DED1D252BB100699B11 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
-		471C4DEE1D252BB100699B11 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
-		471C4DF01D252BBB00699B11 /* ADCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADCell.h; sourceTree = "<group>"; };
-		471C4DF11D252BBB00699B11 /* ADCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADCell.m; sourceTree = "<group>"; };
 		471C4DF31D252BCA00699B11 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		474696EC1D9E8EC000C2C496 /* CollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
-		474696ED1D9E8EC000C2C496 /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
-		474696EF1D9E8EEE00C2C496 /* ADCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADCollectionCell.h; sourceTree = "<group>"; };
-		474696F01D9E8EEE00C2C496 /* ADCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADCollectionCell.m; sourceTree = "<group>"; };
 		6CC06B931DB63F5700AA3140 /* HADFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HADFramework.framework; sourceTree = "<group>"; };
 		6CF7664E1E38D9FD00D5E8D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6CF766501E38DA1C00D5E8D4 /* BannerCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerCollectionViewController.swift; sourceTree = "<group>"; };
@@ -185,10 +164,9 @@
 				6CF7666D1E3B5D4000D5E8D4 /* BannerCollectionViewController.h */,
 				6CF7666E1E3B5D4000D5E8D4 /* BannerCollectionViewController.m */,
 				6CF766651E3A25E700D5E8D4 /* Native */,
-				6CF7665E1E38FEC100D5E8D4 /* Dep */,
 				471C4DF31D252BCA00699B11 /* Main.storyboard */,
-				471C4DBA1D251D5B00699B11 /* Assets.xcassets */,
 				471C4DBC1D251D5B00699B11 /* LaunchScreen.storyboard */,
+				471C4DBA1D251D5B00699B11 /* Assets.xcassets */,
 				471C4DBF1D251D5B00699B11 /* Info.plist */,
 				471C4DAE1D251D5B00699B11 /* Supporting Files */,
 			);
@@ -201,27 +179,6 @@
 				471C4DAF1D251D5B00699B11 /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		6CF7665E1E38FEC100D5E8D4 /* Dep */ = {
-			isa = PBXGroup;
-			children = (
-				471C4DE21D252B8000699B11 /* BannerHeight50.m */,
-				471C4DE11D252B8000699B11 /* BannerHeight50.h */,
-				471C4DE41D252B8A00699B11 /* BannerHeight90.h */,
-				471C4DE51D252B8A00699B11 /* BannerHeight90.m */,
-				471C4DE71D252B9600699B11 /* Banner300x250.h */,
-				471C4DE81D252B9600699B11 /* Banner300x250.m */,
-				471C4DED1D252BB100699B11 /* TableViewController.h */,
-				471C4DEE1D252BB100699B11 /* TableViewController.m */,
-				474696EC1D9E8EC000C2C496 /* CollectionViewController.h */,
-				474696ED1D9E8EC000C2C496 /* CollectionViewController.m */,
-				471C4DF01D252BBB00699B11 /* ADCell.h */,
-				471C4DF11D252BBB00699B11 /* ADCell.m */,
-				474696EF1D9E8EEE00C2C496 /* ADCollectionCell.h */,
-				474696F01D9E8EEE00C2C496 /* ADCollectionCell.m */,
-			);
-			name = Dep;
 			sourceTree = "<group>";
 		};
 		6CF766651E3A25E700D5E8D4 /* Native */ = {
@@ -299,7 +256,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0800;
-				ORGANIZATIONNAME = "Mihael Isaev";
+				ORGANIZATIONNAME = HyperADX;
 				TargetAttributes = {
 					471C4D831D251B5000699B11 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -399,22 +356,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				474696EE1D9E8EC000C2C496 /* CollectionViewController.m in Sources */,
 				471C4DE01D252B7300699B11 /* ViewController.m in Sources */,
-				471C4DE61D252B8A00699B11 /* BannerHeight90.m in Sources */,
 				6CF766721E3B5D5C00D5E8D4 /* BannerTableViewController.m in Sources */,
 				471C4DB31D251D5B00699B11 /* AppDelegate.m in Sources */,
 				6CF766641E3A25DC00D5E8D4 /* NativeTemplatesTableViewController.m in Sources */,
 				6CF766611E38FEF700D5E8D4 /* NativeAdViewController.m in Sources */,
 				471C4DB01D251D5B00699B11 /* main.m in Sources */,
-				471C4DEF1D252BB100699B11 /* TableViewController.m in Sources */,
 				6CF7666F1E3B5D4000D5E8D4 /* BannerCollectionViewController.m in Sources */,
 				6CF7666C1E3A341300D5E8D4 /* NativeCollectionViewController.m in Sources */,
-				471C4DF21D252BBB00699B11 /* ADCell.m in Sources */,
-				471C4DE31D252B8000699B11 /* BannerHeight50.m in Sources */,
-				474696F11D9E8EEE00C2C496 /* ADCollectionCell.m in Sources */,
 				6CF766691E3A340100D5E8D4 /* NativeAdTableViewController.m in Sources */,
-				471C4DE91D252B9600699B11 /* Banner300x250.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
