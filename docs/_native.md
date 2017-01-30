@@ -284,7 +284,7 @@ Implement the Native Ads Manager along side your Native Ads integration. Native 
 
 #### Step 1: Create Table View Controller
 
-1. Open your Table View Controller implementation file and add `tableView`, `adsManager`, `ads`, and `tableViewContentArray` instance variables.
+**1.** Open your Table View Controller implementation file and add `tableView`, `adsManager`, `ads`, and `tableViewContentArray` instance variables.
 
 ```swift
 class NativeTableViewController: UITableViewController {
@@ -308,7 +308,7 @@ class NativeTableViewController: UITableViewController {
 `ads` is used for providing the UITableViewCell that shows the content of ad.
 `tableViewContentArray` is used for storing the normal non-ad content.
 
-2. Add the implementation for tableViewContentArray property to store the normal non-ad content as follows:
+**2.** Add the implementation for tableViewContentArray property to store the normal non-ad content as follows:
 
 ```swift
 func tableViewContentArray() -> [String]?{
@@ -338,7 +338,7 @@ func tableViewContentArray() -> [String]?{
 ```
 `tableViewContentArray` is an array that contains a list of string text indexed from 1 to 10. And it will be displayed in a regular cell. 
 
-3. In `viewDidLoad` method, add the following lines of code to setup for the table view property.
+**3.** In `viewDidLoad` method, add the following lines of code to setup for the table view property.
 ```swift
 self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: kDefaultCellIdentifier)
 ```
@@ -472,7 +472,7 @@ func nativeAdsFailedToLoad(error: NSError?) {
 #### Step 3: Use NativeAdManager to Show Ads
 In this step, you will learn how to use `HADNativeAdTableViewCellProvider` to display ads in the table view cell.
 
-1. In `nativeAdsLoaded` method, add the following lines of code.
+**1.** In `nativeAdsLoaded` method, add the following lines of code.
 ```swift
 func nativeAdsLoaded() {
     let cellProvider = HADNativeAdTableViewCellProvider(manager: adsManager, forType: .height300)
@@ -496,7 +496,7 @@ func nativeAdsLoaded() {
 ```
 The native ad cell provider operates over a loaded ads manager and can create table cells with native ad templates in them as well as help with the math to have a consistent distribution of ads within a table. 
 
-2. You will modify `numberOfRowsInSection`, `cellForRowAtIndexPath` and `heightForRowAtIndexPath` methods as follows:
+**2.** You will modify `numberOfRowsInSection`, `cellForRowAtIndexPath` and `heightForRowAtIndexPath` methods as follows:
 ```swift
 override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int 
 {
