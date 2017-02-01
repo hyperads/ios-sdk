@@ -1,6 +1,10 @@
 # Native ads
 
 The HyperADX's Native Ads allows you to build a customized experience for the ads displayed in your app. When using the Native Ad API, instead of receiving an ad ready to be displayed, you will receive a group of ad properties such as a title, an image, a call to action. These properties are used to construct a custom UIView, which displays the ad.
+The [Native Ad templates](https://github.com/hyperads/ios-sdk/blob/3.0/docs/_native.md#native-ads-template)
+ allows you to use and customize the prepared Ad banner views.
+You can implement the [Native Ads Manager](https://github.com/hyperads/ios-sdk/blob/3.0/docs/_native.md#native-ads-manager) to displayg multiple ads within a short amount of time, or to automatically refresh and deliver ads in an application.
+
 
 **There are three actions you will need to take to implement this in your app:**
 
