@@ -8,7 +8,7 @@ You can implement the [Native Ads Manager](https://github.com/hyperads/ios-sdk/b
 
 **There are three actions you will need to take to implement this in your app:**
 
-* Request an ad.
+* Request for an ad.
 * Use the returned ad metadata to build a custom native UI.
 * Register the ad's view with the `HADNativeAd` instance.
 
@@ -17,6 +17,9 @@ You can implement the [Native Ads Manager](https://github.com/hyperads/ios-sdk/b
 Please complete the steps mentioned in the [Setup the SDK](../README.md#getting-started) section to set up the SDK.
 
 ## Implementation
+Step 1. Importing the SDK and creating native ad views.
+Step 2. Requesting for loading an ad.
+Step 3. Show ad, when the content is ready. 
 
 *Step 1.* Now, in your View Controller implementation file, import the SDK and declare that you implement the `HADNativeAdDelegate` protocol as well as declare and connect instance variables to your Storyboard or .XIB:
 
