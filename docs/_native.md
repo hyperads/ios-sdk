@@ -17,11 +17,16 @@ You can implement the [Native Ads Manager](https://github.com/hyperads/ios-sdk/b
 Please complete the steps mentioned in the [Setup the SDK](../README.md#getting-started) section to set up the SDK.
 
 ## Implementation
+
 Step 1. Importing the SDK and creating native ad views.
+
 Step 2. Requesting for loading an ad.
+
 Step 3. Show ad, when the content is ready. 
 
-*Step 1.* Now, in your View Controller implementation file, import the SDK and declare that you implement the `HADNativeAdDelegate` protocol as well as declare and connect instance variables to your Storyboard or .XIB:
+#### Step 1. 
+
+Now, in your View Controller implementation file, import the SDK and declare that you implement the `HADNativeAdDelegate` protocol as well as declare and connect instance variables to your Storyboard or .XIB:
 
 ```swift
 import HADFramework
@@ -52,7 +57,9 @@ class MyViewController: UIViewController, HADNativeAdDelegate {
 @end
 ```
 
-*Step 2.* Then, add a method in your View Controller's implementation file that initializes `HADNativeAd` and request an ad to load:
+#### Step 2.
+
+Then, add a method in your View Controller's implementation file that initializes `HADNativeAd` and request an ad to load:
 
 ```swift
 override func viewDidLoad() {
@@ -91,7 +98,9 @@ Cache Constants | Description
 `ALL` | Pre-cache all (icon, images, and video)
 
 
-*Step 3.* The next step is to show ad when content is ready. You would need to implement `hadNativeAdDidLoad` method in View Controller file.
+##### Step 3.
+
+The next step is to show ad when content is ready. You would need to implement `hadNativeAdDidLoad` method in View Controller file.
 
 ```swift
 func hadNativeAdDidLoad(nativeAd: HADNativeAd) {
