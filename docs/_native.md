@@ -18,11 +18,11 @@ Please complete the steps mentioned in the [Setup the SDK](../README.md#getting-
 
 ## Implementation
 
-Step 1. Importing the SDK and creating native ad views.
+[Step 1. Importing the SDK and creating native ad views.](https://github.com/spbelenaa/ios-sdk/blob/3.0/docs/_native.md#step-1)
 
-Step 2. Requesting for loading an ad.
+[Step 2. Requesting for loading an ad.](https://github.com/spbelenaa/ios-sdk/blob/3.0/docs/_native.md#step-2)
 
-Step 3. Show ad, when the content is ready. 
+[Step 3. Show ad, when the content is ready](https://github.com/spbelenaa/ios-sdk/blob/3.0/docs/_native.md#step-3). 
 
 #### Step 1. 
 
