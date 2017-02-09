@@ -8,7 +8,7 @@ You can implement the [Native Ads Manager](https://github.com/hyperads/ios-sdk/b
 
 **There are three actions you will need to take to implement this in your app:**
 
-* Request an ad.
+* Request for an ad.
 * Use the returned ad metadata to build a custom native UI.
 * Register the ad's view with the `HADNativeAd` instance.
 
@@ -18,7 +18,15 @@ Please complete the steps mentioned in the [Setup the SDK](../README.md#getting-
 
 ## Implementation
 
-*Step 1.* Now, in your View Controller implementation file, import the SDK and declare that you implement the `HADNativeAdDelegate` protocol as well as declare and connect instance variables to your Storyboard or .XIB:
+[Step 1. Importing the SDK and creating native ad views.](https://github.com/spbelenaa/ios-sdk/blob/3.0/docs/_native.md#step-1)
+
+[Step 2. Requesting for loading an ad.](https://github.com/spbelenaa/ios-sdk/blob/3.0/docs/_native.md#step-2)
+
+[Step 3. Show ad, when the content is ready](https://github.com/spbelenaa/ios-sdk/blob/3.0/docs/_native.md#step-3). 
+
+#### Step 1. 
+
+Now, in your View Controller implementation file, import the SDK and declare that you implement the `HADNativeAdDelegate` protocol as well as declare and connect instance variables to your Storyboard or .XIB:
 
 ```swift
 import HADFramework
@@ -49,7 +57,9 @@ class MyViewController: UIViewController, HADNativeAdDelegate {
 @end
 ```
 
-*Step 2.* Then, add a method in your View Controller's implementation file that initializes `HADNativeAd` and request an ad to load:
+#### Step 2.
+
+Then, add a method in your View Controller's implementation file that initializes `HADNativeAd` and request an ad to load:
 
 ```swift
 override func viewDidLoad() {
@@ -88,7 +98,9 @@ Cache Constants | Description
 `ALL` | Pre-cache all (icon, images, and video)
 
 
-*Step 3.* The next step is to show ad when content is ready. You would need to implement `hadNativeAdDidLoad` method in View Controller file.
+##### Step 3.
+
+The next step is to show ad when content is ready. You would need to implement `hadNativeAdDidLoad` method in View Controller file.
 
 ```swift
 func hadNativeAdDidLoad(nativeAd: HADNativeAd) {
