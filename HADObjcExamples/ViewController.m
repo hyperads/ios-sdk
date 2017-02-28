@@ -8,10 +8,12 @@
 
 #import "ViewController.h"
 
-@interface ViewController () <HADInterstitialAdDelegate, HADAdViewDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface ViewController () <HADBannerAdDelegate, HADVideoInterstitialAdDelegate, HADInterstitialAdDelegate, HADAdViewDelegate, UITableViewDataSource, UITableViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UIView *preloaderView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) HADInterstitialAd *interstitial;
+@property (strong, nonatomic) HADVideoInterstitialAd *videoInterstitial;
 @property (strong, nonatomic) NSArray *sectionNames;
 @property (strong, nonatomic) NSArray *sectionRows;
 
@@ -19,11 +21,18 @@
 
 @implementation ViewController
 
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    [[UIDevice currentDevice] setValue:[NSNumber numberWithInt:UIInterfaceOrientationPortrait] forKey:@"orientation"];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.preloaderView.hidden = YES;
     
-    self.sectionNames = @[@"Native", @"Interstitial", @"Banners"];
-    self.sectionRows = @[@[@"Native Ad", @"Native Ads Templates", @"TableView with Native Ads", @"CollectionView with Native Ads"],@[@"Interstitial"],@[@"Banner Ad Height 50", @"Banner Ad Height 90", @"Banner Ad 300x250", @"TableView with Banner Ads", @"CollectionView with Banner Ads"]];
+    self.sectionNames = @[@"Native", @"Banners", @"Interstitial"];
+    self.sectionRows = @[@[@"Native Ad", @"Native Ads Templates", @"TableView with Native Ads", @"CollectionView with Native Ads"],@[@"HTML Banner 300x250",@"Banner Ad Height 50", @"Banner Ad Height 90", @"Banner Ad 300x250", @"TableView with Banner Ads", @"CollectionView with Banner Ads"],@[@"Interstitial", @"Video Interstitial"]];
     
     [self.tableView setDelegate:self];
     [self.tableView setDataSource:self];
@@ -66,21 +75,56 @@
         [self performSegueWithIdentifier:adName sender:nil];
     }else if ([adName isEqualToString:@"Interstitial"]){
         [self showInterstitial];
+    }else if ([adName isEqualToString:@"Video Interstitial"]){
+        [self showVideoInterstitial];
     }else if ([adName isEqualToString:@"Banner Ad Height 50"]){
         [self showBanner:HADAdSizeHeight50Banner];
     }else if ([adName isEqualToString:@"Banner Ad Height 90"]){
         [self showBanner:HADAdSizeHeight90Banner];
     }else if ([adName isEqualToString:@"Banner Ad 300x250"]){
         [self showBanner:HADAdSizeHeight250Rectangle];
+    }else if ([adName isEqualToString:@"HTML Banner 300x250"]){
+        [self showHTMLBanner:HADBannerAdSizeBanner300x250];
     }else{
         [self performSegueWithIdentifier:adName sender:nil];
     }
 }
 
 - (void)showInterstitial {
-    self.interstitial = [[HADInterstitialAd alloc] initWithPlacementID:@"5b3QbMRQ"];
+    self.preloaderView.hidden = NO;
+    self.interstitial = [[HADInterstitialAd alloc] initWithPlacementID:@"W93593Xw"];
     self.interstitial.delegate = self;
     [self.interstitial loadAd];
+}
+
+- (void)showVideoInterstitial {
+    self.preloaderView.hidden = NO;
+    self.videoInterstitial = [[HADVideoInterstitialAd alloc] initWithPlacementID:@"kvaXVl3r"];
+    self.videoInterstitial.delegate = self;
+    [self.videoInterstitial loadAd];
+}
+
+- (void)showHTMLBanner:(HADBannerAdSize)size {
+    HADBannerAd *adView = [[HADBannerAd alloc] initWithPlacementID:@"KoMrp58X" bannerSize:size viewController:self];
+    adView.delegate = self;
+    [adView loadAd];
+    
+    //create controller
+    UIViewController *adController = [UIViewController new];
+    adController.view.backgroundColor = [UIColor lightGrayColor];
+    [adController.view addSubview:adView];
+    
+    //set ad size
+    int adHeight;
+    
+    if(size == HADBannerAdSizeBanner300x250){
+        adHeight = 250;
+    }
+    
+    adView.frame = CGRectMake(0, 100, self.view.frame.size.width, adHeight);
+    
+    //show controller with ad
+    [self.navigationController pushViewController:adController animated:@YES];
 }
 
 - (void)showBanner:(HADAdSize)size {
@@ -111,6 +155,24 @@
     [self.navigationController pushViewController:adController animated:@YES];
 }
 
+#pragma mark - HADBannerAdDelegate
+
+-(void)hadBannerAdDidLoadWithBannerAd:(HADBannerAd *)bannerAd{
+    NSLog(@"hadBannerAdDidLoad");
+}
+
+-(void)hadBannerAdDidClickWithBannerAd:(HADBannerAd *)bannerAd{
+    NSLog(@"hadBannerAdDidClick");
+}
+
+-(void)hadBannerAdWillLogImpressionWithBannerAd:(HADBannerAd *)bannerAd{
+    NSLog(@"hadBannerAdWillLogImpression");
+}
+
+-(void)hadBannerAdDidFailWithBannerAd:(HADBannerAd *)bannerAd withError:(NSError *)error{
+    NSLog(@"hadBannerAdDidFail: %@", error);
+}
+
 #pragma mark - HADAdViewDelegate
 
 -(void)hadViewDidLoadWithAdView:(HADAdView *)adView{
@@ -128,10 +190,12 @@
 #pragma mark - HADInterstitialAdDelegate
 
 -(void)hadInterstitialAdDidLoadWithInterstitialAd:(HADInterstitialAd *)interstitialAd{
+    self.preloaderView.hidden = YES;
     [self.interstitial showAdFromRootViewController:self];
 }
 
 -(void)hadInterstitialAdDidFailWithInterstitialAd:(HADInterstitialAd *)interstitialAd withError:(NSError *)error{
+    self.preloaderView.hidden = YES;
     NSLog(@"HADInterstitialDidFail: %@", error);
 }
 
@@ -145,6 +209,30 @@
 
 -(void)hadInterstitialAdDidCloseWithInterstitialAd:(HADInterstitialAd *)interstitialAd{
     NSLog(@"HADInterstitialDidClose");
+}
+
+#pragma mark - HADVideoInterstitialAdDelegate
+
+-(void)hadVideoInterstitialAdDidLoadWithAd:(HADVideoInterstitialAd *)ad{
+    self.preloaderView.hidden = YES;
+    [self.videoInterstitial showAdFromRootViewController:self];
+}
+
+-(void)hadVideoInterstitialAdDidFailWithAd:(HADVideoInterstitialAd *)ad withError:(NSError *)error{
+    self.preloaderView.hidden = YES;
+    NSLog(@"HADVideoInterstitialDidFail: %@", error);
+}
+
+-(void)hadVideoInterstitialAdDidClickWithAd:(HADVideoInterstitialAd *)ad{
+    NSLog(@"HADVideoInterstitialDidClick");
+}
+
+-(void)hadVideoInterstitialAdWillCloseWithAd:(HADVideoInterstitialAd *)ad{
+    NSLog(@"HADVideoInterstitialWillClose");
+}
+
+-(void)hadVideoInterstitialAdDidCloseWithAd:(HADVideoInterstitialAd *)ad{
+    NSLog(@"HADVideoInterstitialDidClose");
 }
 
 @end

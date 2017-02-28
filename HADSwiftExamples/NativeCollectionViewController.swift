@@ -31,7 +31,7 @@ class NativeCollectionCell : UICollectionViewCell {
 }
 
 extension NativeCollectionViewController: HADNativeAdDelegate {
-    func nativeAdWillLogImpression(nativeAd: HADNativeAd) {
+    func hadNativeAdWillLogImpression(nativeAd: HADNativeAd) {
         print("nativeAdWillLogImpression")
     }
     
@@ -95,7 +95,7 @@ class NativeCollectionViewController: UICollectionViewController, UICollectionVi
     
     func loadNativeAds() {
         if adsManager == nil {
-            adsManager = HADNativeAdsManager(placementID: "W03qNzM6", numAdsRequested: 5)
+            adsManager = HADNativeAdsManager(placementId: "W03qNzM6", numAdsRequested: 5)
             adsManager?.delegate = self
             //adsManager?.mediaCachePolicy = .all
             adsManager?.loadAds()

@@ -42,12 +42,13 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
 class MainViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var preloaderView: UIView!
     
     var sectionNames = ["Native", "Banners", "Interstitial"]
-    var sectionRows = [["Native Ad", "TableView with Native Ads", "CollectionView with Native Ads", "Native Ads Templates"],["Banner Ad Height 50", "Banner Ad Height 90", "Banner Ad 300x250", "TableView with Banner Ads", "CollectionView with Banner Ads"],["Interstitial"]]
-    //"Video Interstitial"
+    var sectionRows = [["Native Ad", "TableView with Native Ads", "CollectionView with Native Ads", "Native Ads Templates"],["HTML Banner 300x250","Banner Ad Height 50", "Banner Ad Height 90", "Banner Ad 300x250", "TableView with Banner Ads", "CollectionView with Banner Ads"],["Interstitial", "Video Interstitial"]]
     
     var interstitialAd:HADInterstitialAd?
+    var videoInterstitialAd:HADVideoInterstitialAd?
     
     override open func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +61,12 @@ class MainViewController: UIViewController {
         HAD.setAge(value: 33)
         HAD.setKeywords(value: "one,two,free")
         HAD.setCustomParam(key: "hy", value: "per")
+        
+        preloaderView.isHidden = true
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        UIDevice.current.setValue(Int(UIInterfaceOrientation.portrait.rawValue), forKey: "orientation")
     }
     
     func adSelected(_ adName:String){
@@ -76,6 +83,9 @@ class MainViewController: UIViewController {
             break
         case "Native Ads Templates":
             performSegue(withIdentifier: adName, sender: nil)
+            break
+        case "HTML Banner 300x250":
+            showHTMLBanner(size: .banner300x250)
             break
         case "Banner Ad Height 50":
             showBanner(size: .height50Banner)
@@ -95,15 +105,43 @@ class MainViewController: UIViewController {
         case "Interstitial":
             showInterstitial()
             break
+        case "Video Interstitial":
+            showVideoInterstitial()
+            break
         default:
             print("Error: Ad not found")
         }
     }
     
     func showInterstitial() {
-        interstitialAd = HADInterstitialAd(placementID: "5b3QbMRQ")
+        preloaderView.isHidden = false
+        interstitialAd = HADInterstitialAd(placementID: "W93593Xw")
         interstitialAd?.delegate = self
         interstitialAd?.loadAd()
+    }
+    
+    func showVideoInterstitial() {
+        preloaderView.isHidden = false
+        videoInterstitialAd = HADVideoInterstitialAd(placementID: "kvaXVl3r")
+        videoInterstitialAd?.delegate = self
+        videoInterstitialAd?.loadAd()
+    }
+    
+    func showHTMLBanner(size:HADBannerAdSize) {
+        let bannerView = HADBannerAd(placementID: "KoMrp58X", bannerSize:size, viewController: self)
+        bannerView.delegate = self
+        bannerView.loadAd()
+        
+        //create controller
+        let adController = UIViewController()
+        adController.view.backgroundColor = UIColor.lightGray
+        adController.view.addSubview(bannerView)
+        
+        //set ad size
+        bannerView.frame = CGRect(x:0, y:100, width:self.view.frame.width, height:HADBannerAdSize.getSize(size).height)
+        
+        //show controller with ad
+        self.navigationController?.pushViewController(adController, animated: true)
     }
     
     func showBanner(size:HADAdSize) {
@@ -124,6 +162,24 @@ class MainViewController: UIViewController {
     }
 }
 
+// MARK: - HADBannerAdDelegate
+extension MainViewController: HADBannerAdDelegate {
+    func hadBannerAdDidLoad(bannerAd: HADBannerAd) {
+        print("hadBannerAdDidLoad")
+    }
+    
+    func hadBannerAdDidClick(bannerAd: HADBannerAd) {
+        print("hadBannerAdDidClick")
+    }
+    
+    func hadBannerAdWillLogImpression(bannerAd: HADBannerAd) {
+        print("hadBannerAdWillLogImpression")
+    }
+    
+    func hadBannerAdDidFail(bannerAd: HADBannerAd, withError error: NSError?) {
+        print("hadBannerAdDidFail \(error)")
+    }
+}
 
 // MARK: - HADAdViewDelegate
 extension MainViewController: HADAdViewDelegate {
@@ -143,7 +199,8 @@ extension MainViewController: HADAdViewDelegate {
 // MARK: - HADInterstitialAdDelegate
 extension MainViewController: HADInterstitialAdDelegate {
     func hadInterstitialAdDidLoad(interstitialAd: HADInterstitialAd) {
-        interstitialAd.showAdFromRootViewController(self)
+        preloaderView.isHidden = true
+        self.interstitialAd?.showAdFromRootViewController(self)
     }
     
     func hadInterstitialAdDidClick(interstitialAd: HADInterstitialAd) {
@@ -159,7 +216,33 @@ extension MainViewController: HADInterstitialAdDelegate {
     }
     
     func hadInterstitialAdDidFail(interstitialAd: HADInterstitialAd, withError error: NSError?) {
+        preloaderView.isHidden = true
         print("hadInterstitialDidFail: \(error)")
+    }
+}
+
+// MARK: - HADVideoInterstitialAdDelegate
+extension MainViewController: HADVideoInterstitialAdDelegate {
+    func hadVideoInterstitialAdDidLoad(ad: HADVideoInterstitialAd) {
+        preloaderView.isHidden = true
+        self.videoInterstitialAd?.showAdFromRootViewController(self)
+    }
+    
+    func hadVideoInterstitialAdDidClick(ad: HADVideoInterstitialAd) {
+        print("hadVideoInterstitialDidClick")
+    }
+    
+    func hadVideoInterstitialAdDidClose(ad: HADVideoInterstitialAd) {
+        print("hadVideoInterstitialAdDidClose")
+    }
+    
+    func hadVideoInterstitialAdWillClose(ad: HADVideoInterstitialAd) {
+        print("hadVideoInterstitialWillClose")
+    }
+    
+    func hadVideoInterstitialAdDidFail(ad: HADVideoInterstitialAd, withError error: NSError?) {
+        preloaderView.isHidden = true
+        print("hadVideoInterstitialDidFail: \(error)")
     }
 }
 

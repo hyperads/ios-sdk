@@ -84,7 +84,7 @@
     [adController.view addSubview:adView];
     
     //show controller with ad
-    [self.navigationController pushViewController:adController animated:@YES];
+    [self.navigationController pushViewController:adController animated:YES];
 }
 
 -(void)hadNativeAdDidClickWithNativeAd:(HADNativeAd *)nativeAd{
@@ -119,7 +119,7 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [tableView deselectRowAtIndexPath:indexPath animated:@YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     [self adSelected:self.templateNames[indexPath.row]];
 }
 

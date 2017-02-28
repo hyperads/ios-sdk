@@ -468,6 +468,7 @@ Set `mediaCachePolicy` to be `HADNativeAdsCachePolicyAll`. This will configure t
 You need to call `[self.adsManager loadAds];` to load an ad. 
 
 **4.** You need to implement `nativeAdsLoaded` and `nativeAdsFailedToLoadWithError` to check whether ads are loaded successfully by the adsManager as follows:
+
 ```swift
 func nativeAdsLoaded() {
     print("Native ad was loaded, constructing native UI...")

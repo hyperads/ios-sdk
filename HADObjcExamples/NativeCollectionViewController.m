@@ -55,7 +55,7 @@ static int const kRowStrideForAdCell = 37;
 
 - (void)loadNativeAds {
     if (!self.adsManager) {
-        self.adsManager = [[HADNativeAdsManager alloc] initWithPlacementID:@"W03qNzM6" numAdsRequested:5];
+        self.adsManager = [[HADNativeAdsManager alloc] initWithPlacementId:@"W03qNzM6" numAdsRequested:5];
         
         self.adsManager.delegate = self;
         
