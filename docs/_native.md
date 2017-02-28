@@ -1,12 +1,14 @@
 # Native ads
 
 The HyperADX's Native Ads allows you to build a customized experience for the ads displayed in your app. When using the Native Ad API, instead of receiving an ad ready to be displayed, you will receive a group of ad properties such as a title, an image, a call to action. These properties are used to construct a custom UIView, which displays the ad.
+
 The [Native Ad templates](https://github.com/hyperads/ios-sdk/blob/3.0/docs/_native.md#native-ads-template) allows you to use and customize pre-created Ad banner views.
+
 You can implement the [Native Ads Manager](https://github.com/hyperads/ios-sdk/blob/3.0/docs/_native.md#native-ads-manager) to displaying multiple ads within a short amount of time, or to automatically refresh and deliver ads in an application.
 
 ## Implementation
 
-There are three steps you will need to take to implement native ad in your app:*
+There are three steps you will need to take to implement native ad in your app:
 
 [Step 1. Import the SDK and creating native ad views.](https://github.com/spbelenaa/ios-sdk/blob/3.0/docs/_native.md#step-1)
 
@@ -286,11 +288,20 @@ func hadNativeAdDidLoad(nativeAd: HADNativeAd)
 ## Native Ads Manager
 
 Use the Native Ads Manager when your user experience involves displaying multiple ads within a short amount of time, such as a vertical feed or horizontal scroll. An app can also use Native Ads Manager to automatically refresh and deliver ads.
-Implement the Native Ads Manager along a side edge of your Native Ads integration. Native Ads Manager can be used with a publisher defined View (leveraging the Native Ads API) or with the Native Ads Template.
+Implement the Native Ads Manager along a side edge of your Native Ads integration. Native Ads Manager can be used with a publisher defined View (leveraging the Native Ads API) or with the Native Ads Template. 
 
 ### Native Ads Manager with Table View Controller
 
-#### Step 1: Create Table View Controller
+There are three steps you will need to take to implement Native Ads Manager in your app:
+
+[Step 1. Create Table View Controller](https://github.com/spbelenaa/ios-sdk/blob/3.0/docs/_native.md#step-1-create-table-view-controller)
+
+[Step 2. Use Native Ads Manager to Request Ads](https://github.com/spbelenaa/ios-sdk/blob/3.0/docs/_native.md#step-2-use-native-ads-manager-to-request-ads)
+
+[Step 3. Use Native Ads Manager to Show Ads](https://github.com/spbelenaa/ios-sdk/blob/3.0/docs/_native.md#step-3-use-native-ads-manager-to-show-ads)
+
+
+#### Step 1. Create Table View Controller
 
 **1.** Open your Table View Controller implementation file and add `tableView`, `adsManager`, `ads`, and `tableViewContentArray` instance variables.
 
@@ -388,10 +399,10 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
 }	
 ```
 
-#### Step 2: Use Native Ads Manager to Request Ads
+#### Step 2. Use Native Ads Manager to Request Ads
 You now have created a table view sample app that shows regular cells. Next, you will use `NativeAdManager` to request ads.
 
-*1.* In this sample app, it will show one ad cell for every 15 regular cells. First define a static variable used for calculating which cell contains ad content as follows:
+**1.** In this sample app, it will show one ad cell for every 15 regular cells. First define a static variable used for calculating which cell contains ad content as follows:
 ```swift
 let stride = 15
 ```
@@ -400,7 +411,7 @@ let stride = 15
 static NSInteger const kRowStrideForAdCell = 15; 
 ```
 
-*2.* Add `HADNativeAdsManagerDelegate` and `HADNativeAdDelegate` delegates to the ViewController class.
+**2.** Add `HADNativeAdsManagerDelegate` and `HADNativeAdDelegate` delegates to the ViewController class.
 ```swift
 class TableViewController: UITableViewController, HADNativeAdsManagerDelegate, HADNativeAdDelegate
 ```
@@ -412,7 +423,7 @@ class TableViewController: UITableViewController, HADNativeAdsManagerDelegate, H
 `HADNativeAdsManagerDelegate` is used for notifying whether ads are finished loading by `HADNativeAdsManager` or an error is returned.
 `HADNativeAdDelegate` is used for notifying an ad being viewed or clicked by a user.
 
-*3.* In viewDidLoad method, add the following lines of code:
+**3.** In viewDidLoad method, add the following lines of code:
 ```swift
 override open func viewDidLoad() {
     super.viewDidLoad()
@@ -456,7 +467,7 @@ In this example, let's request maximum 5 number of ads. This can be set in `[HAD
 Set `mediaCachePolicy` to be `HADNativeAdsCachePolicyAll`. This will configure the native ad to wait to be called in `nativeAdDidLoad` method untill all ad assets are loaded. 
 You need to call `[self.adsManager loadAds];` to load an ad. 
 
-*4.* You need to implement `nativeAdsLoaded` and `nativeAdsFailedToLoadWithError` to check whether ads are loaded successfully by the adsManager as follows:
+**4.** You need to implement `nativeAdsLoaded` and `nativeAdsFailedToLoadWithError` to check whether ads are loaded successfully by the adsManager as follows:
 ```swift
 func nativeAdsLoaded() {
     print("Native ad was loaded, constructing native UI...")
@@ -477,7 +488,7 @@ func nativeAdsFailedToLoad(error: NSError?) {
 }
 ```
 
-#### Step 3: Use Native Ads Manager to Show Ads
+#### Step 3. Use Native Ads Manager to Show Ads
 In this step, you will learn how to use `HADNativeAdTableViewCellProvider` to display ads in the table view cell.
 
 **1.** In `nativeAdsLoaded` method, add the following lines of code.
