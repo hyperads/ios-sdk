@@ -46,13 +46,13 @@ func hadInterstitialAdDidLoad(interstitialAd: HADInterstitialAd) {
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    HADInterstitialAd *interstitialAd = [[HADInterstitialAd alloc] initWithPlacementID:@"PLACEMENT_ID"];
-    interstitialAd.delegate = self;
-    [interstitialAd loadAd];
+    self.interstitialAd = [[HADInterstitialAd alloc] initWithPlacementID:@"PLACEMENT_ID"];
+    self.interstitialAd.delegate = self;
+    [self.interstitialAd loadAd];
 }
 
 -(void)hadInterstitialAdDidLoadWithInterstitialAd:(HADInterstitialAd *)interstitialAd{
-    [interstitialAd showAdFromRootViewController:self];
+    [self.interstitialAd showAdFromRootViewController:self];
 }
 ```
 
@@ -90,4 +90,9 @@ func hadInterstitialAdDidFail(interstitialAd: HADInterstitialAd, withError error
 -(void)hadInterstitialAdWillCloseWithInterstitialAd:(HADInterstitialAd *)interstitialAd{
     NSLog(@"HADInterstitialWillClose");
 }
+
+-(void)hadInterstitialAdDidCloseWithInterstitialAd:(HADInterstitialAd *)interstitialAd{
+    NSLog(@"HADInterstitialDidClose");
+}
+
 ```
