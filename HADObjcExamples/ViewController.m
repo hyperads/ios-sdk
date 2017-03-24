@@ -129,7 +129,7 @@
 
 - (void)showBanner:(HADAdSize)size {
     
-    HADAdView *adView = [[HADAdView alloc] initWithPlacementID:@"5b3QbMRQ" adSize:size viewController:self];
+    HADAdView *adView = [[HADAdView alloc] initWithPlacementID:@"W03qNzM6" adSize:size viewController:self];
     adView.delegate = self;
     [adView loadAd];
     

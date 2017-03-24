@@ -26,7 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.nativeAd = [[HADNativeAd alloc] initWithPlacementId:@"5b3QbMRQ"];
+    self.nativeAd = [[HADNativeAd alloc] initWithPlacementId:@"W03qNzM6"];
     self.nativeAd.delegate = self;
     self.nativeAd.mediaCachePolicy = HADNativeAdsCachePolicyAll;
     [self.nativeAd loadAd];

@@ -44,7 +44,7 @@ static NSString * const kAdCellIdentifier = @"AD";
         if (![self.alreadyLoadedAdsInRows containsObject:indexPath]) {
             [self.alreadyLoadedAdsInRows addObject:indexPath];
             
-            HADAdView *adView = [[HADAdView alloc] initWithPlacementID:@"5b3QbMRQ" adSize:HADAdSizeHeight50Banner viewController:self];
+            HADAdView *adView = [[HADAdView alloc] initWithPlacementID:@"W03qNzM6" adSize:HADAdSizeHeight50Banner viewController:self];
             adView.delegate = self;
             [adView loadAd];
             

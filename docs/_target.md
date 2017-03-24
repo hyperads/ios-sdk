@@ -4,14 +4,17 @@ Customer segmentation is the practice of dividing a customer base into groups of
 
 ### Custom Parameters
 
-The `HAD` object collects targeting information to be sent with an ad request.
+The `HADAdRequest` object collects targeting information to be sent with an ad request.
+
 
 * Keywords
 
 If your app already knows a user's interests, it can provide that information in the ad request for targeting purposes.
 
 ```swift
-HAD.setKeywords(value: "sport,cinema")
+let adRequest = HADAdRequest()
+adRequest.setKeywords(value: "sport,cinema")
+nativeAd.adRequest = adRequest
 ```
 
 * Gender
@@ -19,7 +22,7 @@ HAD.setKeywords(value: "sport,cinema")
 If your app already knows a user's gender, it can provide that information in the ad request for targeting purposes. The information is also forwarded to ad network mediation adapters if mediation is enabled. `HADUserGender` enum contains two possible values.
 
 ```swift
-HAD.setGender(value: .male)
+adRequest.setGender(value: .male)
 ```
 
 * Age
@@ -28,12 +31,12 @@ If your app already knows a user's age, it can provide that information in the a
 
 You can set year of birth:
 ```swift
-HAD.setYearOfBirth(value: 1983)
+adRequest.setYearOfBirth(value: 1983)
 ```
 
 or just age:
 ```swift
-HAD.setAge(value: 33)
+adRequest.setAge(value: 33)
 ```
 
 * Additional parameters
@@ -41,9 +44,9 @@ HAD.setAge(value: 33)
 Also you can specify any additional parameters you want.
 
 ```swift
-HAD.setCustomParams(params: ["first_name":"John","last_name":"Doe"])
+adRequest.setCustomParams(params: ["first_name":"John","last_name":"Doe"])
 ```
 
 ```swift
-HAD.setCustomParam(key: "full_name", value: "John Doe")
+adRequest.setCustomParam(key: "full_name", value: "John Doe")
 ```

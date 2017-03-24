@@ -41,7 +41,7 @@ class BannerCollectionViewController: UICollectionViewController, UICollectionVi
                 if !alreadyLoadedAdsInRows.contains(indexPath.row) {
                     alreadyLoadedAdsInRows.append(indexPath.row)
                     
-                    let bannerView = HADAdView(placementID: "5b3QbMRQ", adSize:.height50Banner, viewController: self)
+                    let bannerView = HADAdView(placementID: "W03qNzM6", adSize:.height50Banner, viewController: self)
                     bannerView.loadAd()
                     bannerView.delegate = cell
                     cell.bannerContainerView.addSubview(bannerView)

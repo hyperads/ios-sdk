@@ -25,7 +25,17 @@ class NativeViewController: UIViewController {
         
         nativeAd = HADNativeAd(placementId: "W03qNzM6")
         nativeAd.delegate = self
+        
+        //optionaly set cache policy
         nativeAd.mediaCachePolicy = .all;
+        
+        //optionaly set custom params
+        let adRequest = HADAdRequest()
+        adRequest.setCustomParams(params: ["fooKey":"fooValue","barKey":"barValue"])
+        adRequest.setAge(value: 33)
+        adRequest.setKeywords(value: "one,two,free")
+        adRequest.setCustomParam(key: "hy", value: "per")
+        nativeAd.adRequest = adRequest
         
         nativeAd.loadAd()
     }

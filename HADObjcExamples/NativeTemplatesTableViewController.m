@@ -37,7 +37,7 @@
         self.templateType = HADNativeAdViewTypeHeight400;
     }
     
-    self.nativeAd = [[HADNativeAd alloc] initWithPlacementId:@"5b3QbMRQ"];
+    self.nativeAd = [[HADNativeAd alloc] initWithPlacementId:@"W03qNzM6"];
     self.nativeAd.delegate = self;
     [self.nativeAd loadAd];
 }

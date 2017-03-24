@@ -56,12 +56,6 @@ class MainViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        //set custom params
-        HAD.setCustomParams(params: ["fooKey":"fooValue","barKey":"barValue"])
-        HAD.setAge(value: 33)
-        HAD.setKeywords(value: "one,two,free")
-        HAD.setCustomParam(key: "hy", value: "per")
-        
         preloaderView.isHidden = true
     }
     
@@ -117,6 +111,12 @@ class MainViewController: UIViewController {
         preloaderView.isHidden = false
         interstitialAd = HADInterstitialAd(placementID: "W93593Xw")
         interstitialAd?.delegate = self
+        
+        //optionaly set custom params
+        let adRequest = HADAdRequest()
+        adRequest.setKeywords(value: "one,two,free")
+        interstitialAd?.adRequest = adRequest
+        
         interstitialAd?.loadAd()
     }
     
@@ -124,12 +124,24 @@ class MainViewController: UIViewController {
         preloaderView.isHidden = false
         videoInterstitialAd = HADVideoInterstitialAd(placementID: "kvaXVl3r")
         videoInterstitialAd?.delegate = self
+        
+        //optionaly set custom params
+        let adRequest = HADAdRequest()
+        adRequest.setKeywords(value: "one,two,free")
+        videoInterstitialAd?.adRequest = adRequest
+        
         videoInterstitialAd?.loadAd()
     }
     
     func showHTMLBanner(size:HADBannerAdSize) {
         let bannerView = HADBannerAd(placementID: "KoMrp58X", bannerSize:size, viewController: self)
         bannerView.delegate = self
+        
+        //optionaly set custom params
+        let adRequest = HADAdRequest()
+        adRequest.setKeywords(value: "one,two,free")
+        bannerView.adRequest = adRequest
+        
         bannerView.loadAd()
         
         //create controller
@@ -147,6 +159,12 @@ class MainViewController: UIViewController {
     func showBanner(size:HADAdSize) {
         let bannerView = HADAdView(placementID: "5b3QbMRQ", adSize:size, viewController: self)
         bannerView.delegate = self
+        
+        //optionaly set custom params
+        let adRequest = HADAdRequest()
+        adRequest.setKeywords(value: "one,two,free")
+        bannerView.adRequest = adRequest
+        
         bannerView.loadAd()
         
         //create controller

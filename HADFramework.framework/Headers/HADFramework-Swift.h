@@ -120,6 +120,8 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import ObjectiveC;
 @import Foundation;
 @import AVFoundation;
+@import CoreFoundation;
+@import QuartzCore;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -129,10 +131,12 @@ typedef SWIFT_ENUM(NSInteger, BannerTemplateCustomClickModes) {
   BannerTemplateCustomClickModesButton = 1,
 };
 
+@class RPCircularProgress;
 @class NSCoder;
 
 SWIFT_CLASS("_TtC12HADFramework15CloseButtonView")
 @interface CloseButtonView : UIView
+@property (nonatomic, strong) RPCircularProgress * _Nullable progress;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (void)drawRect:(CGRect)rect;
@@ -234,50 +238,11 @@ SWIFT_CLASS("_TtC12HADFramework13EqualizerView")
 @property (nonatomic, readonly) CGSize intrinsicContentSize;
 @end
 
-enum HADUserGender : NSInteger;
 
 /**
 */
 SWIFT_CLASS("_TtC12HADFramework3HAD")
 @interface HAD : NSObject
-/**
-  Set custom parameters for sending to HyperADX
-  \param params A dictionary of [String:String] type
-
-*/
-+ (void)setCustomParamsWithParams:(NSDictionary<NSString *, NSString *> * _Nonnull)params;
-/**
-  Set custom parameter for sending to HyperADX
-  \param key The key of param as String
-
-  \param value the value of param as String
-
-*/
-+ (void)setCustomParamWithKey:(NSString * _Nonnull)key value:(NSString * _Nonnull)value;
-/**
-  Set user’s age parameter for sending to HyperADX
-  \param value The user’s age as Int
-
-*/
-+ (void)setAgeWithValue:(NSInteger)value;
-/**
-  Set user’s year of birth parameter for sending to HyperADX
-  \param value The user’s year of birth as Int
-
-*/
-+ (void)setYearOfBirthWithValue:(NSInteger)value;
-/**
-  Set user’s gender of birth parameter for sending to HyperADX
-  \param value The user’s gender of birth as HADUserGender
-
-*/
-+ (void)setGenderWithValue:(enum HADUserGender)value;
-/**
-  Set keywords parameter for sending to HyperADX
-  \param value The keywords as String
-
-*/
-+ (void)setKeywordsWithValue:(NSString * _Nonnull)value;
 + (void)create;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -312,6 +277,51 @@ typedef SWIFT_ENUM(NSInteger, HADAdOrientation) {
   HADAdOrientationPortrait = 0,
   HADAdOrientationLandscape = 1,
 };
+
+enum HADUserGender : NSInteger;
+
+SWIFT_CLASS("_TtC12HADFramework12HADAdRequest")
+@interface HADAdRequest : NSObject
+/**
+  Set custom parameters for sending to HyperADX
+  \param params A dictionary of [String:String] type
+
+*/
+- (void)setCustomParamsWithParams:(NSDictionary<NSString *, NSString *> * _Nonnull)params;
+/**
+  Set custom parameter for sending to HyperADX
+  \param key The key of param as String
+
+  \param value the value of param as String
+
+*/
+- (void)setCustomParamWithKey:(NSString * _Nonnull)key value:(NSString * _Nonnull)value;
+/**
+  Set user’s age parameter for sending to HyperADX
+  \param value The user’s age as Int
+
+*/
+- (void)setAgeWithValue:(NSInteger)value;
+/**
+  Set user’s year of birth parameter for sending to HyperADX
+  \param value The user’s year of birth as Int
+
+*/
+- (void)setYearOfBirthWithValue:(NSInteger)value;
+/**
+  Set user’s gender of birth parameter for sending to HyperADX
+  \param value The user’s gender of birth as HADUserGender
+
+*/
+- (void)setGenderWithValue:(enum HADUserGender)value;
+/**
+  Set keywords parameter for sending to HyperADX
+  \param value The keywords as String
+
+*/
+- (void)setKeywordsWithValue:(NSString * _Nonnull)value;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
 
 /**
   Represents the ad size.
@@ -356,6 +366,10 @@ SWIFT_CLASS("_TtC12HADFramework9HADAdView")
 */
 @property (nonatomic, readonly, copy) NSString * _Nullable placementID;
 @property (nonatomic, readonly, strong) UIViewController * _Nullable rootViewController;
+/**
+  The HADAdRequest object contains custom params
+*/
+@property (nonatomic, strong) HADAdRequest * _Nullable adRequest;
 /**
   the delegate
 */
@@ -448,7 +462,7 @@ SWIFT_PROTOCOL("_TtP12HADFramework19HADNativeAdDelegate_")
 
 
 /**
-  The methods declared by the HADAdViewDelegate protocol allow the adopting delegate to respond
+  The methods declared by the HADAdDelegate protocol allow the adopting delegate to respond
   to messages from the HADAdView class and thus respond to operations such as whether the ad has
   been loaded, the person has clicked the ad.
 */
@@ -485,6 +499,10 @@ enum HADBannerAdSize : NSInteger;
 */
 SWIFT_CLASS("_TtC12HADFramework11HADBannerAd")
 @interface HADBannerAd : UIView
+/**
+  The HADAdRequest object contains custom params
+*/
+@property (nonatomic, strong) HADAdRequest * _Nullable adRequest;
 /**
   Typed access to the id of the ad placement.
 */
@@ -601,6 +619,10 @@ typedef SWIFT_ENUM(NSInteger, HADBannerTemplateTypes) {
 SWIFT_CLASS("_TtC12HADFramework21HADBannerTemplateView")
 @interface HADBannerTemplateView : UIView
 /**
+  The HADAdRequest object contains custom params
+*/
+@property (nonatomic, strong) HADAdRequest * _Nullable adRequest;
+/**
 */
 @property (nonatomic) BOOL refresh;
 /**
@@ -708,6 +730,10 @@ SWIFT_PROTOCOL("_TtP12HADFramework29HADBannerTemplateViewDelegate_")
 */
 SWIFT_CLASS("_TtC12HADFramework13HADBannerView")
 @interface HADBannerView : UIView
+/**
+  The HADAdRequest object contains custom params
+*/
+@property (nonatomic, strong) HADAdRequest * _Nullable adRequest;
 /**
 */
 @property (nonatomic) uint32_t refreshTime;
@@ -827,6 +853,10 @@ SWIFT_CLASS("_TtC12HADFramework15HADInterstitial")
 SWIFT_CLASS("_TtC12HADFramework17HADInterstitialAd")
 @interface HADInterstitialAd : UIViewController
 /**
+  The HADAdRequest object contains custom params
+*/
+@property (nonatomic, strong) HADAdRequest * _Nullable adRequest;
+/**
   The delegate
 */
 @property (nonatomic, weak) id <HADInterstitialAdDelegate> _Nullable delegate;
@@ -903,6 +933,7 @@ SWIFT_PROTOCOL("_TtP12HADFramework20HADMediaViewDelegate_")
 - (void)hadMediaViewDidLoadWithMediaView:(HADMediaView * _Nonnull)mediaView;
 - (void)hadMediaViewDidStartPlayingVideoWithMediaView:(HADMediaView * _Nonnull)mediaView;
 - (void)hadMediaViewDidEndPlayingVideoWithMediaView:(HADMediaView * _Nonnull)mediaView;
+- (void)hadMediaViewDidChangeTimeWithMediaView:(HADMediaView * _Nonnull)mediaView progress:(float)progress;
 @end
 
 
@@ -1024,6 +1055,10 @@ enum HADNativeAdsCachePolicy : NSInteger;
 */
 SWIFT_CLASS("_TtC12HADFramework11HADNativeAd")
 @interface HADNativeAd : NSObject
+/**
+  The HADAdRequest object contains custom params
+*/
+@property (nonatomic, strong) HADAdRequest * _Nullable adRequest;
 /**
   Call isAdValid to check whether native ad is valid & internal consistent prior rendering using its properties. If
   rendering is done as part of the loadAd callback, it is guarantee to be consistent
@@ -1450,6 +1485,10 @@ typedef SWIFT_ENUM(NSInteger, HADNativeAdsCachePolicy) {
 SWIFT_CLASS("_TtC12HADFramework19HADNativeAdsManager")
 @interface HADNativeAdsManager : NSObject
 /**
+  The HADAdRequest object contains custom params
+*/
+@property (nonatomic, strong) HADAdRequest * _Nullable adRequest;
+/**
   The delegate
 */
 @property (nonatomic, weak) id <HADNativeAdsManagerDelegate> _Nullable delegate;
@@ -1525,6 +1564,10 @@ SWIFT_CLASS("_TtC12HADFramework22HADVideoInterstitialAd")
 */
 @property (nonatomic, readonly, copy) NSString * _Nullable placementId;
 /**
+  The HADAdRequest object contains custom params
+*/
+@property (nonatomic, strong) HADAdRequest * _Nullable adRequest;
+/**
   The delegate
 */
 @property (nonatomic, weak) id <HADVideoInterstitialAdDelegate> _Nullable delegate;
@@ -1588,6 +1631,7 @@ SWIFT_CLASS("_TtC12HADFramework22HADVideoInterstitialAd")
 - (void)hadMediaViewDidLoadWithMediaView:(HADMediaView * _Nonnull)mediaView;
 - (void)hadMediaViewDidStartPlayingVideoWithMediaView:(HADMediaView * _Nonnull)mediaView;
 - (void)hadMediaViewDidEndPlayingVideoWithMediaView:(HADMediaView * _Nonnull)mediaView;
+- (void)hadMediaViewDidChangeTimeWithMediaView:(HADMediaView * _Nonnull)mediaView progress:(float)progress;
 @end
 
 
@@ -1649,6 +1693,93 @@ SWIFT_CLASS("_TtC12HADFramework14PlayButtonView")
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (void)drawRect:(CGRect)rect;
+@end
+
+@class CAMediaTimingFunction;
+
+SWIFT_CLASS("_TtC12HADFramework18RPCircularProgress")
+@interface RPCircularProgress : UIView
+/**
+  The color of the empty progress track (gets drawn over)
+*/
+@property (nonatomic, strong) UIColor * _Nonnull trackTintColor;
+/**
+  The color of the progress bar
+*/
+@property (nonatomic, strong) UIColor * _Nonnull progressTintColor;
+/**
+  The color the notched out circle within the progress area (if there is one)
+*/
+@property (nonatomic, strong) UIColor * _Nullable innerTintColor;
+/**
+  Sets whether or not the corners of the progress bar should be rounded
+*/
+@property (nonatomic) BOOL roundedCorners;
+/**
+  Sets how thick the progress bar should be (pinned between \code
+  0.01
+  \endcode and \code
+  1
+  \endcode)
+*/
+@property (nonatomic) CGFloat thicknessRatio;
+/**
+  Sets whether or not the animation should be clockwise
+*/
+@property (nonatomic) BOOL clockwiseProgress;
+/**
+  A timing function defining the pacing of the animation. Defaults to ease in, ease out.
+*/
+@property (nonatomic, strong) CAMediaTimingFunction * _Nonnull timingFunction;
+/**
+  Getter for the current progress (not observed from any active animations)
+*/
+@property (nonatomic, readonly) CGFloat progress;
+/**
+  Sets how much of the progress bar should be filled during an indeterminate animation, pinned between \code
+  0.05
+  \endcode and \code
+  0.9
+  \endcode
+  <em>Note:</em> This can be overriden / animated from by using updateProgress(…)
+*/
+@property (nonatomic) CGFloat indeterminateProgress;
+/**
+  Controls the speed at which the indeterminate progress bar animates
+*/
+@property (nonatomic) CFTimeInterval indeterminateDuration;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) Class _Nonnull layerClass;)
++ (Class _Nonnull)layerClass;
+/**
+  Default initializer for the class
+
+  returns:
+  A configured instance of self
+*/
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)didMoveToWindow;
+/**
+  Enables or disables the indeterminate (spinning) animation
+  \param enabled Whether or not to enable the animation (defaults to \code
+  true
+  \endcode)
+
+  \param completion An optional closure to execute after the animation completes
+
+*/
+- (void)enableIndeterminate:(BOOL)enabled completion:(void (^ _Nullable)(void))completion;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+@class CAAnimation;
+
+@interface RPCircularProgress (SWIFT_EXTENSION(HADFramework)) <CAAnimationDelegate>
+- (void)animationDidStop:(CAAnimation * _Nonnull)anim finished:(BOOL)flag;
+@end
+
+
+@interface RPCircularProgress (SWIFT_EXTENSION(HADFramework))
 @end
 
 

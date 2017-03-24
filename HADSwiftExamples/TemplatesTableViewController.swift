@@ -40,7 +40,7 @@ class TemplatesTableViewController: UITableViewController {
     
     func loadTemplate(_ type:HADNativeAdViewType){
         templateType = type
-        nativeAd = HADNativeAd(placementId: "5b3QbMRQ")
+        nativeAd = HADNativeAd(placementId: "W03qNzM6")
         nativeAd?.delegate = self
         nativeAd?.loadAd()
     }
