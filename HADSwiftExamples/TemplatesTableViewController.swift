@@ -55,7 +55,7 @@ extension TemplatesTableViewController: HADNativeAdDelegate {
         
         //create native ad view with customization
          let attributes:HADNativeAdViewAttributes = HADNativeAdViewAttributes();
-         attributes.backgroundColor = UIColor.black
+         attributes.backgroundColor = UIColor.white
          attributes.buttonColor = UIColor.red
          attributes.buttonTitleColor = UIColor.white
          
