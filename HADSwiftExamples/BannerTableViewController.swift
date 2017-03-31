@@ -9,18 +9,18 @@
 import UIKit
 import HADFramework
 
-class BannerCell: UITableViewCell, HADAdViewDelegate {
+class BannerCell: UITableViewCell, HADBannerAdDelegate {
     
-    func hadViewDidLoad(adView: HADAdView) {
+    func hadBannerAdDidLoad(bannerAd: HADBannerAd) {
         print("hadViewDidLoad")
     }
     
-    func hadViewDidClick(adView: HADAdView) {
+    func hadBannerAdDidClick(bannerAd: HADBannerAd) {
         print("hadViewDidClick")
     }
     
-    func hadViewDidFail(adView: HADAdView, withError error: NSError?) {
-        print("hadViewDidFail: \(error?.localizedDescription)")
+    func hadBannerAdDidFail(bannerAd: HADBannerAd, withError error: NSError?) {
+        print("hadViewDidFail: \(String(describing: error?.localizedDescription))")
     }
 }
 
@@ -38,14 +38,13 @@ class BannerTableViewController: UITableViewController {
             if !alreadyLoadedAdsInRows.contains(indexPath.row) {
                 alreadyLoadedAdsInRows.append(indexPath.row)
                 
-                let bannerView = HADAdView(placementID: "W03qNzM6", adSize:.height50Banner, viewController: self)
-                bannerView.loadAd()
+                let bannerView = HADBannerAd(placementID: "KoMrp58X", bannerSize:.banner320x50, viewController: self)
                 bannerView.delegate = cell
+                bannerView.loadAd()
                 cell.contentView.addSubview(bannerView)
                 
-                let height = HADAdSize.getSize(.height50Banner).height
                 //set ad size
-                bannerView.frame = CGRect(x:0, y:0, width:cell.contentView.frame.width, height:height);
+                bannerView.frame = CGRect(x:0, y:0, width:cell.frame.width, height:HADBannerAdSize.getSize(.banner320x50).height)
             }
             return cell
         } else {

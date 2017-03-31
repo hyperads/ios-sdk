@@ -45,7 +45,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var preloaderView: UIView!
     
     var sectionNames = ["Native", "Banners", "Interstitial"]
-    var sectionRows = [["Native Ad", "TableView with Native Ads", "CollectionView with Native Ads", "Native Ads Templates"],["HTML Banner 300x250","Banner Ad Height 50", "Banner Ad Height 90", "Banner Ad 300x250", "TableView with Banner Ads", "CollectionView with Banner Ads"],["Interstitial", "Video Interstitial"]]
+     var sectionRows = [["Native Ad", "TableView with Native Ads", "CollectionView with Native Ads", "Native Ads Templates"],["Banner 300x250", "TableView with Banner Ads", "CollectionView with Banner Ads"],["Interstitial", "Video Interstitial"]]
     
     var interstitialAd:HADInterstitialAd?
     var videoInterstitialAd:HADVideoInterstitialAd?
@@ -53,12 +53,14 @@ class MainViewController: UIViewController {
     override open func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
         tableView.dataSource = self
         tableView.delegate = self
         
         preloaderView.isHidden = true
+        
+        //User's event test
+        HADEventManager.sharedInstance.setup(token: "TOKEN")
+        HADEventManager.sharedInstance.send(type: .invite)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -80,17 +82,8 @@ class MainViewController: UIViewController {
         case "Native Ads Templates":
             performSegue(withIdentifier: adName, sender: nil)
             break
-        case "HTML Banner 300x250":
-            showHTMLBanner(size: .banner300x250)
-            break
-        case "Banner Ad Height 50":
-            showBanner(size: .height50Banner)
-            break
-        case "Banner Ad Height 90":
-            showBanner(size: .height90Banner)
-            break
-        case "Banner Ad 300x250":
-            showBanner(size: .height250Rectangle)
+        case "Banner 300x250":
+            showBanner(size: .banner300x250)
             break
         case "TableView with Banner Ads":
             performSegue(withIdentifier: adName, sender: nil)
@@ -135,7 +128,7 @@ class MainViewController: UIViewController {
         videoInterstitialAd?.loadAd()
     }
     
-    func showHTMLBanner(size:HADBannerAdSize) {
+    func showBanner(size:HADBannerAdSize) {
         let bannerView = HADBannerAd(placementID: "KoMrp58X", bannerSize:size, viewController: self)
         bannerView.delegate = self
         
@@ -153,29 +146,6 @@ class MainViewController: UIViewController {
         
         //set ad size
         bannerView.frame = CGRect(x:0, y:100, width:self.view.frame.width, height:HADBannerAdSize.getSize(size).height)
-        
-        //show controller with ad
-        self.navigationController?.pushViewController(adController, animated: true)
-    }
-    
-    func showBanner(size:HADAdSize) {
-        let bannerView = HADAdView(placementID: "5b3QbMRQ", adSize:size, viewController: self)
-        bannerView.delegate = self
-        
-        //optionaly set custom params
-        let adRequest = HADAdRequest()
-        adRequest.setKeywords(value: "one,two,free")
-        bannerView.adRequest = adRequest
-        
-        bannerView.loadAd()
-        
-        //create controller
-        let adController = UIViewController()
-        adController.view.backgroundColor = UIColor.lightGray
-        adController.view.addSubview(bannerView)
-        
-        //set ad size
-        bannerView.frame = CGRect(x:0, y:100, width:self.view.frame.width, height:HADAdSize.getSize(size).height)
         
         //show controller with ad
         self.navigationController?.pushViewController(adController, animated: true)

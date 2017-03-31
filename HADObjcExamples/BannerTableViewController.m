@@ -9,7 +9,7 @@
 #import "BannerTableViewController.h"
 #import <HADFramework/HADFramework.h>
 
-@interface BannerTableViewController () <HADAdViewDelegate>
+@interface BannerTableViewController () <HADBannerAdDelegate>
 
 @property (strong, nonatomic) NSMutableArray *alreadyLoadedAdsInRows;
 
@@ -49,12 +49,10 @@ static NSString * const kAdCellIdentifier = @"AD";
         if (![self.alreadyLoadedAdsInRows containsObject:indexPath]) {
             [self.alreadyLoadedAdsInRows addObject:indexPath];
             
-            HADAdView *adView = [[HADAdView alloc] initWithPlacementID:@"W03qNzM6" adSize:HADAdSizeHeight50Banner viewController:self];
+            HADBannerAd *adView = [[HADBannerAd alloc] initWithPlacementID:@"KoMrp58X" bannerSize:HADBannerAdSizeBanner320x50 viewController:self];
             adView.delegate = self;
             [adView loadAd];
-            
             [cell.contentView addSubview:adView];
-            
             adView.frame = CGRectMake(0, 0, self.view.frame.size.width, 50);
         }
         
@@ -64,18 +62,18 @@ static NSString * const kAdCellIdentifier = @"AD";
     } 
 }
 
-#pragma mark - HADAdViewDelegate
+#pragma mark - HADBannerAdDelegate
 
--(void)hadViewDidLoadWithAdView:(HADAdView *)adView{
-    NSLog(@"hadViewDidLoadWithAdView");
+-(void)hadBannerAdDidLoadWithBannerAd:(HADBannerAd *)bannerAd{
+    NSLog(@"hadBannerAdDidLoadWithBannerAd");
 }
 
--(void)hadViewDidClickWithAdView:(HADAdView *)adView{
-    NSLog(@"hadViewDidClickWithAdView");
+-(void)hadBannerAdDidClickWithBannerAd:(HADBannerAd *)bannerAd{
+    NSLog(@"hadBannerAdDidClickWithBannerAd");
 }
 
--(void)hadViewDidFailWithAdView:(HADAdView *)adView withError:(NSError *)error{
-    NSLog(@"hadViewDidFailWithAdView: %@", error);
+-(void)hadBannerAdDidFailWithBannerAd:(HADBannerAd *)bannerAd withError:(NSError *)error{
+    NSLog(@"hadBannerAdDidFailWithBannerAd: %@", error);
 }
 
 @end

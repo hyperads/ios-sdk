@@ -32,10 +32,14 @@
     self.preloaderView.hidden = YES;
     
     self.sectionNames = @[@"Native", @"Banners", @"Interstitial"];
-    self.sectionRows = @[@[@"Native Ad", @"Native Ads Templates", @"TableView with Native Ads", @"CollectionView with Native Ads"],@[@"HTML Banner 300x250",@"Banner Ad Height 50", @"Banner Ad Height 90", @"Banner Ad 300x250", @"TableView with Banner Ads", @"CollectionView with Banner Ads"],@[@"Interstitial", @"Video Interstitial"]];
+    self.sectionRows = @[@[@"Native Ad", @"Native Ads Templates", @"TableView with Native Ads", @"CollectionView with Native Ads"],@[@"Banner 300x250", @"TableView with Banner Ads", @"CollectionView with Banner Ads"],@[@"Interstitial", @"Video Interstitial"]];
     
     [self.tableView setDelegate:self];
     [self.tableView setDataSource:self];
+    
+    //User's event test
+    [HADEventManager.sharedInstance setupWithToken:@"TOKEN"];
+    [HADEventManager.sharedInstance sendWithType:HADEventTypeInvite];
 }
 
 #pragma mark - UITableViewDelegate
@@ -77,14 +81,8 @@
         [self showInterstitial];
     }else if ([adName isEqualToString:@"Video Interstitial"]){
         [self showVideoInterstitial];
-    }else if ([adName isEqualToString:@"Banner Ad Height 50"]){
-        [self showBanner:HADAdSizeHeight50Banner];
-    }else if ([adName isEqualToString:@"Banner Ad Height 90"]){
-        [self showBanner:HADAdSizeHeight90Banner];
-    }else if ([adName isEqualToString:@"Banner Ad 300x250"]){
-        [self showBanner:HADAdSizeHeight250Rectangle];
-    }else if ([adName isEqualToString:@"HTML Banner 300x250"]){
-        [self showHTMLBanner:HADBannerAdSizeBanner300x250];
+    }else if ([adName isEqualToString:@"Banner 300x250"]){
+        [self showBanner:HADBannerAdSizeBanner300x250];
     }else{
         [self performSegueWithIdentifier:adName sender:nil];
     }
@@ -104,7 +102,7 @@
     [self.videoInterstitial loadAd];
 }
 
-- (void)showHTMLBanner:(HADBannerAdSize)size {
+- (void)showBanner:(HADBannerAdSize)size {
     HADBannerAd *adView = [[HADBannerAd alloc] initWithPlacementID:@"KoMrp58X" bannerSize:size viewController:self];
     adView.delegate = self;
     [adView loadAd];
@@ -114,42 +112,7 @@
     adController.view.backgroundColor = [UIColor lightGrayColor];
     [adController.view addSubview:adView];
     
-    //set ad size
-    int adHeight;
-    
-    if(size == HADBannerAdSizeBanner300x250){
-        adHeight = 250;
-    }
-    
-    adView.frame = CGRectMake(0, 100, self.view.frame.size.width, adHeight);
-    
-    //show controller with ad
-    [self.navigationController pushViewController:adController animated:@YES];
-}
-
-- (void)showBanner:(HADAdSize)size {
-    
-    HADAdView *adView = [[HADAdView alloc] initWithPlacementID:@"W03qNzM6" adSize:size viewController:self];
-    adView.delegate = self;
-    [adView loadAd];
-    
-    //create controller
-    UIViewController *adController = [UIViewController new];
-    adController.view.backgroundColor = [UIColor lightGrayColor];
-    [adController.view addSubview:adView];
-    
-    //set ad size
-    int adHeight;
-    
-    if(size == HADAdSizeHeight250Rectangle){
-        adHeight = 250;
-    }else if(size == HADAdSizeHeight50Banner){
-        adHeight = 50;
-    }else if(size == HADAdSizeHeight90Banner){
-        adHeight = 90;
-    }
-
-    adView.frame = CGRectMake(0, 100, self.view.frame.size.width, adHeight);
+    adView.frame = CGRectMake(0, 100, self.view.frame.size.width, 250);
     
     //show controller with ad
     [self.navigationController pushViewController:adController animated:@YES];

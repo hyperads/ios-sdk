@@ -44,12 +44,12 @@ This step is required to work around an [App Store submission bug](http://www.op
 
 You can implement the following ad formats in your iOS application:
 
-* [Banner](docs/_banner.md)
-* [HTML Banner](docs/_html.md)
+* [Banner](docs/_html.md)
 * [Interstitial](docs/_interstitial.md)
 * [Video Interstitial](docs/_video.md)
 * [Native & Native video](docs/_native.md)
 * [Ad targeting](docs/_target.md)
+* [User's events](docs/_events.md)
 
 ### Adapters for integration with popular Networks
 
