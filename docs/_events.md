@@ -1,16 +1,16 @@
-#  User's segmentation events
+#  User segmentation
 
-With sending in-app events triggered by your users you can improve your monetization and get higher earnings.
+Customer segmentation is the practice of dividing a customer base into groups of individuals that are similar in specific ways relevant to marketing, such as age, gender, interests and spending habits. You can build custom (or use predefined) segments from your users. This is potentially increase your monetization.
 
-Our platform automatically build audiences using your in-app data (provided by your events) and assigns high performing campaigns individually to each segment.
+For building segments based on in-app events you need to notify our backend for every event occured in your app.
 
-Also our advertisers and mediabuying department make higher bids for more engaged users.
+First of all you must set your token with `HADEventManager.sharedInstance.setup(token: "TOKEN")`
 
-You can send the events very easy. Just call the method `send(type: HADEventType)` from HADEventManager class.
+Next, you can send events. Just call the method `send(type: HADEventType)` of HADEventManager class.
 
-Swift example: `HADEventManager.send(.achievementUnlocked)`
+Swift example: `HADEventManager.sharedInstance.send(.achievementUnlocked)`
 
-Objective-C example: `[HADEventManager send:HADEventTypeAchievementUnlocked];`
+Objective-C example: `[[HADEventManager sharedInstance] send:HADEventTypeAchievementUnlocked];`
 
 ## Event codes
 

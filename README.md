@@ -44,13 +44,23 @@ This step is required to work around an [App Store submission bug](http://www.op
 
 You can implement the following ad formats in your iOS application:
 
-* [Banner](docs/_html.md)
+* [Native & Native video](docs/_native.md)
 * [Interstitial](docs/_interstitial.md)
 * [Video Interstitial](docs/_video.md)
-* [Native & Native video](docs/_native.md)
-* [Ad targeting](docs/_target.md)
-* [User's events](docs/_events.md)
+* [Banner](docs/_html.md)
 
+### Targeting
+
+Ad users are different in their behaviors, needs and expectations. Applying user segmentation delivers the best-fitting ad experience to your users. Custom ad targeting results in increasing your monetization values and obtaining maximum value from every user. Besides our advertisers and media buying department encourage the most engaged users by making higher bids for them.
+ 
+* [Examples & target types](docs/_target.md)
+ 
+### User segmentation
+ 
+Customer segmentation is the practice of dividing a customer base into groups of individuals that are similar in specific ways relevant to marketing, such as age, gender, interests and spending habits. You can build custom (or use predefined) segments from your users. This is potentially increase your monetization.
+
+* [Examples](docs/_events.md)
+ 
 ### Adapters for integration with popular Networks
 
 HyperADX provides MoPub and AdMob adapters for iOS applications. Publishers using MoPub and AdMob to mediate ad networks for their iOS apps can now take advantage of serving HypeADX's, interstitial and banner ads through MoPub's and AdMob's mediation solutions.
