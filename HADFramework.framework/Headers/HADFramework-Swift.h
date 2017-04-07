@@ -1200,15 +1200,68 @@ SWIFT_PROTOCOL("_TtP12HADFramework27HADNativeAdsManagerDelegate_")
 - (void)nativeAdsFailedToLoadWithError:(NSError * _Nullable)error;
 @end
 
+
+SWIFT_CLASS("_TtC12HADFramework9HADReward")
+@interface HADReward : NSObject
+- (NSString * _Nullable)getLabel SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 ///
 typedef SWIFT_ENUM(NSInteger, HADUserGender) {
   HADUserGenderMale = 0,
   HADUserGenderFemale = 1,
 };
 
+
+/// Video fullscreen class
+SWIFT_CLASS("_TtC12HADFramework18HADVideoFullscreen")
+@interface HADVideoFullscreen : UIViewController
+/// Typed access to the id of the ad placement.
+@property (nonatomic, readonly, copy) NSString * _Nullable placementId;
+/// The HADAdRequest object contains custom params
+@property (nonatomic, strong) HADAdRequest * _Nullable adRequest;
+/// This is a method to initialize an HADInterstitialAd matching the given placement id.
+/// \param placementID The id of the ad placement. You can create your placement id from HyperADX developers page.
+///
+- (nonnull instancetype)initWithPlacementID:(NSString * _Nonnull)placementID OBJC_DESIGNATED_INITIALIZER;
+///
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+///
+- (void)viewDidLoad;
+@property (nonatomic, readonly) UIInterfaceOrientation preferredInterfaceOrientationForPresentation;
+///
+@property (nonatomic, readonly) BOOL prefersStatusBarHidden;
+/// Begins loading the HADInterstitialAd content.
+/// You can implement <code>hadInterstitialAdDidLoad:</code> and <code>hadInterstitialAdDidFail:withError:</code> methods
+/// of <code>HADInterstitialAdDelegate</code> if you would like to be notified as loading succeeds or fails.
+- (void)loadAd;
+/// Presents the interstitial ad modally from the specified view controller.
+/// \param controller The view controller that will be used to present the interstitial ad.
+///
+- (void)showAdFromRootViewController:(UIViewController * _Nonnull)controller;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
+@end
+
+
+@interface HADVideoFullscreen (SWIFT_EXTENSION(HADFramework)) <HADNativeAdDelegate>
+- (void)hadNativeAdDidLoadWithNativeAd:(HADNativeAd * _Nonnull)nativeAd;
+- (void)hadNativeAdDidClickWithNativeAd:(HADNativeAd * _Nonnull)nativeAd;
+- (void)hadNativeAdDidFailWithNativeAd:(HADNativeAd * _Nonnull)nativeAd withError:(NSError * _Nullable)error;
+@end
+
+
+@interface HADVideoFullscreen (SWIFT_EXTENSION(HADFramework)) <HADMediaViewDelegate>
+- (void)hadMediaViewDidFailWithMediaView:(HADMediaView * _Nonnull)mediaView withError:(NSError * _Nullable)error;
+- (void)hadMediaViewDidLoadWithMediaView:(HADMediaView * _Nonnull)mediaView;
+- (void)hadMediaViewDidStartPlayingVideoWithMediaView:(HADMediaView * _Nonnull)mediaView;
+- (void)hadMediaViewDidEndPlayingVideoWithMediaView:(HADMediaView * _Nonnull)mediaView;
+- (void)hadMediaViewDidChangeTimeWithMediaView:(HADMediaView * _Nonnull)mediaView progress:(float)progress;
+@end
+
 @protocol HADVideoInterstitialAdDelegate;
 
-/// Native ad class
+/// Video interstitial ad class
 SWIFT_CLASS("_TtC12HADFramework22HADVideoInterstitialAd")
 @interface HADVideoInterstitialAd : UIViewController
 /// Typed access to the id of the ad placement.
@@ -1288,6 +1341,52 @@ SWIFT_PROTOCOL("_TtP12HADFramework30HADVideoInterstitialAdDelegate_")
 /// \param ad An HADVideoInterstitialAd object sending the message.
 ///
 - (void)hadVideoInterstitialAdWillCloseWithAd:(HADVideoInterstitialAd * _Nonnull)ad;
+@end
+
+@protocol HADVideoRewardedAdDelegate;
+
+SWIFT_CLASS("_TtC12HADFramework18HADVideoRewardedAd")
+@interface HADVideoRewardedAd : HADVideoFullscreen
+/// The customer id for s2s rewarding
+@property (nonatomic, copy) NSString * _Nullable customerID;
+/// The delegate
+@property (nonatomic, weak) id <HADVideoRewardedAdDelegate> _Nullable delegate;
+- (nonnull instancetype)initWithPlacementID:(NSString * _Nonnull)placementID OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+/// The methods declared by the HADVideoInterstitialAdDelegate protocol allow the adopting delegate to respond
+/// to messages from the HADVideoInterstitialAd class and thus respond to operations such as whether the
+/// interstitial ad has been loaded, user has clicked or closed the interstitial.
+SWIFT_PROTOCOL("_TtP12HADFramework26HADVideoRewardedAdDelegate_")
+@protocol HADVideoRewardedAdDelegate
+@optional
+/// Sent when an HADVideoRewardedAd failes to load an ad.
+/// \param ad An HADVideoRewardedAd object sending the message.
+///
+/// \param error An error object containing details of the error.
+///
+- (void)hadVideoRewardedAdDidFailWithAd:(HADVideoRewardedAd * _Nonnull)ad withError:(NSError * _Nullable)error;
+/// Sent when an HADVideoRewardedAd successfully loads an ad.
+/// \param ad An HADVideoRewardedAd object sending the message.
+///
+- (void)hadVideoRewardedAdDidLoadWithAd:(HADVideoRewardedAd * _Nonnull)ad;
+/// Sent after an ad in the HADVideoRewardedAd object is clicked. The appropriate app store view or
+/// app browser will be launched.
+/// \param ad An HADVideoRewardedAd object sending the message.
+///
+- (void)hadVideoRewardedAdDidClickWithAd:(HADVideoRewardedAd * _Nonnull)ad;
+/// Sent after an HADVideoRewardedAd object has been dismissed from the screen, returning control
+/// to your application.
+/// \param ad An HADVideoRewardedAd object sending the message.
+///
+- (void)hadVideoRewardedAdDidCloseWithAd:(HADVideoRewardedAd * _Nonnull)ad;
+/// Sent immediately before an HADVideoRewardedAd object will be dismissed from the screen.
+/// \param ad An HADVideoRewardedAd object sending the message.
+///
+- (void)hadVideoRewardedAdWillCloseWithAd:(HADVideoRewardedAd * _Nonnull)ad;
+- (void)hadVideoRewardedAdCompleteWithAd:(HADVideoRewardedAd * _Nonnull)ad reward:(HADReward * _Nonnull)reward;
 @end
 
 
