@@ -8,7 +8,6 @@ Please take the following steps to implement MoPub adapter:
 * [Download](https://github.com/hyperads/ios-sdk/releases) and extract the HADFramework for iOS.
 
 
-
 Setup SDKs:
 
 * [Integrate](https://github.com/mopub/mopub-ios-sdk/wiki/Manual-Native-Ads-Integration-for-iOS) with Mopub SDK.
@@ -24,18 +23,15 @@ Log into MoPub.
 
 In Mopub's dashboard select **Networks > Add a Network.**
 
-![Mopub-1]
-(images/adapters/ios/mopub1.png)
+<img src="/docs/images/adapters/ios/mopub1.png" title="sample" width="808" height="248" />
 
 * Then select **Custom Native Network.**
 
-![Mopub-2]
-(images/adapters/ios/mopub2.png)
+<img src="/docs/images/adapters/ios/mopub2.png" title="sample" width="1020" height="543" />
 
 * Fill in the fields accordingly to the Ad Unit that you want to use.
 
-![Mopub-3]
-(images/adapters/ios/mopub3.png)
+<img src="/docs/images/adapters/ios/mopub3.png" title="sample" width="1020" height="800" />
 
 ### Interstitial
 
