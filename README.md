@@ -24,7 +24,7 @@ Please complete the steps listed below to download and set-up HADFramework - Hyp
 * [Download](https://github.com/hyperads/ios-sdk/releases) the latest release and extract the HADFramework for iOS.
 * Open your project target _General_ tab.
 * Drag the `HADFramework.framework` file to _Embedded Binaries_. Make sure **Copy items if needed** is selected.
-* Add the `AdSupport` and `CoreTelephony` frameworks to your project.
+* Add the `AdSupport`, `CoreTelephony` and `AVFoundation` frameworks to your project.
 * Create a new _Run Script Phase_ in your app target _Build Phases_ and paste the following snippet in the script text field:
 ```
 bash "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/HADFramework.framework/strip-frameworks.sh"
@@ -47,6 +47,7 @@ You can implement the following ad formats in your iOS application:
 * [Native & Native video](docs/_native.md)
 * [Interstitial](docs/_interstitial.md)
 * [Video Interstitial](docs/_video.md)
+* [Video Rewarded](docs/_rewarded.md)
 * [Banner](docs/_html.md)
 
 ### Targeting

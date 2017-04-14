@@ -1203,7 +1203,9 @@ SWIFT_PROTOCOL("_TtP12HADFramework27HADNativeAdsManagerDelegate_")
 
 SWIFT_CLASS("_TtC12HADFramework9HADReward")
 @interface HADReward : NSObject
+@property (nonatomic) BOOL isSuccessful;
 - (NSString * _Nullable)getLabel SWIFT_WARN_UNUSED_RESULT;
+- (NSInteger)getAmount SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 

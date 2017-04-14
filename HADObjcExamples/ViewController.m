@@ -8,12 +8,13 @@
 
 #import "ViewController.h"
 
-@interface ViewController () <HADBannerAdDelegate, HADVideoInterstitialAdDelegate, HADInterstitialAdDelegate, HADAdViewDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface ViewController () <HADBannerAdDelegate, HADVideoInterstitialAdDelegate, HADInterstitialAdDelegate, HADVideoRewardedAdDelegate, HADAdViewDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *preloaderView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) HADInterstitialAd *interstitial;
 @property (strong, nonatomic) HADVideoInterstitialAd *videoInterstitial;
+@property (strong, nonatomic) HADVideoRewardedAd *videoRewarded;
 @property (strong, nonatomic) NSArray *sectionNames;
 @property (strong, nonatomic) NSArray *sectionRows;
 
@@ -32,7 +33,7 @@
     self.preloaderView.hidden = YES;
     
     self.sectionNames = @[@"Native", @"Banners", @"Interstitial"];
-    self.sectionRows = @[@[@"Native Ad", @"Native Ads Templates", @"TableView with Native Ads", @"CollectionView with Native Ads"],@[@"Banner 300x250", @"TableView with Banner Ads", @"CollectionView with Banner Ads"],@[@"Interstitial", @"Video Interstitial"]];
+    self.sectionRows = @[@[@"Native Ad", @"Native Ads Templates", @"TableView with Native Ads", @"CollectionView with Native Ads"],@[@"Banner 300x250", @"TableView with Banner Ads", @"CollectionView with Banner Ads"],@[@"Interstitial", @"Video Interstitial", @"Video Rewarded"]];
     
     [self.tableView setDelegate:self];
     [self.tableView setDataSource:self];
@@ -81,6 +82,8 @@
         [self showInterstitial];
     }else if ([adName isEqualToString:@"Video Interstitial"]){
         [self showVideoInterstitial];
+    }else if ([adName isEqualToString:@"Video Rewarded"]){
+        [self showVideoRewarded];
     }else if ([adName isEqualToString:@"Banner 300x250"]){
         [self showBanner:HADBannerAdSizeBanner300x250];
     }else{
@@ -100,6 +103,14 @@
     self.videoInterstitial = [[HADVideoInterstitialAd alloc] initWithPlacementID:@"kvaXVl3r"];
     self.videoInterstitial.delegate = self;
     [self.videoInterstitial loadAd];
+}
+
+- (void)showVideoRewarded {
+    self.preloaderView.hidden = NO;
+    self.videoRewarded = [[HADVideoRewardedAd alloc] initWithPlacementID:@"wa2240ra"];
+    self.videoRewarded.customerID = @"CUSTOMER_ID";
+    self.videoRewarded.delegate = self;
+    [self.videoRewarded loadAd];
 }
 
 - (void)showBanner:(HADBannerAdSize)size {
@@ -196,6 +207,33 @@
 
 -(void)hadVideoInterstitialAdDidCloseWithAd:(HADVideoInterstitialAd *)ad{
     NSLog(@"HADVideoInterstitialDidClose");
+}
+
+#pragma mark - HADVideoRewardedAdDelegate
+
+-(void)hadVideoRewardedAdDidLoadWithAd:(HADVideoRewardedAd *)ad{
+    [self.videoRewarded showAdFromRootViewController:self];
+}
+
+-(void)hadVideoRewardedAdDidClickWithAd:(HADVideoRewardedAd *)ad{
+    NSLog(@"HADVideoRewardedDidClick");
+}
+
+-(void)hadVideoRewardedAdDidCloseWithAd:(HADVideoRewardedAd *)ad{
+    NSLog(@"HADVideoRewardedAdDidClose");
+}
+
+-(void)hadVideoRewardedAdWillCloseWithAd:(HADVideoRewardedAd *)ad{
+    NSLog(@"HADVideoRewardedAdWillClose");
+}
+
+-(void)hadVideoRewardedAdCompleteWithAd:(HADVideoRewardedAd *)ad reward:(HADReward *)reward{
+    NSLog(@"HADVideoRewardedAdComplete %@", [reward getLabel]);
+}
+
+-(void)hadVideoRewardedAdDidFailWithAd:(HADVideoRewardedAd *)ad withError:(NSError *)error{
+    self.preloaderView.hidden = YES;
+    NSLog(@"HADVideoRewardedDidFail: %@", error);
 }
 
 @end

@@ -45,10 +45,11 @@ class MainViewController: UIViewController {
     @IBOutlet weak var preloaderView: UIView!
     
     var sectionNames = ["Native", "Banners", "Interstitial"]
-     var sectionRows = [["Native Ad", "TableView with Native Ads", "CollectionView with Native Ads", "Native Ads Templates"],["Banner 300x250", "TableView with Banner Ads", "CollectionView with Banner Ads"],["Interstitial", "Video Interstitial"]]
+     var sectionRows = [["Native Ad", "TableView with Native Ads", "CollectionView with Native Ads", "Native Ads Templates"],["Banner 300x250", "TableView with Banner Ads", "CollectionView with Banner Ads"],["Interstitial", "Video Interstitial", "Video Rewarded"]]
     
     var interstitialAd:HADInterstitialAd?
     var videoInterstitialAd:HADVideoInterstitialAd?
+    var videoRewardedAd:HADVideoRewardedAd?
     
     override open func viewDidLoad() {
         super.viewDidLoad()
@@ -97,6 +98,9 @@ class MainViewController: UIViewController {
         case "Video Interstitial":
             showVideoInterstitial()
             break
+        case "Video Rewarded":
+            showVideoRewarded()
+            break
         default:
             print("Error: Ad not found")
         }
@@ -126,6 +130,17 @@ class MainViewController: UIViewController {
         videoInterstitialAd?.adRequest = adRequest
         
         videoInterstitialAd?.loadAd()
+    }
+    
+    func showVideoRewarded() {
+        preloaderView.isHidden = false
+        videoRewardedAd = HADVideoRewardedAd(placementID: "wa2240ra")
+        //for server side rewarding
+        videoRewardedAd?.customerID = "CUSTOMER_ID"
+        videoRewardedAd?.delegate = self
+        
+        //for client-side rewarding
+        videoRewardedAd?.loadAd()
     }
     
     func showBanner(size:HADBannerAdSize) {
@@ -167,7 +182,7 @@ extension MainViewController: HADBannerAdDelegate {
     }
     
     func hadBannerAdDidFail(bannerAd: HADBannerAd, withError error: NSError?) {
-        print("hadBannerAdDidFail \(error)")
+        print("hadBannerAdDidFail \(String(describing: error))")
     }
 }
 
@@ -182,7 +197,7 @@ extension MainViewController: HADAdViewDelegate {
     }
     
     func hadViewDidFail(adView: HADAdView, withError error: NSError?) {
-        print("hadViewDidFail: \(error?.localizedDescription)")
+        print("hadViewDidFail: \(String(describing: error?.localizedDescription))")
     }
 }
 
@@ -207,7 +222,7 @@ extension MainViewController: HADInterstitialAdDelegate {
     
     func hadInterstitialAdDidFail(interstitialAd: HADInterstitialAd, withError error: NSError?) {
         preloaderView.isHidden = true
-        print("hadInterstitialDidFail: \(error)")
+        print("hadInterstitialDidFail: \(String(describing: error))")
     }
 }
 
@@ -232,9 +247,40 @@ extension MainViewController: HADVideoInterstitialAdDelegate {
     
     func hadVideoInterstitialAdDidFail(ad: HADVideoInterstitialAd, withError error: NSError?) {
         preloaderView.isHidden = true
-        print("hadVideoInterstitialDidFail: \(error)")
+        print("hadVideoInterstitialDidFail: \(String(describing: error))")
     }
 }
 
+// MARK: - HADVideoRewardedAdDelegate
+extension MainViewController: HADVideoRewardedAdDelegate {
+    
+    func hadVideoRewardedAdComplete(ad: HADVideoRewardedAd, reward: HADReward) {
+        print("hadVideoRewardedAdComplete \(String(describing: reward.getLabel())) \(String(describing: reward.getAmount()))")
+    }
+    
+    func hadVideoRewardedAdDidLoad(ad: HADVideoRewardedAd) {
+        preloaderView.isHidden = true
+        videoRewardedAd?.showAdFromRootViewController(self)
+    }
+    
+    func hadVideoRewardedAdDidClick(ad: HADVideoRewardedAd) {
+        print("hadVideoRewardedAdDidClick")
+    }
+    
+    func hadVideoRewardedAdDidClose(ad: HADVideoRewardedAd) {
+        print("hadVideoRewardedAdDidClose")
+        videoRewardedAd = nil
+    }
+    
+    func hadVideoRewardedAdWillClose(ad: HADVideoRewardedAd) {
+        print("hadVideoRewardedAdWillClose")
+    }
+    
+    func hadVideoRewardedAdDidFail(ad: HADVideoRewardedAd, withError error: NSError?) {
+        preloaderView.isHidden = true
+        print("hadVideoRewardedAdDidFail: \(String(describing: error))")
+        videoRewardedAd = nil
+    }
+}
 
 
