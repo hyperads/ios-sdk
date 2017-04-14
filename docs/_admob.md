@@ -13,18 +13,15 @@ Please take the following steps to implement Admob adapter:
 
 * Add a new ad unit. Click **+NEW AD UNIT** to do this. 
 
-![Admob-1]
-(images/adapters/ios/AdMobBanner1.png)
+<img src="images/adapters/ios/AdMobBanner1.png"/>
 
 * Select an ad format and enter the relevant details.
 
-![Admob-2]
-(images/adapters/ios/AdMobBanner2.png)
+<img src="images/adapters/ios/AdMobBanner2.png"/>
 
 * Then add a new mediation source. Select your application from the **All apps** list on the left-hand side. Click the link in the **Mediation** column to the right of the ad unit you want to modify. Click **+ New APP NETWORK.** Add the custom event: 
 
-![Admob-3]
-(images/adapters/ios/AdMobBanner3.png)
+<img src="images/adapters/ios/AdMobBanner3.png"/>
 
 * You will get UnitId string like 'ca-app-pub-+++++++++++++/+++++++++++++'. For the next few hours you may get the AdMob errors with codes 0 or 2 with text "No ad to show.". Just be patient.
 
