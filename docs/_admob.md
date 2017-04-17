@@ -1,7 +1,7 @@
 # Admob adapter
 
 You can configure Admob adapter to serve Hyperadx banner and interstitial ads through Admob's mediation solution. The example of Admob adapter example is located in 
-[ /Mediation Adapters/Admob/](https://github.com/hyperads/ios-sdk/tree/master/Mediation%20adapters/Admob).
+[ /Mediation Adapters/Admob/](https://github.com/hyperads/ios-sdk/tree/3.0/Mediation%20adapters/AdMob)
 
 Please take the following steps to implement Admob adapter: 
 
